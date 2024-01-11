@@ -21,10 +21,10 @@ We use [mdbook](https://github.com/rust-lang/mdBook) for converting the markdown
 
 1. After updating the .md files, run:
 ```ps1
-.\publish.ps1
+.\tools\publish.ps1
 ```
 
 If you want to test the changes _locally_, run:
 ```ps1
-.\publish.ps1 -action deploy
+.\tools\publish.ps1 -action deploy
 ```
