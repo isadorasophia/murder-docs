@@ -20,6 +20,15 @@ public virtual void Interact(World world, Entity interactor, Entity interacted)
 `interactor` [Entity](../../Bang/Entities/Entity.html) \
 `interacted` [Entity](../../Bang/Entities/Entity.html) \
 
+#### Enable(World, Entity)
+```csharp
+public void Enable(World world, Entity target)
+```
+
+**Parameters** \
+`world` [World](../../Bang/World.html) \
+`target` [Entity](../../Bang/Entities/Entity.html) \
+
 
 
 ⚡

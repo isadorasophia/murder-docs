@@ -26,12 +26,20 @@ Create a new [PositionComponent](../../Murder/Components/PositionComponent.html)
 public PositionComponent(float x, float y, IMurderTransformComponent parent)
 ```
 
+**Parameters** \
+`x` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`y` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`parent` [IMurderTransformComponent](../../Murder/Components/IMurderTransformComponent.html) \
+
+```csharp
+public PositionComponent(float x, float y)
+```
+
 Create a new [PositionComponent](../../Murder/Components/PositionComponent.html).
 
 **Parameters** \
 `x` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `y` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
-`parent` [IMurderTransformComponent](../../Murder/Components/IMurderTransformComponent.html) \
 
 ```csharp
 public PositionComponent(Vector2 v)

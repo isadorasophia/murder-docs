@@ -831,6 +831,17 @@ Exponential out.
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 \
 
+#### JumpArc(float)
+```csharp
+public float JumpArc(float t)
+```
+
+**Parameters** \
+`t` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
 #### Linear(float)
 ```csharp
 public float Linear(float t)

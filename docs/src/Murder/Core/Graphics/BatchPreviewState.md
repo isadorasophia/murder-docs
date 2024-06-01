@@ -73,20 +73,6 @@ public static const BatchPreviewState Step3;
 
 **Returns** \
 [BatchPreviewState](../../../Murder/Core/Graphics/BatchPreviewState.html) \
-#### Step4
-```csharp
-public static const BatchPreviewState Step4;
-```
-
-**Returns** \
-[BatchPreviewState](../../../Murder/Core/Graphics/BatchPreviewState.html) \
-#### Step5
-```csharp
-public static const BatchPreviewState Step5;
-```
-
-**Returns** \
-[BatchPreviewState](../../../Murder/Core/Graphics/BatchPreviewState.html) \
 #### Ui
 ```csharp
 public static const BatchPreviewState Ui;

@@ -132,6 +132,16 @@ This has the duration of each reactive system (id) to its corresponding time (in
 
 **Returns** \
 [Dictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2?view=net-7.0) \
+#### StartCounters
+```csharp
+public readonly Dictionary<TKey, TValue> StartCounters;
+```
+
+This has the duration of each start system (id) to its corresponding time (in ms).
+            See [World.IdToSystem](../Bang/World.html#idtosystem) on how to fetch the actual system.
+
+**Returns** \
+[Dictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2?view=net-7.0) \
 #### UpdateCounters
 ```csharp
 public readonly Dictionary<TKey, TValue> UpdateCounters;
@@ -316,7 +326,20 @@ Get an entity with the specific id.
 public Entity GetUniqueEntity()
 ```
 
+Call [World.GetUniqueEntity``1(System.Int32)](../Bang/World.html#getuniqueentity(int) from a generator instead.
+
+**Returns** \
+[Entity](../Bang/Entities/Entity.html) \
+
+#### GetUniqueEntity(int)
+```csharp
+public Entity GetUniqueEntity(int index)
+```
+
 Get an entity with the unique component <typeparamref name="T" />.
+
+**Parameters** \
+`index` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 **Returns** \
 [Entity](../Bang/Entities/Entity.html) \
@@ -340,10 +363,37 @@ Tries to get an entity with the specific id.
 public Entity TryGetUniqueEntity()
 ```
 
-Try to get a unique entity that owns <typeparamref name="T" />.
+Call [World.TryGetUniqueEntity``1(System.Int32)](../Bang/World.html#trygetuniqueentity(int) from a generator instead.
 
 **Returns** \
 [Entity](../Bang/Entities/Entity.html) \
+
+#### TryGetUniqueEntity(int)
+```csharp
+public Entity TryGetUniqueEntity(int index)
+```
+
+Try to get a unique entity that owns <typeparamref name="T" />.
+
+**Parameters** \
+`index` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+**Returns** \
+[Entity](../Bang/Entities/Entity.html) \
+
+#### GetActivatedAndDeactivatedEntitiesWith(Type[])
+```csharp
+public ImmutableArray<T> GetActivatedAndDeactivatedEntitiesWith(Type[] components)
+```
+
+This is very slow. It should get both the activate an deactivate entities.
+            Used when it is absolutely necessary to get both activate and deactivated entities on the filtering.
+
+**Parameters** \
+`components` [Type[]](https://learn.microsoft.com/en-us/dotnet/api/System.Type?view=net-7.0) \
+
+**Returns** \
+[ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 
 #### GetAllEntities()
 ```csharp
@@ -388,7 +438,21 @@ Retrieve a context for the specified filter and components.
 public T GetUnique()
 ```
 
-Get the unique component within an entity <typeparamref name="T" />.
+Call [World.GetUnique``1(System.Int32)](../Bang/World.html#getunique(int) from a generator instead.
+
+**Returns** \
+[T](../) \
+
+#### GetUnique(int)
+```csharp
+public T GetUnique(int index)
+```
+
+Get the unique component <typeparamref name="T" /> within an entity. The component has index of <paramref name="index" />.
+
+**Parameters** \
+`index` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+\
 
 **Returns** \
 [T](../) \
@@ -398,7 +462,21 @@ Get the unique component within an entity <typeparamref name="T" />.
 public T? TryGetUnique()
 ```
 
-Try to get a unique entity that owns <typeparamref name="T" />.
+Call [World.TryGetUnique``1(System.Int32)](../Bang/World.html#trygetunique(int) from a generator instead.
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetUnique(int)
+```csharp
+public T? TryGetUnique(int index)
+```
+
+Try to get a unique entity that owns <typeparamref name="T" />. The component has index of <paramref name="index" />.
+
+**Parameters** \
+`index` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+\
 
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \

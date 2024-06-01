@@ -29,6 +29,18 @@ public readonly ImmutableDictionary<TKey, TValue> Events;
 
 **Returns** \
 [ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \
+### ⭐ Methods
+#### Merge(ImmutableDictionary<TKey, TValue>)
+```csharp
+public EventListenerComponent Merge(ImmutableDictionary<TKey, TValue> events)
+```
+
+**Parameters** \
+`events` [ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \
+
+**Returns** \
+[EventListenerComponent](../../Murder/Components/EventListenerComponent.html) \
+
 
 
 ⚡

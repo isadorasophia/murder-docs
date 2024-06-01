@@ -28,6 +28,16 @@ public void SetParameter(Effect effect, string id, Vector2 val)
 `id` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 `val` [Vector2](https://docs.monogame.net/api/Microsoft.Xna.Framework.Vector2.html) \
 
+#### SetParameter(Effect, string, Vector3)
+```csharp
+public void SetParameter(Effect effect, string id, Vector3 val)
+```
+
+**Parameters** \
+`effect` [Effect](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Effect.html) \
+`id` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`val` [Vector3](https://docs.monogame.net/api/Microsoft.Xna.Framework.Vector3.html) \
+
 #### SetParameter(Effect, string, Vector3[])
 ```csharp
 public void SetParameter(Effect effect, string id, Vector3[] val)
@@ -96,6 +106,16 @@ public void SetTechnique(Effect effect, string id)
 **Parameters** \
 `effect` [Effect](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Effect.html) \
 `id` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+
+#### TrySetParameter(Effect, string, Vector2)
+```csharp
+public void TrySetParameter(Effect effect, string id, Vector2 val)
+```
+
+**Parameters** \
+`effect` [Effect](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Effect.html) \
+`id` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`val` [Vector2](https://docs.monogame.net/api/Microsoft.Xna.Framework.Vector2.html) \
 
 #### TrySetParameter(Effect, string, bool)
 ```csharp

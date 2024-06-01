@@ -15,13 +15,13 @@ public SoundRuleAction()
 ```
 
 ```csharp
-public SoundRuleAction(SoundFact fact, BlackboardActionKind kind, Object value)
+public SoundRuleAction(SoundFact fact, BlackboardActionKind kind, T? value)
 ```
 
 **Parameters** \
 `fact` [SoundFact](../../../Murder/Core/Sounds/SoundFact.html) \
 `kind` [BlackboardActionKind](../../../Murder/Core/Dialogs/BlackboardActionKind.html) \
-`value` [Object](https://learn.microsoft.com/en-us/dotnet/api/System.Object?view=net-7.0) \
+`value` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
 ### ⭐ Properties
 #### Fact
@@ -40,11 +40,11 @@ public readonly BlackboardActionKind Kind;
 [BlackboardActionKind](../../../Murder/Core/Dialogs/BlackboardActionKind.html) \
 #### Value
 ```csharp
-public readonly Object Value;
+public readonly T? Value;
 ```
 
 **Returns** \
-[Object](https://learn.microsoft.com/en-us/dotnet/api/System.Object?view=net-7.0) \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
 
 ⚡

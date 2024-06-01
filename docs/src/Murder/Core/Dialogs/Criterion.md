@@ -22,7 +22,7 @@ public Criterion(Fact fact, CriterionKind kind, Object value)
 `value` [Object](https://learn.microsoft.com/en-us/dotnet/api/System.Object?view=net-7.0) \
 
 ```csharp
-public Criterion(Fact fact, CriterionKind kind, T? bool, T? int, string string, Object value)
+public Criterion(Fact fact, CriterionKind kind, T? bool, T? int, T? float, string string, Object value)
 ```
 
 **Parameters** \
@@ -30,6 +30,7 @@ public Criterion(Fact fact, CriterionKind kind, T? bool, T? int, string string, 
 `kind` [CriterionKind](../../../Murder/Core/Dialogs/CriterionKind.html) \
 `bool` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 `int` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+`float` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 `string` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 `value` [Object](https://learn.microsoft.com/en-us/dotnet/api/System.Object?view=net-7.0) \
 
@@ -57,6 +58,13 @@ public readonly Fact Fact;
 
 **Returns** \
 [Fact](../../../Murder/Core/Dialogs/Fact.html) \
+#### FloatValue
+```csharp
+public readonly T? FloatValue;
+```
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 #### IntValue
 ```csharp
 public readonly T? IntValue;

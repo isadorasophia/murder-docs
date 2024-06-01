@@ -31,6 +31,13 @@ public readonly float Duration;
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+#### FadeChildren
+```csharp
+public readonly bool FadeChildren;
+```
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 #### Style
 ```csharp
 public readonly FadeWhenInAreaStyle Style;

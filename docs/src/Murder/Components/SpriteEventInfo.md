@@ -18,6 +18,14 @@ public SpriteEventInfo(string id, T? sound, bool persist)
 `persist` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
 ```csharp
+public SpriteEventInfo(string id, T? sound)
+```
+
+**Parameters** \
+`id` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`sound` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+```csharp
 public SpriteEventInfo(string id)
 ```
 

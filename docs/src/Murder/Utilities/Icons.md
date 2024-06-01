@@ -50,6 +50,13 @@ public static const char Entity;
 
 **Returns** \
 [char](https://learn.microsoft.com/en-us/dotnet/api/System.Char?view=net-7.0) \
+#### Map
+```csharp
+public static const char Map;
+```
+
+**Returns** \
+[char](https://learn.microsoft.com/en-us/dotnet/api/System.Char?view=net-7.0) \
 #### Play
 ```csharp
 public static const char Play;

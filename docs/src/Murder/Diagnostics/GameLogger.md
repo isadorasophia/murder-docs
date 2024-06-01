@@ -132,13 +132,13 @@ protected void LogCommandOutput(string msg)
 
 #### CaptureCrash(Exception, string)
 ```csharp
-public bool CaptureCrash(Exception ex, string logFile)
+public bool CaptureCrash(Exception _, string logFile)
 ```
 
 Used to filter exceptions once a crash is yet to happen.
 
 **Parameters** \
-`ex` [Exception](https://learn.microsoft.com/en-us/dotnet/api/System.Exception?view=net-7.0) \
+`_` [Exception](https://learn.microsoft.com/en-us/dotnet/api/System.Exception?view=net-7.0) \
 `logFile` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 
 **Returns** \
@@ -160,6 +160,14 @@ public ImmutableArray<T> FetchLogs()
 **Returns** \
 [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 
+#### GetCurrentLog()
+```csharp
+public string GetCurrentLog()
+```
+
+**Returns** \
+[string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+
 #### DrawConsole(Func<T, TResult>)
 ```csharp
 public virtual void DrawConsole(Func<T, TResult> onInputAction)
@@ -169,6 +177,15 @@ Draws the console of the game.
 
 **Parameters** \
 `onInputAction` [Func\<T, TResult\>](https://learn.microsoft.com/en-us/dotnet/api/System.Func-2?view=net-7.0) \
+
+#### TrackImpl(string, Object)
+```csharp
+public virtual void TrackImpl(string variableName, Object value)
+```
+
+**Parameters** \
+`variableName` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`value` [Object](https://learn.microsoft.com/en-us/dotnet/api/System.Object?view=net-7.0) \
 
 #### ClearAllGraphs()
 ```csharp
@@ -269,6 +286,15 @@ public void Toggle(bool value)
 ```csharp
 public void ToggleDebugWindow()
 ```
+
+#### Track(string, Object)
+```csharp
+public void Track(string variableName, Object value)
+```
+
+**Parameters** \
+`variableName` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`value` [Object](https://learn.microsoft.com/en-us/dotnet/api/System.Object?view=net-7.0) \
 
 #### Verify(bool, string)
 ```csharp

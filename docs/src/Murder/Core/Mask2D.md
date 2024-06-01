@@ -50,17 +50,6 @@ public readonly Vector2 Size;
 **Returns** \
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 ### ⭐ Methods
-#### Begin(Color)
-```csharp
-public Batch2D Begin(Color debug)
-```
-
-**Parameters** \
-`debug` [Color](../../Murder/Core/Graphics/Color.html) \
-
-**Returns** \
-[Batch2D](../../Murder/Core/Graphics/Batch2D.html) \
-
 #### Begin(bool)
 ```csharp
 public Batch2D Begin(bool debug)
@@ -76,6 +65,18 @@ public Batch2D Begin(bool debug)
 ```csharp
 public virtual void Dispose()
 ```
+
+#### Draw(Batch2D, Vector2, DrawInfo)
+```csharp
+public void Draw(Batch2D targetBatch, Vector2 position, DrawInfo drawInfo)
+```
+
+Ends the batch (if it is still running) and draws the render target to the target batch. If already ended, it will just draw the render target.
+
+**Parameters** \
+`targetBatch` [Batch2D](../../Murder/Core/Graphics/Batch2D.html) \
+`position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`drawInfo` [DrawInfo](../../Murder/Core/Graphics/DrawInfo.html) \
 
 #### End(Batch2D, Vector2, DrawInfo)
 ```csharp

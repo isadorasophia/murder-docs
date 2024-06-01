@@ -15,14 +15,14 @@ public FontAsset()
 ```
 
 ```csharp
-public FontAsset(int index, Dictionary<TKey, TValue> characters, ImmutableArray<T> kernings, int size, string texturePath, float baseline, Point offset)
+public FontAsset(int index, Dictionary<TKey, TValue> characters, ImmutableArray<T> kernings, int lineHeight, string texturePath, float baseline, Point offset)
 ```
 
 **Parameters** \
 `index` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `characters` [Dictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2?view=net-7.0) \
 `kernings` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
-`size` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`lineHeight` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `texturePath` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 `baseline` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `offset` [Point](../../../Murder/Core/Geometry/Point.html) \

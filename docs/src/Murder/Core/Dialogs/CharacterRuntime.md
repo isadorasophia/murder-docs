@@ -30,14 +30,15 @@ public bool CheckRequirements(World world, ImmutableArray<T> requirements, Int32
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### HasNewContentOnNextDialogueLine(World, Entity)
+#### HasContentOnNextDialogueLine(World, Entity, bool)
 ```csharp
-public bool HasNewContentOnNextDialogueLine(World world, Entity target)
+public bool HasContentOnNextDialogueLine(World world, Entity target, bool checkForNewContentOnly)
 ```
 
 **Parameters** \
 `world` [World](../../../Bang/World.html) \
 `target` [Entity](../../../Bang/Entities/Entity.html) \
+`checkForNewContentOnly` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \

@@ -51,20 +51,6 @@ protected float _soundVolume;
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
-#### Bloom
-```csharp
-public bool Bloom { get; }
-```
-
-**Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-#### Downscale
-```csharp
-public bool Downscale { get; }
-```
-
-**Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 #### Language
 ```csharp
 public LanguageId Language { get; }

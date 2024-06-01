@@ -41,6 +41,13 @@ A list of optional modifiers that need to be pressed along with [Chord.Key](../.
 
 **Returns** \
 [Keys[]](https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Keys.html) \
+#### None
+```csharp
+public static Chord None;
+```
+
+**Returns** \
+[Chord](../../../Murder/Core/Input/Chord.html) \
 ### ⭐ Methods
 #### ToString()
 ```csharp

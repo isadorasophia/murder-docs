@@ -255,16 +255,6 @@ public T GetProperties()
 **Returns** \
 [T](../../../) \
 
-#### CreatePreviewImage()
-```csharp
-public Texture2D CreatePreviewImage()
-```
-
-Creates a new texture 2D from the graphics device.
-
-**Returns** \
-[Texture2D](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Texture2D.html) \
-
 #### AfterDeserialized()
 ```csharp
 public virtual void AfterDeserialized()

@@ -13,25 +13,21 @@ Tracks a saved game with all the player status.
 
 ### ⭐ Constructors
 ```csharp
-protected SaveData(int slot, float version, BlackboardTracker tracker)
+protected SaveData(int saveSlot, float saveVersion, BlackboardTracker blackboardTracker)
 ```
 
 **Parameters** \
-`slot` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-`version` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
-`tracker` [BlackboardTracker](../../Murder/Save/BlackboardTracker.html) \
+`saveSlot` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`saveVersion` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`blackboardTracker` [BlackboardTracker](../../Murder/Save/BlackboardTracker.html) \
 
 ```csharp
-public SaveData()
-```
-
-```csharp
-public SaveData(int slot, float version)
+public SaveData(int saveSlot, float saveVersion)
 ```
 
 **Parameters** \
-`slot` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-`version` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`saveSlot` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`saveVersion` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 ### ⭐ Properties
 #### _entitiesOnWorldToDestroy
@@ -293,6 +289,14 @@ protected virtual bool TryGetDynamicAssetImpl(T& value)
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### GetDefaultSaveName()
+```csharp
+protected virtual string GetDefaultSaveName()
+```
+
+**Returns** \
+[string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+
 #### ClearAllWorlds()
 ```csharp
 protected virtual void ClearAllWorlds()
@@ -396,6 +400,13 @@ public void ChangeSaveName(string name)
 
 **Parameters** \
 `name` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+
+#### Initialize()
+```csharp
+public void Initialize()
+```
+
+Called after creating a fresh new save from this.
 
 #### MakeGuid()
 ```csharp

@@ -301,6 +301,18 @@ public IntRectangle Expand(int value)
 **Returns** \
 [IntRectangle](../../../Murder/Core/Geometry/IntRectangle.html) \
 
+#### Expand(int, int)
+```csharp
+public IntRectangle Expand(int x, int y)
+```
+
+**Parameters** \
+`x` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`y` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+**Returns** \
+[IntRectangle](../../../Murder/Core/Geometry/IntRectangle.html) \
+
 #### FromCoordinates(Point, Point)
 ```csharp
 public IntRectangle FromCoordinates(Point topLeft, Point bottomRight)

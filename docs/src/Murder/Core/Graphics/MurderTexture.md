@@ -40,6 +40,11 @@ Draws a texture with a clipping area.
 `sort` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `blend` [Vector3](https://docs.monogame.net/api/Microsoft.Xna.Framework.Vector3.html) \
 
+#### Preload()
+```csharp
+public void Preload()
+```
+
 
 
 ⚡

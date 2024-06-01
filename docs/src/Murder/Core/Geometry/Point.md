@@ -137,6 +137,28 @@ Returns the length of this point, squared (IOW: X * X + Y * Y).
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
+#### Max(Point)
+```csharp
+public Point Max(Point other)
+```
+
+**Parameters** \
+`other` [Point](../../../Murder/Core/Geometry/Point.html) \
+
+**Returns** \
+[Point](../../../Murder/Core/Geometry/Point.html) \
+
+#### Min(Point)
+```csharp
+public Point Min(Point other)
+```
+
+**Parameters** \
+`other` [Point](../../../Murder/Core/Geometry/Point.html) \
+
+**Returns** \
+[Point](../../../Murder/Core/Geometry/Point.html) \
+
 #### Mirror(Point)
 ```csharp
 public Point Mirror(Point center)

@@ -7,7 +7,7 @@
 public sealed struct FadeTransitionComponent : IComponent
 ```
 
-For now, this will only fade out aseprite components.
+For now, this will only fade out sprite components.
 
 **Implements:** _[IComponent](../../Bang/Components/IComponent.html)_
 

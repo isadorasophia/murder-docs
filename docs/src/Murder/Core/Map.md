@@ -214,6 +214,16 @@ Check for collision using tiles coordinates.
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
+#### OverrideValueAt(Point, int, int)
+```csharp
+public void OverrideValueAt(Point p, int collisionMask, int weight)
+```
+
+**Parameters** \
+`p` [Point](../../Murder/Core/Geometry/Point.html) \
+`collisionMask` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`weight` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
 #### SetFloorAt(IntRectangle, int)
 ```csharp
 public void SetFloorAt(IntRectangle rect, int type)
@@ -232,6 +242,16 @@ public void SetFloorAt(int x, int y, int type)
 `x` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `y` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `type` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+#### SetOccupied(Point, int, int)
+```csharp
+public void SetOccupied(Point p, int collisionMask, int weight)
+```
+
+**Parameters** \
+`p` [Point](../../Murder/Core/Geometry/Point.html) \
+`collisionMask` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`weight` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 #### SetOccupiedAsCarve(IntRectangle, bool, bool, bool, int)
 ```csharp
@@ -255,6 +275,16 @@ public void SetOccupiedAsStatic(int x, int y, int layer)
 `y` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `layer` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
+#### SetUnoccupied(Point, int, int)
+```csharp
+public void SetUnoccupied(Point p, int collisionMask, int weight)
+```
+
+**Parameters** \
+`p` [Point](../../Murder/Core/Geometry/Point.html) \
+`collisionMask` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`weight` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
 #### SetUnoccupiedCarve(IntRectangle, bool, bool, int)
 ```csharp
 public void SetUnoccupiedCarve(IntRectangle rect, bool blockVision, bool isObstacle, int weight)
@@ -265,6 +295,11 @@ public void SetUnoccupiedCarve(IntRectangle rect, bool blockVision, bool isObsta
 `blockVision` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 `isObstacle` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 `weight` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+#### ZeroAll()
+```csharp
+public void ZeroAll()
+```
 
 
 

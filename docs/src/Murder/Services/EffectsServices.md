@@ -33,14 +33,14 @@ Add an entity which will apply a "fade-in" effect. Darkening the screen to black
 
 #### FadeOut(World, float, Color, float, int)
 ```csharp
-public void FadeOut(World world, float time, Color color, float delay, int bufferDrawFrames)
+public void FadeOut(World world, float duration, Color color, float delay, int bufferDrawFrames)
 ```
 
 Add an entity which will apply a "fade-out" effect. Clearing the screen.
 
 **Parameters** \
 `world` [World](../../Bang/World.html) \
-`time` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`duration` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `color` [Color](../../Murder/Core/Graphics/Color.html) \
 `delay` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `bufferDrawFrames` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \

@@ -123,6 +123,11 @@ public string Escape(string text)
 **Returns** \
 [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 
+#### Preload()
+```csharp
+public void Preload()
+```
+
 
 
 ⚡

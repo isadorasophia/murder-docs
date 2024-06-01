@@ -82,12 +82,12 @@ Unique Id used for the lookup of messages with type [NextDialogMessage](../../Mu
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-#### OnActorEnteredOrExitedMessage
+#### OnCollisionMessage
 ```csharp
-public static int OnActorEnteredOrExitedMessage { get; }
+public static int OnCollisionMessage { get; }
 ```
 
-Unique Id used for the lookup of messages with type [OnActorEnteredOrExitedMessage](../../Murder/Messages/Physics/OnActorEnteredOrExitedMessage.html).
+Unique Id used for the lookup of messages with type [OnCollisionMessage](../../Murder/Messages/Physics/OnCollisionMessage.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -97,15 +97,6 @@ public static int OnInteractExitMessage { get; }
 ```
 
 Unique Id used for the lookup of messages with type [OnInteractExitMessage](../../Murder/Messages/OnInteractExitMessage.html).
-
-**Returns** \
-[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-#### OnTriggerEnteredMessage
-```csharp
-public static int OnTriggerEnteredMessage { get; }
-```
-
-Unique Id used for the lookup of messages with type [OnTriggerEnteredMessage](../../Murder/Messages/Physics/OnTriggerEnteredMessage.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -124,6 +115,15 @@ public static int PickChoiceMessage { get; }
 ```
 
 Unique Id used for the lookup of messages with type [PickChoiceMessage](../../Murder/Messages/PickChoiceMessage.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### ThetherSnapMessage
+```csharp
+public static int ThetherSnapMessage { get; }
+```
+
+Unique Id used for the lookup of messages with type [ThetherSnapMessage](../../Murder/Messages/ThetherSnapMessage.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \

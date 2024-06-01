@@ -8,9 +8,9 @@ public static class DirectionHelper
 ```
 
 ### ⭐ Properties
-#### Cardinal
+#### Cardinal4
 ```csharp
-public static ImmutableArray<T> Cardinal;
+public static ImmutableArray<T> Cardinal4;
 ```
 
 **Returns** \
@@ -22,9 +22,16 @@ public static ImmutableArray<T> Cardinal4Flipped;
 
 **Returns** \
 [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
-#### CardinalFlipped
+#### Cardinal8
 ```csharp
-public static ImmutableArray<T> CardinalFlipped;
+public static ImmutableArray<T> Cardinal8;
+```
+
+**Returns** \
+[ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
+#### Cardinal8Flipped
+```csharp
+public static ImmutableArray<T> Cardinal8Flipped;
 ```
 
 **Returns** \
@@ -46,11 +53,15 @@ public bool Flipped(Direction direction)
 public Direction FromAngle(float angle)
 ```
 
+Converts an angle (in radians) to a Direction enum.
+
 **Parameters** \
 `angle` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 
 **Returns** \
 [Direction](../../Murder/Helpers/Direction.html) \
+\
 
 #### FromVector(Vector2)
 ```csharp
@@ -148,9 +159,9 @@ public Direction RoundTo4Directions(Direction direction, Orientation bias)
 **Returns** \
 [Direction](../../Murder/Helpers/Direction.html) \
 
-#### Angle(Direction)
+#### ToAngle(Direction)
 ```csharp
-public float Angle(Direction direction)
+public float ToAngle(Direction direction)
 ```
 
 The angle of the direction, in radians.
@@ -165,14 +176,25 @@ The angle of the direction, in radians.
 
 #### GetFlipped(Direction)
 ```csharp
-public SpriteEffects GetFlipped(Direction direction)
+public ImageFlip GetFlipped(Direction direction)
 ```
 
 **Parameters** \
 `direction` [Direction](../../Murder/Helpers/Direction.html) \
 
 **Returns** \
-[SpriteEffects](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.SpriteEffects.html) \
+[ImageFlip](../../Murder/Core/Graphics/ImageFlip.html) \
+
+#### GetFlippedHorizontal(Direction)
+```csharp
+public ImageFlip GetFlippedHorizontal(Direction direction)
+```
+
+**Parameters** \
+`direction` [Direction](../../Murder/Helpers/Direction.html) \
+
+**Returns** \
+[ImageFlip](../../Murder/Core/Graphics/ImageFlip.html) \
 
 #### ToCardinal(Direction, string, string, string, string)
 ```csharp
@@ -215,22 +237,33 @@ public string ToCardinal4(Direction direction, string n, string e, string s, boo
 **Returns** \
 [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 
-#### GetSuffixFromAngle(AgentSpriteComponent, float)
+#### GetName(int, int, bool)
 ```csharp
-public ValueTuple<T1, T2> GetSuffixFromAngle(AgentSpriteComponent sprite, float angle)
+public ValueTuple<T1, T2> GetName(int i, int totalDirections, bool flipWest)
+```
+
+**Parameters** \
+`i` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`totalDirections` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`flipWest` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+**Returns** \
+[ValueTuple\<T1, T2\>](https://learn.microsoft.com/en-us/dotnet/api/System.ValueTuple-2?view=net-7.0) \
+
+#### GetSuffixFromAngle(Entity, AgentSpriteComponent, float)
+```csharp
+public ValueTuple<T1, T2> GetSuffixFromAngle(Entity entity, AgentSpriteComponent _, float angle)
 ```
 
 Get the suffix from a suffix list based on an angle
 
 **Parameters** \
-`sprite` [AgentSpriteComponent](../../Murder/Components/AgentSpriteComponent.html) \
-\
+`entity` [Entity](../../Bang/Entities/Entity.html) \
+`_` [AgentSpriteComponent](../../Murder/Components/AgentSpriteComponent.html) \
 `angle` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
-\
 
 **Returns** \
 [ValueTuple\<T1, T2\>](https://learn.microsoft.com/en-us/dotnet/api/System.ValueTuple-2?view=net-7.0) \
-\
 
 #### ToCardinalFlipped(Direction, string, string, string)
 ```csharp

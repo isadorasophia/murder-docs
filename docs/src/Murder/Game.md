@@ -144,6 +144,15 @@ De time difference between current and last update, scaled by pause and other ti
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+#### DIAGNOSTICS_MODE
+```csharp
+public static bool DIAGNOSTICS_MODE;
+```
+
+Use this to set whether diagnostics should be pulled.
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 #### Downsample
 ```csharp
 public float Downsample;
@@ -189,6 +198,13 @@ Gets the current instance of the GraphicsDevice.
 
 **Returns** \
 [GraphicsDevice](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html) \
+#### GraphicsDeviceManager
+```csharp
+public GraphicsDeviceManager GraphicsDeviceManager { get; }
+```
+
+**Returns** \
+[GraphicsDeviceManager](https://docs.monogame.net/api/Microsoft.Xna.Framework.GraphicsDeviceManager.html) \
 #### GraphLogger
 ```csharp
 public virtual GraphLogger GraphLogger { get; }
@@ -257,7 +273,7 @@ Singleton instance of the game. wBe cautious when referencing this...
 [Game](../Murder/Game.html) \
 #### IsActive
 ```csharp
-public bool IsActive { get; }
+public bool IsActive { get; internal set; }
 ```
 
 **Returns** \
@@ -330,19 +346,21 @@ public float LongestUpdateTime { get; private set; }
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
-#### MaxElapsedTime
-```csharp
-public TimeSpan MaxElapsedTime { get; public set; }
-```
-
-**Returns** \
-[TimeSpan](https://learn.microsoft.com/en-us/dotnet/api/System.TimeSpan?view=net-7.0) \
 #### Now
 ```csharp
 public static float Now { get; }
 ```
 
 Gets the current scaled elapsed time.
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+#### NowAbsolute
+```csharp
+public static float NowAbsolute { get; }
+```
+
+Gets the absolute time since the game started. This is not affected by pause, freeze frames or time scaling.
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
@@ -466,15 +484,22 @@ public TimeSpan TargetElapsedTime { get; public set; }
 
 **Returns** \
 [TimeSpan](https://learn.microsoft.com/en-us/dotnet/api/System.TimeSpan?view=net-7.0) \
-#### TimeSinceLastDraw
+#### TimeScale
 ```csharp
-public float TimeSinceLastDraw { get; }
+public float TimeScale;
 ```
-
-Gets the time in seconds since the last draw.
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+#### TimeTrackerDiagnoostics
+```csharp
+public static UpdateTimeTracker TimeTrackerDiagnoostics;
+```
+
+Only updated if [Game.DIAGNOSTICS_MODE](../Murder/Game.html#diagnostics_mode) is set.
+
+**Returns** \
+[UpdateTimeTracker](../Murder/Diagnostics/UpdateTimeTracker.html) \
 #### UnscaledDeltaTime
 ```csharp
 public static float UnscaledDeltaTime { get; }
@@ -541,6 +566,17 @@ public event EventHandler<TEventArgs> Exiting;
 ```csharp
 protected virtual bool BeginDraw()
 ```
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### ShowMissingRequirementMessage(Exception)
+```csharp
+protected virtual bool ShowMissingRequirementMessage(Exception exception)
+```
+
+**Parameters** \
+`exception` [Exception](https://learn.microsoft.com/en-us/dotnet/api/System.Exception?view=net-7.0) \
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
@@ -672,13 +708,13 @@ protected virtual void OnExiting(Object sender, EventArgs args)
 
 #### OnLoadingDraw(RenderContext)
 ```csharp
-protected virtual void OnLoadingDraw(RenderContext renderContext)
+protected virtual void OnLoadingDraw(RenderContext render)
 ```
 
 Display drawing for the load animation.
 
 **Parameters** \
-`renderContext` [RenderContext](../Murder/Core/Graphics/RenderContext.html) \
+`render` [RenderContext](../Murder/Core/Graphics/RenderContext.html) \
 
 #### SetWindowSize(Point)
 ```csharp
@@ -869,23 +905,10 @@ public void Resume()
 
 This will resume the game.
 
-#### RevertSlowDown()
-```csharp
-public void RevertSlowDown()
-```
-
 #### Run()
 ```csharp
 public void Run()
 ```
-
-#### Run(GameRunBehavior)
-```csharp
-public void Run(GameRunBehavior runBehavior)
-```
-
-**Parameters** \
-`runBehavior` [GameRunBehavior](https://docs.monogame.net/api/Microsoft.Xna.Framework.GameRunBehavior.html) \
 
 #### RunOneFrame()
 ```csharp
@@ -906,17 +929,6 @@ public void SkipDeltaTimeOnUpdate()
 
 This will skip update times and immediately run the update calls from the game 
             until [Game.ResumeDeltaTimeOnUpdate](../Murder/Game.html#resumedeltatimeonupdate) is called.
-
-#### SlowDown(float)
-```csharp
-public void SlowDown(float scale)
-```
-
-This will slow down the game time.
-            TODO: What if we have multiple slow downs in the same run?
-
-**Parameters** \
-`scale` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### SuppressDraw()
 ```csharp

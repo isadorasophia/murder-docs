@@ -9,6 +9,14 @@ public sealed struct SendToParentInteraction : IInteraction
 
 **Implements:** _[IInteraction](../../Bang/Interactions/IInteraction.html)_
 
+### ⭐ Properties
+#### CustomMessage
+```csharp
+public readonly IMessage CustomMessage;
+```
+
+**Returns** \
+[IMessage](../../Bang/Components/IMessage.html) \
 ### ⭐ Methods
 #### Interact(World, Entity, Entity)
 ```csharp

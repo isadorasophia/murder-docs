@@ -14,6 +14,14 @@ public class CalculatePathfindSystem : IStartupSystem, ISystem, IReactiveSystem
 public CalculatePathfindSystem()
 ```
 
+### ⭐ Properties
+#### LineOfSightCollisionMask
+```csharp
+public static const int LineOfSightCollisionMask;
+```
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 ### ⭐ Methods
 #### OnAdded(World, ImmutableArray<T>)
 ```csharp

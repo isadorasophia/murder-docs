@@ -19,6 +19,17 @@ public bool HasValue(Vector2 vector)
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### Angle(Vector2)
+```csharp
+public float Angle(Vector2 vector)
+```
+
+**Parameters** \
+`vector` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
 #### Height(Vector2)
 ```csharp
 public float Height(Vector2 vector)
@@ -134,6 +145,17 @@ public ValueTuple<T1, T2> XY(Vector2 vector)
 **Returns** \
 [ValueTuple\<T1, T2\>](https://learn.microsoft.com/en-us/dotnet/api/System.ValueTuple-2?view=net-7.0) \
 
+#### Abs(Vector2)
+```csharp
+public Vector2 Abs(Vector2 vector)
+```
+
+**Parameters** \
+`vector` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
 #### Add(Vector2, float)
 ```csharp
 public Vector2 Add(Vector2 a, float b)
@@ -205,6 +227,19 @@ public Vector2 NormalizedWithSanity(Vector2 vector)
 **Returns** \
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 
+#### Perpendicular(Vector2)
+```csharp
+public Vector2 Perpendicular(Vector2 vector)
+```
+
+Returns the perpendicular vector to the given vector.
+
+**Parameters** \
+`vector` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
 #### PerpendicularClockwise(Vector2)
 ```csharp
 public Vector2 PerpendicularClockwise(Vector2 vector)
@@ -254,6 +289,20 @@ Returns a new vector, rotated by the given angle. In radians.
 **Returns** \
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 \
+
+#### SnapAngle(Vector2, int)
+```csharp
+public Vector2 SnapAngle(Vector2 vector, int steps)
+```
+
+Snap the angel to the nearest angle, based on the number of steps in a circle.
+
+**Parameters** \
+`vector` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`steps` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 
 #### ToVector3(Vector2)
 ```csharp

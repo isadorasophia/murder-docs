@@ -59,6 +59,28 @@ public bool Blink(float speed, bool scaled)
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### IsInteger(float)
+```csharp
+public bool IsInteger(float value)
+```
+
+**Parameters** \
+`value` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### IsInteger(Vector2)
+```csharp
+public bool IsInteger(Vector2 value)
+```
+
+**Parameters** \
+`value` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### SameSign(float, float)
 ```csharp
 public bool SameSign(float num1, float num2)
@@ -82,6 +104,23 @@ public bool SameSignOrSimilar(float num1, float num2)
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### MultiplyUnsigned8Bit(byte, int)
+```csharp
+public byte MultiplyUnsigned8Bit(byte a, int b)
+```
+
+Returns the result of multiplying two unsigned 8-bit values.
+
+**Parameters** \
+`a` [byte](https://learn.microsoft.com/en-us/dotnet/api/System.Byte?view=net-7.0) \
+\
+`b` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+\
+
+**Returns** \
+[byte](https://learn.microsoft.com/en-us/dotnet/api/System.Byte?view=net-7.0) \
+\
 
 #### LerpSnap(float, float, double, float)
 ```csharp
@@ -164,23 +203,28 @@ public float ClampNearZero(float value, float minimum)
 public float ClampTime(float elapsed, float inDuration, float delayDuration, float outDuration)
 ```
 
-Takes an elapsed time and coverts it to a 0-1 range
+Normalizes elapsed time to a 0-1 range based on specified durations for an 'in', 'delay', and 'out' phase. The value goes from 0 to 1 then back to 0.
 
 **Parameters** \
 `elapsed` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 `inDuration` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 `delayDuration` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 `outDuration` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 
 #### ClampTime(float, float, EaseKind)
 ```csharp
 public float ClampTime(float elapsed, float maxTime, EaseKind ease)
 ```
 
-Takes an elapsed time and coverts it to a 0-1 range
+Normalizes and eases elapsed time into a 0-1 range based on a maximum duration and an easing function.
 
 **Parameters** \
 `elapsed` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
@@ -192,17 +236,34 @@ Takes an elapsed time and coverts it to a 0-1 range
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 
 #### ClampTime(float, float)
 ```csharp
 public float ClampTime(float elapsed, float maxTime)
 ```
 
-Takes an elapsed time and coverts it to a 0-1 range
+Normalizes the given elapsed time to a range of 0 to 1 based on the specified maximum time.
 
 **Parameters** \
 `elapsed` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 `maxTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+
+#### ClampTime(float, float, float)
+```csharp
+public float ClampTime(float start, float now, float duration)
+```
+
+**Parameters** \
+`start` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`now` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`duration` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
@@ -214,6 +275,19 @@ public float ConvertLayerToLayerDepth(int layer)
 
 **Parameters** \
 `layer` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### DeterministicFloat(int, float, float)
+```csharp
+public float DeterministicFloat(int seed, float min, float max)
+```
+
+**Parameters** \
+`seed` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`min` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`max` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
@@ -242,6 +316,48 @@ public float Lerp(float origin, float target, float factor)
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### LerpSmooth(float, float, float, float)
+```csharp
+public float LerpSmooth(float a, float b, float deltaTime, float halfLife)
+```
+
+Smoothly interpolates between two float values over time using an exponential decay formula.
+
+**Parameters** \
+`a` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`b` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`deltaTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`halfLife` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+
+#### LerpSmoothAngle(float, float, float, float)
+```csharp
+public float LerpSmoothAngle(float a, float b, float deltaTime, float halfLife)
+```
+
+Smoothly interpolates between two angles over time using a linear interpolation method.
+
+**Parameters** \
+`a` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`b` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`deltaTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`halfLife` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 
 #### LerpSnap(float, float, float, float)
 ```csharp
@@ -278,6 +394,21 @@ public float Min(Single[] values)
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### NormalizeAngle(float)
+```csharp
+public float NormalizeAngle(float angle)
+```
+
+Normalizes the given angle to be within the range of 0 to 2π radians.
+
+**Parameters** \
+`angle` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 
 #### Remap(float, float, float, float, float)
 ```csharp
@@ -320,6 +451,23 @@ public float SmoothStep(float value, float min, float max)
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
+#### SnapAngle(float, int)
+```csharp
+public float SnapAngle(float finalAngle, int steps)
+```
+
+Snap the current angle into <paramref name="steps" /> degrees.
+
+**Parameters** \
+`finalAngle` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`steps` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+\
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+
 #### ToSpringOscillation(float, float)
 ```csharp
 public float ToSpringOscillation(float t, float frequency)
@@ -337,19 +485,43 @@ Converts a value to a spring oscillation.
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 \
 
-#### Wave(int, bool)
+#### Wave(float, bool)
 ```csharp
-public float Wave(int speed, bool scaled)
+public float Wave(float speed, bool scaled)
 ```
 
-Generates a value from 0 to 1 in a sine wave using Game.Now or Game.NowUnscaled
+Generates a normalized sine wave value oscillating between 0 and 1.
 
 **Parameters** \
-`speed` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`speed` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 `scaled` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+\
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+
+#### Wave(float, float, float, bool)
+```csharp
+public float Wave(float speed, float min, float max, bool scaled)
+```
+
+Generates a sinusoidal wave value oscillating between a specified minimum and maximum.
+
+**Parameters** \
+`speed` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`min` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`max` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`scaled` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+\
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
 
 #### CeilToInt(float)
 ```csharp
@@ -369,6 +541,19 @@ public int ConvertLayerDepthToLayer(float layerDepth)
 
 **Parameters** \
 `layerDepth` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+#### DeterministicInt(int, int, int)
+```csharp
+public int DeterministicInt(int seed, int min, int max)
+```
+
+**Parameters** \
+`seed` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`min` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`max` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -505,17 +690,6 @@ public int WrapAround(int value, Int32& min, Int32& max)
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
-#### ToPoint(Vector2)
-```csharp
-public Point ToPoint(Vector2 vector)
-```
-
-**Parameters** \
-`vector` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-
-**Returns** \
-[Point](../../Murder/Core/Geometry/Point.html) \
-
 #### AddOnce(IList<T>, T)
 ```csharp
 public T AddOnce(IList<T> list, T item)
@@ -593,6 +767,30 @@ public Vector2 Approach(Vector2& from, Vector2& target, float amount)
 **Returns** \
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 
+#### DeterministicVector2(int, float)
+```csharp
+public Vector2 DeterministicVector2(int seed, float radius)
+```
+
+**Parameters** \
+`seed` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`radius` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+#### DeterministicVector2InACircle(int, float)
+```csharp
+public Vector2 DeterministicVector2InACircle(int seed, float radius)
+```
+
+**Parameters** \
+`seed` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`radius` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
 #### GetPositionInSemicircle(float, Vector2, float, float, float)
 ```csharp
 public Vector2 GetPositionInSemicircle(float ratio, Vector2 center, float radius, float startAngle, float endAngle)
@@ -607,6 +805,40 @@ public Vector2 GetPositionInSemicircle(float ratio, Vector2 center, float radius
 
 **Returns** \
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+#### Lerp(Vector2, Vector2, float)
+```csharp
+public Vector2 Lerp(Vector2 origin, Vector2 target, float factor)
+```
+
+**Parameters** \
+`origin` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`target` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`factor` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+#### LerpSmooth(Vector2, Vector2, float, float)
+```csharp
+public Vector2 LerpSmooth(Vector2 a, Vector2 b, float deltaTime, float halfLife)
+```
+
+Smoothly interpolates between two vectors over time using a linear interpolation method.
+
+**Parameters** \
+`a` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+\
+`b` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+\
+`deltaTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+`halfLife` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+\
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+\
 
 #### Normalized(Vector2&)
 ```csharp
@@ -634,50 +866,6 @@ public Vector2 RandomPointInsideCircle()
 
 **Returns** \
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-
-#### ToCore(Vector2)
-```csharp
-public Vector2 ToCore(Vector2 vector)
-```
-
-**Parameters** \
-`vector` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-
-**Returns** \
-[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-
-#### ToSysVector2(Point)
-```csharp
-public Vector2 ToSysVector2(Point point)
-```
-
-**Parameters** \
-`point` [Point](https://docs.monogame.net/api/Microsoft.Xna.Framework.Point.html) \
-
-**Returns** \
-[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-
-#### ToSysVector2(Vector2)
-```csharp
-public Vector2 ToSysVector2(Vector2 vector)
-```
-
-**Parameters** \
-`vector` [Vector2](https://docs.monogame.net/api/Microsoft.Xna.Framework.Vector2.html) \
-
-**Returns** \
-[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-
-#### ToXnaVector2(Vector2)
-```csharp
-public Vector2 ToXnaVector2(Vector2 vector)
-```
-
-**Parameters** \
-`vector` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-
-**Returns** \
-[Vector2](https://docs.monogame.net/api/Microsoft.Xna.Framework.Vector2.html) \
 
 #### Populate(T[], T)
 ```csharp

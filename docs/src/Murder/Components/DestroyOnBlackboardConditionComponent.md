@@ -14,6 +14,13 @@ public sealed struct DestroyOnBlackboardConditionComponent : IComponent
 public DestroyOnBlackboardConditionComponent()
 ```
 
+```csharp
+public DestroyOnBlackboardConditionComponent(CriterionNode node)
+```
+
+**Parameters** \
+`node` [CriterionNode](../../Murder/Core/Dialogs/CriterionNode.html) \
+
 ### ⭐ Properties
 #### Rules
 ```csharp

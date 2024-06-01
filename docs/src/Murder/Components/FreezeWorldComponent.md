@@ -11,15 +11,19 @@ public sealed struct FreezeWorldComponent : IComponent
 
 ### ⭐ Constructors
 ```csharp
-public FreezeWorldComponent()
-```
-
-```csharp
-public FreezeWorldComponent(int count)
+public FreezeWorldComponent(float startTime, int count)
 ```
 
 **Parameters** \
+`startTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `count` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+```csharp
+public FreezeWorldComponent(float startTime)
+```
+
+**Parameters** \
+`startTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 ### ⭐ Properties
 #### Count
@@ -29,6 +33,13 @@ public readonly int Count;
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### StartTime
+```csharp
+public readonly float StartTime;
+```
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 
 ⚡

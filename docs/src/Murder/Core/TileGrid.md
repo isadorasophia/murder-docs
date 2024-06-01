@@ -118,6 +118,16 @@ public virtual bool HasFlagAt(int x, int y, int value)
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### MoveFromTo(Point, Point, Point)
+```csharp
+public void MoveFromTo(Point from, Point to, Point size)
+```
+
+**Parameters** \
+`from` [Point](../../Murder/Core/Geometry/Point.html) \
+`to` [Point](../../Murder/Core/Geometry/Point.html) \
+`size` [Point](../../Murder/Core/Geometry/Point.html) \
+
 #### Resize(IntRectangle)
 ```csharp
 public void Resize(IntRectangle rectangle)
@@ -149,24 +159,26 @@ public void Resize(int width, int height, Point origin)
 `height` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `origin` [Point](../../Murder/Core/Geometry/Point.html) \
 
-#### Set(Point, int)
+#### Set(Point, int, bool)
 ```csharp
-public void Set(Point p, int value)
+public void Set(Point p, int value, bool overridePreviousValues)
 ```
 
 **Parameters** \
 `p` [Point](../../Murder/Core/Geometry/Point.html) \
 `value` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`overridePreviousValues` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### Set(int, int, int)
+#### Set(int, int, int, bool)
 ```csharp
-public void Set(int x, int y, int value)
+public void Set(int x, int y, int value, bool overridePreviousValues)
 ```
 
 **Parameters** \
 `x` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `y` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `value` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`overridePreviousValues` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
 #### SetGridPosition(IntRectangle, int)
 ```csharp

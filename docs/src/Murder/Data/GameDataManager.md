@@ -11,6 +11,18 @@ public class GameDataManager : IDisposable
 
 ### ⭐ Constructors
 ```csharp
+protected GameDataManager(IMurderGame game, FileManager fileManager)
+```
+
+Creates a new game data manager.
+
+**Parameters** \
+`game` [IMurderGame](../../Murder/IMurderGame.html) \
+\
+`fileManager` [FileManager](../../Murder/Serialization/FileManager.html) \
+\
+
+```csharp
 public GameDataManager(IMurderGame game)
 ```
 
@@ -71,6 +83,13 @@ public ImmutableDictionary<TKey, TValue> _fonts;
 
 **Returns** \
 [ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \
+#### _game
+```csharp
+protected readonly IMurderGame _game;
+```
+
+**Returns** \
+[IMurderGame](../../Murder/IMurderGame.html) \
 #### _gameProfile
 ```csharp
 protected GameProfile _gameProfile;
@@ -78,6 +97,19 @@ protected GameProfile _gameProfile;
 
 **Returns** \
 [GameProfile](../../Murder/Assets/GameProfile.html) \
+#### _packedGameDataDirectory
+```csharp
+protected static const string _packedGameDataDirectory;
+```
+
+Relative path where the published game content are expected to be.
+            Expected to be:
+                [bin]/resources/content/
+                or
+                [source]/packed/content/
+
+**Returns** \
+[string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 #### _skipLoadingAssetAtPaths
 ```csharp
 protected readonly HashSet<T> _skipLoadingAssetAtPaths;
@@ -113,13 +145,6 @@ Used for loading the editor asynchronously.
 
 **Returns** \
 [Object](https://learn.microsoft.com/en-us/dotnet/api/System.Object?view=net-7.0) \
-#### AvailableUniqueTextures
-```csharp
-public ImmutableArray<T> AvailableUniqueTextures;
-```
-
-**Returns** \
-[ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 #### BinResourcesDirectoryPath
 ```csharp
 public string BinResourcesDirectoryPath { get; }
@@ -127,15 +152,6 @@ public string BinResourcesDirectoryPath { get; }
 
 **Returns** \
 [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
-#### BloomShader
-```csharp
-public Effect BloomShader;
-```
-
-A shader that can blur and find brightness areas in images
-
-**Returns** \
-[Effect](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Effect.html) \
 #### CachedUniqueTextures
 ```csharp
 public readonly CacheDictionary<TKey, TValue> CachedUniqueTextures;
@@ -168,12 +184,12 @@ public ImmutableArray<T> CurrentPalette;
 
 **Returns** \
 [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
-#### CustomGameShader
+#### CustomGameShaders
 ```csharp
-public Effect[] CustomGameShader;
+public Effect[] CustomGameShaders;
 ```
 
-Custom optional game shader, provided by [GameDataManager._game](../../Murder/Data/GameDataManager.html#_game).
+Custom optional game shaders, provided by [GameDataManager._game](../../Murder/Data/GameDataManager.html#_game).
 
 **Returns** \
 [Effect[]](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Effect.html) \
@@ -184,6 +200,13 @@ public Texture2D DitherTexture;
 
 **Returns** \
 [Texture2D](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Texture2D.html) \
+#### FileManager
+```csharp
+public readonly FileManager FileManager;
+```
+
+**Returns** \
+[FileManager](../../Murder/Serialization/FileManager.html) \
 #### GameDirectory
 ```csharp
 public virtual string GameDirectory { get; }
@@ -207,6 +230,22 @@ public static const string GameProfileFileName;
 
 **Returns** \
 [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+#### HiddenAssetsRelativePath
+```csharp
+public static const string HiddenAssetsRelativePath;
+```
+
+**Returns** \
+[string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+#### IgnoreSerializationErrors
+```csharp
+public virtual bool IgnoreSerializationErrors { get; }
+```
+
+Whether we will continue trying to deserialize a file after finding an issue.
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 #### LoadContentProgress
 ```csharp
 public Task LoadContentProgress;
@@ -228,15 +267,6 @@ public LocalizationAsset Localization { get; }
 
 **Returns** \
 [LocalizationAsset](../../Murder/Assets/Localization/LocalizationAsset.html) \
-#### MaskShader
-```csharp
-public Effect MaskShader;
-```
-
-A shader that mask images
-
-**Returns** \
-[Effect](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Effect.html) \
 #### OtherEffects
 ```csharp
 public virtual Effect[] OtherEffects { get; }
@@ -258,15 +288,6 @@ public T? PendingSave;
 
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
-#### PosterizerShader
-```csharp
-public Effect PosterizerShader;
-```
-
-A shader that can blur and find brightness areas in images
-
-**Returns** \
-[Effect](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Effect.html) \
 #### Preferences
 ```csharp
 public GamePreferences Preferences { get; }
@@ -274,15 +295,40 @@ public GamePreferences Preferences { get; }
 
 **Returns** \
 [GamePreferences](../../Murder/Save/GamePreferences.html) \
+#### PublishedPackedAssetsFullPath
+```csharp
+protected virtual string PublishedPackedAssetsFullPath { get; }
+```
+
+File path of the packed contents for the released game.
+
+**Returns** \
+[string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 #### SaveBasePath
 ```csharp
-public static string SaveBasePath { get; }
+public string SaveBasePath { get; }
 ```
 
 Save directory path used when serializing user data.
 
 **Returns** \
 [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+#### SerializationOptions
+```csharp
+public JsonSerializerOptions SerializationOptions { get; }
+```
+
+**Returns** \
+[JsonSerializerOptions](https://learn.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonSerializerOptions?view=net-7.0) \
+#### ShaderPixel
+```csharp
+public Effect ShaderPixel;
+```
+
+A shader specialized for rendering pixel art.
+
+**Returns** \
+[Effect](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Effect.html) \
 #### ShaderRelativePath
 ```csharp
 protected readonly string ShaderRelativePath;
@@ -315,29 +361,14 @@ public static const char SKIP_CHAR;
 
 **Returns** \
 [char](https://learn.microsoft.com/en-us/dotnet/api/System.Char?view=net-7.0) \
-### ⭐ Methods
-#### FetchAssetsAtPath(string, bool, bool, bool, bool)
+#### WaitPendingSaveTrackerOperation
 ```csharp
-protected IEnumerable<T> FetchAssetsAtPath(string fullPath, bool recursive, bool skipFailures, bool stopOnFailure, bool hasEditorPath)
+public bool WaitPendingSaveTrackerOperation { get; }
 ```
 
-Fetch all assets at a given path.
-
-**Parameters** \
-`fullPath` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
-\
-`recursive` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-\
-`skipFailures` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-\
-`stopOnFailure` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-\
-`hasEditorPath` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-\
-
 **Returns** \
-[IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0) \
-
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+### ⭐ Methods
 #### LoadContentAsync()
 ```csharp
 protected Task LoadContentAsync()
@@ -346,16 +377,16 @@ protected Task LoadContentAsync()
 **Returns** \
 [Task](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task?view=net-7.0) \
 
-#### ShouldSkipAsset(FileInfo)
+#### ShouldSkipAsset(string)
 ```csharp
-protected virtual bool ShouldSkipAsset(FileInfo f)
+protected virtual bool ShouldSkipAsset(string fullFilename)
 ```
 
 This will skip loading assets that start with a certain char. This is used to filter assets
             that are only used in the editor.
 
 **Parameters** \
-`f` [FileInfo](https://learn.microsoft.com/en-us/dotnet/api/System.IO.FileInfo?view=net-7.0) \
+`fullFilename` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
@@ -415,10 +446,39 @@ Creates an implementation of SaveData for the game.
 **Returns** \
 [SaveData](../../Murder/Assets/SaveData.html) \
 
+#### LoadAllAssetsAsync()
+```csharp
+protected virtual Task LoadAllAssetsAsync()
+```
+
+**Returns** \
+[Task](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task?view=net-7.0) \
+
 #### LoadContentAsyncImpl()
 ```csharp
 protected virtual Task LoadContentAsyncImpl()
 ```
+
+**Returns** \
+[Task](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task?view=net-7.0) \
+
+#### LoadFontsAndTexturesAsync()
+```csharp
+protected virtual Task LoadFontsAndTexturesAsync()
+```
+
+**Returns** \
+[Task](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task?view=net-7.0) \
+
+#### LoadSoundsImplAsync(bool)
+```csharp
+protected virtual Task LoadSoundsImplAsync(bool reload)
+```
+
+Implemented by custom implementations of data manager that want to do some preprocessing on the sounds.
+
+**Parameters** \
+`reload` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
 **Returns** \
 [Task](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task?view=net-7.0) \
@@ -429,6 +489,22 @@ protected virtual void OnAfterPreloadLoaded()
 ```
 
 Immediately fired once the "fast" loading finishes.
+
+#### OnAssetLoadError(GameAsset)
+```csharp
+protected virtual void OnAssetLoadError(GameAsset asset)
+```
+
+Let implementations deal with a custom handling of errors.
+            This is called when the asset was successfully loaded but failed to fill some of its fields.
+
+**Parameters** \
+`asset` [GameAsset](../../Murder/Assets/GameAsset.html) \
+
+#### PreloadContentImpl()
+```csharp
+protected virtual void PreloadContentImpl()
+```
 
 #### PreprocessSoundFiles()
 ```csharp
@@ -446,19 +522,18 @@ protected virtual void RemoveAsset(Type t, Guid assetGuid)
 `t` [Type](https://learn.microsoft.com/en-us/dotnet/api/System.Type?view=net-7.0) \
 `assetGuid` [Guid](https://learn.microsoft.com/en-us/dotnet/api/System.Guid?view=net-7.0) \
 
-#### LoadAssetsAtPath(String&, bool)
-```csharp
-protected void LoadAssetsAtPath(String& relativePath, bool hasEditorPath)
-```
-
-**Parameters** \
-`relativePath` [string&](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
-`hasEditorPath` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-
 #### PreloadContent()
 ```csharp
 protected void PreloadContent()
 ```
+
+#### TrackFont(FontAsset)
+```csharp
+protected void TrackFont(FontAsset asset)
+```
+
+**Parameters** \
+`asset` [FontAsset](../../Murder/Assets/Graphics/FontAsset.html) \
 
 #### GetAsepriteFrame(Guid)
 ```csharp
@@ -657,20 +732,6 @@ public ImmutableDictionary<TKey, TValue> FilterAllAssets(Type[] types)
 **Returns** \
 [ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \
 
-#### FilterAllAssetsWithImplementation(Type[])
-```csharp
-public ImmutableDictionary<TKey, TValue> FilterAllAssetsWithImplementation(Type[] types)
-```
-
-Filter all the assets and any types that implement those types.
-            Cautious: this may be slow or just imply extra allocations.
-
-**Parameters** \
-`types` [Type[]](https://learn.microsoft.com/en-us/dotnet/api/System.Type?view=net-7.0) \
-
-**Returns** \
-[ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \
-
 #### FilterOutAssets(Type[])
 ```csharp
 public ImmutableDictionary<TKey, TValue> FilterOutAssets(Type[] types)
@@ -804,20 +865,36 @@ public T TryGetAsset(Guid id)
 **Returns** \
 [T](../../) \
 
-#### FetchTexture(string)
+#### LoadSoundsAsync(bool)
 ```csharp
-public Texture2D FetchTexture(string path)
+public Task LoadSoundsAsync(bool reload)
+```
+
+This will load all the sounds to the game.
+
+**Parameters** \
+`reload` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+**Returns** \
+[Task](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task?view=net-7.0) \
+
+#### TryLoadAssetAsync(string, string, bool, bool)
+```csharp
+public Task<TResult> TryLoadAssetAsync(string path, string relativePath, bool skipFailures, bool hasEditorPath)
 ```
 
 **Parameters** \
 `path` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`relativePath` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`skipFailures` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+`hasEditorPath` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
 **Returns** \
-[Texture2D](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Texture2D.html) \
+[Task\<TResult\>](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1?view=net-7.0) \
 
-#### TryFetchTexture(string)
+#### FetchTexture(string)
 ```csharp
-public Texture2D TryFetchTexture(string path)
+public Texture2D FetchTexture(string path)
 ```
 
 **Parameters** \
@@ -848,19 +925,6 @@ public TextureAtlas TryFetchAtlas(AtlasId atlas)
 
 **Returns** \
 [TextureAtlas](../../Murder/Core/Graphics/TextureAtlas.html) \
-
-#### LoadSounds(bool)
-```csharp
-public ValueTask LoadSounds(bool reload)
-```
-
-This will load all the sounds to the game.
-
-**Parameters** \
-`reload` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-
-**Returns** \
-[ValueTask](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.ValueTask?view=net-7.0) \
 
 #### SerializeSaveAsync()
 ```csharp
@@ -894,6 +958,13 @@ Create a new save data based on a name.
 **Returns** \
 [SaveData](../../Murder/Assets/SaveData.html) \
 
+#### AfterContentLoadedFromMainThread()
+```csharp
+public virtual void AfterContentLoadedFromMainThread()
+```
+
+Called after the content was loaded back from the main thread.
+
 #### DeleteAllSaves()
 ```csharp
 public virtual void DeleteAllSaves()
@@ -922,9 +993,9 @@ public virtual void InitShaders()
 public virtual void LoadContent()
 ```
 
-#### LoadFontsAndTextures()
+#### OnAssetRenamedOrAddedOrDeleted()
 ```csharp
-public virtual void LoadFontsAndTextures()
+public virtual void OnAssetRenamedOrAddedOrDeleted()
 ```
 
 #### AddAsset(T, bool)
@@ -970,11 +1041,6 @@ public void DisposeAtlas(AtlasId atlasId)
 public void DisposeAtlases()
 ```
 
-#### InitializeAssets()
-```csharp
-public void InitializeAssets()
-```
-
 #### LoadShaders(bool, bool)
 ```csharp
 public void LoadShaders(bool breakOnFail, bool forceReload)
@@ -987,6 +1053,11 @@ Override this to load all shaders present in the game.
 \
 `forceReload` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 \
+
+#### OnErrorLoadingAsset()
+```csharp
+public void OnErrorLoadingAsset()
+```
 
 #### QuickSave()
 ```csharp

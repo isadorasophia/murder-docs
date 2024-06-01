@@ -15,6 +15,31 @@ public BlackboardTracker()
 ```
 
 ### ⭐ Methods
+#### SetValue(BlackboardInfo, string, T, bool)
+```csharp
+protected bool SetValue(BlackboardInfo info, string fieldName, T value, bool isRevertingTrigger)
+```
+
+**Parameters** \
+`info` [BlackboardInfo](../../Murder/Data/BlackboardInfo.html) \
+`fieldName` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`value` [T](../../) \
+`isRevertingTrigger` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### OnFieldModified(BlackboardInfo, FieldInfo, string, T)
+```csharp
+protected virtual void OnFieldModified(BlackboardInfo info, FieldInfo fieldInfo, string fieldName, T value)
+```
+
+**Parameters** \
+`info` [BlackboardInfo](../../Murder/Data/BlackboardInfo.html) \
+`fieldInfo` [FieldInfo](https://learn.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo?view=net-7.0) \
+`fieldName` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`value` [T](../../) \
+
 #### GetBool(string, string, T?)
 ```csharp
 public bool GetBool(string name, string fieldName, T? character)
@@ -84,6 +109,19 @@ public bool SetValueForAllCharacterBlackboards(string blackboardName, string fie
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### GetFloat(string, string, T?)
+```csharp
+public float GetFloat(string name, string fieldName, T? character)
+```
+
+**Parameters** \
+`name` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`fieldName` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`character` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### GetInt(string, string, T?)
 ```csharp
@@ -224,6 +262,18 @@ public void SetBool(string name, string fieldName, BlackboardActionKind kind, bo
 `fieldName` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 `kind` [BlackboardActionKind](../../Murder/Core/Dialogs/BlackboardActionKind.html) \
 `value` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+`character` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### SetFloat(string, string, BlackboardActionKind, float, T?)
+```csharp
+public void SetFloat(string name, string fieldName, BlackboardActionKind kind, float value, T? character)
+```
+
+**Parameters** \
+`name` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`fieldName` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`kind` [BlackboardActionKind](../../Murder/Core/Dialogs/BlackboardActionKind.html) \
+`value` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `character` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
 #### SetInt(string, string, BlackboardActionKind, int, T?)

@@ -67,13 +67,13 @@ public static DrawInfo Default { get; }
 
 **Returns** \
 [DrawInfo](../../../Murder/Core/Graphics/DrawInfo.html) \
-#### FlippedHorizontal
+#### ImageFlip
 ```csharp
-public bool FlippedHorizontal { get; public set; }
+public ImageFlip ImageFlip { get; public set; }
 ```
 
 **Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+[ImageFlip](../../../Murder/Core/Graphics/ImageFlip.html) \
 #### Offset
 ```csharp
 public Vector2 Offset { get; public set; }

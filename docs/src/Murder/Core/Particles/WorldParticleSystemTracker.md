@@ -16,6 +16,20 @@ public WorldParticleSystemTracker(int seed)
 `seed` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 ### ⭐ Methods
+#### SetAlpha(int, float)
+```csharp
+public bool SetAlpha(int entityId, float alpha)
+```
+
+Set the alpha for a particle system itself according to the <paramref name="entityId" />.
+
+**Parameters** \
+`entityId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`alpha` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### Synchronize(Entity)
 ```csharp
 public bool Synchronize(Entity particleEntity)

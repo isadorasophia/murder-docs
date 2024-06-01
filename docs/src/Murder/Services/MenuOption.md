@@ -30,7 +30,14 @@ public MenuOption(string text, bool selectable)
 ### ⭐ Properties
 #### Enabled
 ```csharp
-public readonly bool Enabled;
+public bool Enabled { get; public set; }
+```
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+#### Faded
+```csharp
+public bool Faded { get; public set; }
 ```
 
 **Returns** \

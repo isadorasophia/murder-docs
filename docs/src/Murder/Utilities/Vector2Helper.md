@@ -22,6 +22,20 @@ public static Vector2 Down { get; }
 
 **Returns** \
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+#### Left
+```csharp
+public static Vector2 Left { get; }
+```
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+#### Right
+```csharp
+public static Vector2 Right { get; }
+```
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 #### Up
 ```csharp
 public static Vector2 Up { get; }
@@ -76,6 +90,20 @@ Creates a vector from an angle in radians.
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 \
 
+#### LerpSmooth(Vector2, Vector2, float, float)
+```csharp
+public Vector2 LerpSmooth(Vector2 from, Vector2 to, float deltaTime, float halfLife)
+```
+
+**Parameters** \
+`from` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`to` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`deltaTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`halfLife` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
 #### LerpSnap(Vector2, Vector2, double, float)
 ```csharp
 public Vector2 LerpSnap(Vector2 origin, Vector2 target, double factor, float threshold)
@@ -100,6 +128,30 @@ public Vector2 LerpSnap(Vector2 origin, Vector2 target, float factor, float thre
 `target` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 `factor` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `threshold` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+#### Max(Vector2, Vector2)
+```csharp
+public Vector2 Max(Vector2 first, Vector2 second)
+```
+
+**Parameters** \
+`first` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`second` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+#### Min(Vector2, Vector2)
+```csharp
+public Vector2 Min(Vector2 first, Vector2 second)
+```
+
+**Parameters** \
+`first` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`second` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 
 **Returns** \
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \

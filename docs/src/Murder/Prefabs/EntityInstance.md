@@ -18,6 +18,14 @@ public EntityInstance()
 ```
 
 ```csharp
+public EntityInstance(string name, Guid guid)
+```
+
+**Parameters** \
+`name` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`guid` [Guid](https://learn.microsoft.com/en-us/dotnet/api/System.Guid?view=net-7.0) \
+
+```csharp
 public EntityInstance(string name, T? guid)
 ```
 
@@ -377,6 +385,14 @@ Set the name of the entity instance.
 
 **Parameters** \
 `name` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+
+#### UpdateGuid(Guid)
+```csharp
+public void UpdateGuid(Guid newGuid)
+```
+
+**Parameters** \
+`newGuid` [Guid](https://learn.microsoft.com/en-us/dotnet/api/System.Guid?view=net-7.0) \
 
 
 

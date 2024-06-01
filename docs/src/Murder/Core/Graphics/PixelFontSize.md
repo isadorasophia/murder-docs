@@ -52,11 +52,11 @@ public Point Offset;
 [Point](../../../Murder/Core/Geometry/Point.html) \
 #### Textures
 ```csharp
-public List<T> Textures;
+public MurderTexture[] Textures;
 ```
 
 **Returns** \
-[List\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1?view=net-7.0) \
+[MurderTexture[]](../../../Murder/Core/Graphics/MurderTexture.html) \
 ### ⭐ Methods
 #### HeightOf(string)
 ```csharp
@@ -182,31 +182,6 @@ public Vector2 Measure(string text)
 
 **Returns** \
 [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-
-#### Draw(string, Batch2D, Vector2, Color, float)
-```csharp
-public void Draw(string text, Batch2D spriteBatch, Vector2 position, Color color, float sort)
-```
-
-**Parameters** \
-`text` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
-`spriteBatch` [Batch2D](../../../Murder/Core/Graphics/Batch2D.html) \
-`position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-`color` [Color](../../../Murder/Core/Graphics/Color.html) \
-`sort` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
-
-#### Draw(string, Batch2D, Vector2, Vector2, Color, float)
-```csharp
-public void Draw(string text, Batch2D spriteBatch, Vector2 position, Vector2 justify, Color color, float sort)
-```
-
-**Parameters** \
-`text` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
-`spriteBatch` [Batch2D](../../../Murder/Core/Graphics/Batch2D.html) \
-`position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-`justify` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-`color` [Color](../../../Murder/Core/Graphics/Color.html) \
-`sort` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 
 

@@ -8,6 +8,7 @@ public sealed enum WatcherNotificationKind : Enum, IComparable, ISpanFormattable
 ```
 
 When a system is watching for a component, this is the kind of notification currently fired.
+            The order of the enumerator dictates the order that these will be called on the watcher systems.
 
 **Implements:** _[Enum](https://learn.microsoft.com/en-us/dotnet/api/System.Enum?view=net-7.0), [IComparable](https://learn.microsoft.com/en-us/dotnet/api/System.IComparable?view=net-7.0), [ISpanFormattable](https://learn.microsoft.com/en-us/dotnet/api/System.ISpanFormattable?view=net-7.0), [IFormattable](https://learn.microsoft.com/en-us/dotnet/api/System.IFormattable?view=net-7.0), [IConvertible](https://learn.microsoft.com/en-us/dotnet/api/System.IConvertible?view=net-7.0)_
 

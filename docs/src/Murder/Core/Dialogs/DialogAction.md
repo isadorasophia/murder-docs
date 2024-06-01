@@ -13,7 +13,7 @@ public DialogAction()
 ```
 
 ```csharp
-public DialogAction(int id, Fact fact, BlackboardActionKind kind, string string, T? int, T? bool, IComponent component)
+public DialogAction(int id, Fact fact, BlackboardActionKind kind, string string, T? int, T? bool, T? float, IComponent component)
 ```
 
 **Parameters** \
@@ -23,6 +23,7 @@ public DialogAction(int id, Fact fact, BlackboardActionKind kind, string string,
 `string` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 `int` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 `bool` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+`float` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 `component` [IComponent](../../../Bang/Components/IComponent.html) \
 
 ### ⭐ Properties
@@ -47,6 +48,13 @@ public readonly Fact Fact;
 
 **Returns** \
 [Fact](../../../Murder/Core/Dialogs/Fact.html) \
+#### FloatValue
+```csharp
+public readonly T? FloatValue;
+```
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 #### Id
 ```csharp
 public readonly int Id;

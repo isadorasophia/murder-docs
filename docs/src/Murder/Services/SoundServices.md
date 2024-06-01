@@ -19,6 +19,18 @@ public float GetGlobalParameter(ParameterId id)
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
+#### ReplaceIdentifiers(ImmutableDictionary<TKey, TValue>, Func<T, TResult>)
+```csharp
+public ImmutableDictionary<TKey, TValue> ReplaceIdentifiers(ImmutableDictionary<TKey, TValue> source, Func<T, TResult> converter)
+```
+
+**Parameters** \
+`source` [ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \
+`converter` [Func\<T, TResult\>](https://learn.microsoft.com/en-us/dotnet/api/System.Func-2?view=net-7.0) \
+
+**Returns** \
+[ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \
+
 #### StopAll(bool, HashSet<T>)
 ```csharp
 public SoundEventId[] StopAll(bool fadeOut, HashSet<T> exceptFor)
@@ -48,7 +60,7 @@ Stop all the ongoing events.
 
 #### GetSpatialAttributes(Entity)
 ```csharp
-public SoundSpatialAttributes GetSpatialAttributes(Entity target)
+public T? GetSpatialAttributes(Entity target)
 ```
 
 Return the spatial attributes for playing a sound from <paramref name="target" />.
@@ -57,7 +69,25 @@ Return the spatial attributes for playing a sound from <paramref name="target" /
 `target` [Entity](../../Bang/Entities/Entity.html) \
 
 **Returns** \
-[SoundSpatialAttributes](../../Murder/Core/Sounds/SoundSpatialAttributes.html) \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetSoundForEvent(Entity, string)
+```csharp
+public T? TryGetSoundForEvent(Entity e, string animationEventId)
+```
+
+Try to get a sound id associated with an <paramref name="animationEventId" />
+            on an entity with an [EventListenerComponent](../../Murder/Components/EventListenerComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+\
+`animationEventId` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+\
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+\
 
 #### Play(SoundEventId, Entity, SoundProperties)
 ```csharp

@@ -38,13 +38,13 @@ public Animation CurrentAnimation { get; public set; }
 
 **Returns** \
 [Animation](../../../Murder/Core/Graphics/Animation.html) \
-#### Flipped
+#### ImageFlip
 ```csharp
-public bool Flipped { get; public set; }
+public ImageFlip ImageFlip { get; public set; }
 ```
 
 **Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+[ImageFlip](../../../Murder/Core/Graphics/ImageFlip.html) \
 #### Offset
 ```csharp
 public Vector2 Offset { get; public set; }

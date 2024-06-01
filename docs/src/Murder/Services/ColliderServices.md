@@ -55,6 +55,17 @@ Returns the center point of an entity with all its colliders.
 **Returns** \
 [Point](../../Murder/Core/Geometry/Point.html) \
 
+#### GetCenterOf(Entity)
+```csharp
+public Vector2 GetCenterOf(Entity e)
+```
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
 #### SnapToGrid(Vector2)
 ```csharp
 public Vector2 SnapToGrid(Vector2 positive)

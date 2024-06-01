@@ -129,6 +129,13 @@ This has the duration of each render system (id) to its corresponding time (in m
 
 **Returns** \
 [Dictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2?view=net-7.0) \
+#### StartCounters
+```csharp
+public readonly Dictionary<TKey, TValue> StartCounters;
+```
+
+**Returns** \
+[Dictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2?view=net-7.0) \
 #### UpdateCounters
 ```csharp
 public readonly Dictionary<TKey, TValue> UpdateCounters;
@@ -281,6 +288,17 @@ public Entity GetUniqueEntity()
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
+#### GetUniqueEntity(int)
+```csharp
+public Entity GetUniqueEntity(int index)
+```
+
+**Parameters** \
+`index` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
 #### TryGetEntity(int)
 ```csharp
 public Entity TryGetEntity(int id)
@@ -299,6 +317,28 @@ public Entity TryGetUniqueEntity()
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
+
+#### TryGetUniqueEntity(int)
+```csharp
+public Entity TryGetUniqueEntity(int index)
+```
+
+**Parameters** \
+`index` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### GetActivatedAndDeactivatedEntitiesWith(Type[])
+```csharp
+public ImmutableArray<T> GetActivatedAndDeactivatedEntitiesWith(Type[] components)
+```
+
+**Parameters** \
+`components` [Type[]](https://learn.microsoft.com/en-us/dotnet/api/System.Type?view=net-7.0) \
+
+**Returns** \
+[ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 
 #### GetAllEntities()
 ```csharp
@@ -339,10 +379,32 @@ public T GetUnique()
 **Returns** \
 [T](../../) \
 
+#### GetUnique(int)
+```csharp
+public T GetUnique(int index)
+```
+
+**Parameters** \
+`index` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+**Returns** \
+[T](../../) \
+
 #### TryGetUnique()
 ```csharp
 public T? TryGetUnique()
 ```
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetUnique(int)
+```csharp
+public T? TryGetUnique(int index)
+```
+
+**Parameters** \
+`index` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \

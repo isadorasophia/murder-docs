@@ -324,6 +324,18 @@ Whether an object within bounds intersects with this rectangle.
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### SubtractRectangles(Rectangle, Rectangle)
+```csharp
+public IEnumerable<T> SubtractRectangles(Rectangle main, Rectangle subtract)
+```
+
+**Parameters** \
+`main` [Rectangle](../../../Murder/Core/Geometry/Rectangle.html) \
+`subtract` [Rectangle](../../../Murder/Core/Geometry/Rectangle.html) \
+
+**Returns** \
+[IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0) \
+
 #### AddPadding(float, float, float, float)
 ```csharp
 public Rectangle AddPadding(float left, float top, float right, float bottom)
@@ -461,9 +473,9 @@ Constructor for a rectangle from a set of coordinates.
 **Returns** \
 [Rectangle](../../../Murder/Core/Geometry/Rectangle.html) \
 
-#### GetIntersection(Rectangle, Rectangle)
+#### Intersection(Rectangle, Rectangle)
 ```csharp
-public Rectangle GetIntersection(Rectangle a, Rectangle b)
+public Rectangle Intersection(Rectangle a, Rectangle b)
 ```
 
 **Parameters** \

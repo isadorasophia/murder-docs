@@ -31,6 +31,13 @@ public static const RemoveStyle None;
 
 **Returns** \
 [RemoveStyle](../../Murder/Components/RemoveStyle.html) \
+#### RemoveComponents
+```csharp
+public static const RemoveStyle RemoveComponents;
+```
+
+**Returns** \
+[RemoveStyle](../../Murder/Components/RemoveStyle.html) \
 
 
 ⚡

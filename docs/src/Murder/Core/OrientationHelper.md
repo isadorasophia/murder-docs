@@ -14,7 +14,7 @@ public float GetOrientationAmount(Vector2 vector, Orientation orientation)
 ```
 
 **Parameters** \
-`vector` [Vector2](https://docs.monogame.net/api/Microsoft.Xna.Framework.Vector2.html) \
+`vector` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 `orientation` [Orientation](../../Murder/Core/Orientation.html) \
 
 **Returns** \
@@ -26,7 +26,7 @@ public Orientation GetDominantOrientation(Vector2 vector)
 ```
 
 **Parameters** \
-`vector` [Vector2](https://docs.monogame.net/api/Microsoft.Xna.Framework.Vector2.html) \
+`vector` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 
 **Returns** \
 [Orientation](../../Murder/Core/Orientation.html) \

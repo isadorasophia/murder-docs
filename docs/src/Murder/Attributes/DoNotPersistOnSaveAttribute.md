@@ -14,7 +14,23 @@ public class DoNotPersistOnSaveAttribute : Attribute
 public DoNotPersistOnSaveAttribute()
 ```
 
+```csharp
+public DoNotPersistOnSaveAttribute(Type exceptIfComponentIsPresent)
+```
+
+**Parameters** \
+`exceptIfComponentIsPresent` [Type](https://learn.microsoft.com/en-us/dotnet/api/System.Type?view=net-7.0) \
+
 ### ⭐ Properties
+#### ExceptIfComponentIsPresent
+```csharp
+public readonly Type ExceptIfComponentIsPresent;
+```
+
+This will dismiss this attribute and persist the component on the serialization if the following IComponent type is present.
+
+**Returns** \
+[Type](https://learn.microsoft.com/en-us/dotnet/api/System.Type?view=net-7.0) \
 #### TypeId
 ```csharp
 public virtual Object TypeId { get; }

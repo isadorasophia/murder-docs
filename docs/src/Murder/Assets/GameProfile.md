@@ -149,15 +149,6 @@ public virtual string EditorFolder { get; }
 
 **Returns** \
 [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
-#### EnforceResolution
-```csharp
-public bool EnforceResolution { get; }
-```
-
-Indicates if resolution enforcement is active.
-
-**Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 #### Exploration
 ```csharp
 public readonly Exploration Exploration;
@@ -165,6 +156,22 @@ public readonly Exploration Exploration;
 
 **Returns** \
 [Exploration](../../Murder/Assets/Exploration.html) \
+#### FeedbackKey
+```csharp
+public readonly string FeedbackKey;
+```
+
+**Returns** \
+[string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+#### FeedbackUrl
+```csharp
+public readonly string FeedbackUrl;
+```
+
+Used for reporting bugs and feedback.
+
+**Returns** \
+[string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 #### FileChanged
 ```csharp
 public bool FileChanged { get; public set; }
@@ -228,13 +235,13 @@ Game desired display height. Use [RenderContext.Camera](../../Murder/Core/Graphi
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### GameScale
 ```csharp
-public readonly int GameScale;
+public readonly float GameScale;
 ```
 
 Game scaling factor.
 
 **Returns** \
-[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 #### GameWidth
 ```csharp
 public readonly int GameWidth;
@@ -333,6 +340,16 @@ public string Name { get; public set; }
 
 **Returns** \
 [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+#### PreloadTextures
+```csharp
+public bool PreloadTextures;
+```
+
+Whether textures (e.g. fonts) should be preloaded. If true, startup time might be slower but
+            actual game will be faster.
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 #### PushAwayInterval
 ```csharp
 public readonly float PushAwayInterval;
@@ -347,6 +364,13 @@ public bool Rename { get; public set; }
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+#### ResizeStyle
+```csharp
+public readonly ViewportResizeStyle ResizeStyle;
+```
+
+**Returns** \
+[ViewportResizeStyle](../../Murder/Core/Graphics/ViewportResizeStyle.html) \
 #### SaveLocation
 ```csharp
 public virtual string SaveLocation { get; }

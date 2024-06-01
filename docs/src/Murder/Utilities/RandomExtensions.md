@@ -101,17 +101,6 @@ public float SmoothRandom(float seed, float smoothness)
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
-#### AnyEnumOf(Random)
-```csharp
-public T AnyEnumOf(Random r)
-```
-
-**Parameters** \
-`r` [Random](https://learn.microsoft.com/en-us/dotnet/api/System.Random?view=net-7.0) \
-
-**Returns** \
-[T](../../) \
-
 #### AnyOf(Random, IList<T>)
 ```csharp
 public T AnyOf(Random r, IList<T> arr)

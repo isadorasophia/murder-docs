@@ -137,6 +137,22 @@ public virtual void OnDestroyed()
 Clean up right before the state machine gets cleaned up.
             Callers must call the base implementation.
 
+#### Subscribe(Action)
+```csharp
+public void Subscribe(Action notification)
+```
+
+**Parameters** \
+`notification` [Action](https://learn.microsoft.com/en-us/dotnet/api/System.Action?view=net-7.0) \
+
+#### Unsubscribe(Action)
+```csharp
+public void Unsubscribe(Action notification)
+```
+
+**Parameters** \
+`notification` [Action](https://learn.microsoft.com/en-us/dotnet/api/System.Action?view=net-7.0) \
+
 
 
 ⚡

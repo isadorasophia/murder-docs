@@ -7,9 +7,9 @@
 public class ComplexDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IDictionary<TKey, TValue>, ICollection<T>, IEnumerable<T>, IEnumerable, IDictionary, ICollection, IReadOnlyDictionary<TKey, TValue>, IReadOnlyCollection<T>, ISerializable, IDeserializationCallback
 ```
 
-When serializing dictionaries, Newtonsoft is not able to resolve custom dictionary keys.
-            As a workaround for that, we will implement our own complex dictionary which serializes its keys
-            as a value tuple, with [JsonArrayAttribute](../../).
+When serializing dictionaries, System.Text.Json is not able to resolve custom dictionary keys.
+            As a workaround for that, we will implement our own complex dictionary converter that manually deserializes
+            each key and value.
 
 **Implements:** _[Dictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2?view=net-7.0), [IDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2?view=net-7.0), [ICollection\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1?view=net-7.0), [IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0), [IEnumerable](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable?view=net-7.0), [IDictionary](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.IDictionary?view=net-7.0), [ICollection](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.ICollection?view=net-7.0), [IReadOnlyDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyDictionary-2?view=net-7.0), [IReadOnlyCollection\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyCollection-1?view=net-7.0), [ISerializable](https://learn.microsoft.com/en-us/dotnet/api/System.Runtime.Serialization.ISerializable?view=net-7.0), [IDeserializationCallback](https://learn.microsoft.com/en-us/dotnet/api/System.Runtime.Serialization.IDeserializationCallback?view=net-7.0)_
 
@@ -17,6 +17,20 @@ When serializing dictionaries, Newtonsoft is not able to resolve custom dictiona
 ```csharp
 public ComplexDictionary<TKey, TValue>()
 ```
+
+```csharp
+public ComplexDictionary<TKey, TValue>(IDictionary<TKey, TValue> dictionary)
+```
+
+**Parameters** \
+`dictionary` [IDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2?view=net-7.0) \
+
+```csharp
+public ComplexDictionary<TKey, TValue>(IEqualityComparer<T> comparer)
+```
+
+**Parameters** \
+`comparer` [IEqualityComparer\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEqualityComparer-1?view=net-7.0) \
 
 ### ⭐ Properties
 #### Comparer

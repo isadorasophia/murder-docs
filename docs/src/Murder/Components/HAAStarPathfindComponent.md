@@ -32,19 +32,19 @@ public readonly HAAStar Data;
 ### ⭐ Methods
 #### Subscribe(Action)
 ```csharp
-public virtual void Subscribe(Action notification)
+public virtual void Subscribe(Action _)
 ```
 
 **Parameters** \
-`notification` [Action](https://learn.microsoft.com/en-us/dotnet/api/System.Action?view=net-7.0) \
+`_` [Action](https://learn.microsoft.com/en-us/dotnet/api/System.Action?view=net-7.0) \
 
 #### Unsubscribe(Action)
 ```csharp
-public virtual void Unsubscribe(Action notification)
+public virtual void Unsubscribe(Action _)
 ```
 
 **Parameters** \
-`notification` [Action](https://learn.microsoft.com/en-us/dotnet/api/System.Action?view=net-7.0) \
+`_` [Action](https://learn.microsoft.com/en-us/dotnet/api/System.Action?view=net-7.0) \
 
 
 

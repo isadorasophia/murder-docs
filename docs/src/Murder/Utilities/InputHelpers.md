@@ -32,6 +32,17 @@ public int GetAmountOfLines(ReadOnlySpan<T> text, int width)
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
+#### IntToDPad(int)
+```csharp
+public string IntToDPad(int slot)
+```
+
+**Parameters** \
+`slot` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+**Returns** \
+[string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+
 #### Clamp(int)
 ```csharp
 public void Clamp(int length)

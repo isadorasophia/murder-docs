@@ -20,11 +20,29 @@ Creates a FacingComponent using a Direction as a base.
 `direction` [Direction](../../Murder/Helpers/Direction.html) \
 \
 
+```csharp
+public FacingComponent(float angle)
+```
+
+**Parameters** \
+`angle` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
 ### ⭐ Properties
+#### Angle
+```csharp
+public readonly float Angle;
+```
+
+The angle the agent is facing, in radians
+
+**Returns** \
+[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 #### Direction
 ```csharp
-public readonly Direction Direction;
+public Direction Direction { get; }
 ```
+
+The [FacingComponent.Direction](../../Murder/Components/FacingComponent.html#direction) that this entity is facing
 
 **Returns** \
 [Direction](../../Murder/Helpers/Direction.html) \

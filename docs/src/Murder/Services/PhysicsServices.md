@@ -8,26 +8,27 @@ public static class PhysicsServices
 ```
 
 ### ⭐ Methods
-#### CollidesAt(Map&, int, ColliderComponent, Vector2, IEnumerable<T>, int, out Int32&)
+#### CanSeeEntity(World, Vector2, Vector2, int, int)
 ```csharp
-public bool CollidesAt(Map& map, int ignoreId, ColliderComponent collider, Vector2 position, IEnumerable<T> others, int mask, Int32& hitId)
+public bool CanSeeEntity(World world, Vector2 from, Vector2 to, int selfEntityId, int targetEntityId)
 ```
 
+Returns whether <paramref name="from" /> an see an entity <paramref name="targetEntityId" /> before
+            it gets to <paramref name="to" />.
+
 **Parameters** \
-`map` [Map&](../../Murder/Core/Map.html) \
-`ignoreId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-`collider` [ColliderComponent](../../Murder/Components/ColliderComponent.html) \
-`position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-`others` [IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0) \
-`mask` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-`hitId` [int&](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`world` [World](../../Bang/World.html) \
+`from` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`to` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`selfEntityId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`targetEntityId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### CollidesAt(Map&, int, ColliderComponent, Vector2, IEnumerable<T>, int)
+#### CollidesAt(Map&, int, ColliderComponent, Vector2, ImmutableArray<T>, int, out Int32&)
 ```csharp
-public bool CollidesAt(Map& map, int ignoreId, ColliderComponent collider, Vector2 position, IEnumerable<T> others, int mask)
+public bool CollidesAt(Map& map, int ignoreId, ColliderComponent collider, Vector2 position, ImmutableArray<T> others, int mask, Int32& hitId)
 ```
 
 **Parameters** \
@@ -35,8 +36,9 @@ public bool CollidesAt(Map& map, int ignoreId, ColliderComponent collider, Vecto
 `ignoreId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `collider` [ColliderComponent](../../Murder/Components/ColliderComponent.html) \
 `position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-`others` [IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0) \
+`others` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 `mask` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`hitId` [int&](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
@@ -123,9 +125,9 @@ public bool FindClosestEntityOnRange(World world, Vector2 fromPosition, float ra
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### GetFirstMtvAt(Map&, HashSet<T>, ColliderComponent, Vector2, IEnumerable<T>, int, out Int32&, out Int32&, out Vector2&)
+#### GetFirstMtvAt(Map&, HashSet<T>, ColliderComponent, Vector2, ImmutableArray<T>, int, out Int32&, out Int32&, out Vector2&)
 ```csharp
-public bool GetFirstMtvAt(Map& map, HashSet<T> ignoreIds, ColliderComponent collider, Vector2 position, IEnumerable<T> others, int mask, Int32& hitId, Int32& layer, Vector2& mtv)
+public bool GetFirstMtvAt(Map& map, HashSet<T> ignoreIds, ColliderComponent collider, Vector2 position, ImmutableArray<T> others, int mask, Int32& hitId, Int32& layer, Vector2& mtv)
 ```
 
 **Parameters** \
@@ -133,7 +135,7 @@ public bool GetFirstMtvAt(Map& map, HashSet<T> ignoreIds, ColliderComponent coll
 `ignoreIds` [HashSet\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.HashSet-1?view=net-7.0) \
 `collider` [ColliderComponent](../../Murder/Components/ColliderComponent.html) \
 `position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-`others` [IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0) \
+`others` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 `mask` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `hitId` [int&](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `layer` [int&](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -167,6 +169,19 @@ public bool HasLineOfSight(World world, Entity from, Entity to)
 `world` [World](../../Bang/World.html) \
 `from` [Entity](../../Bang/Entities/Entity.html) \
 `to` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasLineOfSight(World, Vector2, Vector2)
+```csharp
+public bool HasLineOfSight(World world, Vector2 from, Vector2 to)
+```
+
+**Parameters** \
+`world` [World](../../Bang/World.html) \
+`from` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`to` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
@@ -252,9 +267,9 @@ public IEnumerable<T> GetAllCollisionsAt(World world, Point position, ColliderCo
 **Returns** \
 [IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0) \
 
-#### Neighbours(Vector2, World)
+#### Neighbours(Vector2, World, float)
 ```csharp
-public IEnumerable<T> Neighbours(Vector2 position, World world)
+public IEnumerable<T> Neighbours(Vector2 position, World world, float unit)
 ```
 
 Get all the neighbours of a position within the world.
@@ -263,6 +278,7 @@ Get all the neighbours of a position within the world.
 **Parameters** \
 `position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 `world` [World](../../Bang/World.html) \
+`unit` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 **Returns** \
 [IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0) \
@@ -328,14 +344,14 @@ public ImmutableArray<T> FilterPositionAndColliderEntities(IEnumerable<T> entiti
 **Returns** \
 [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 
-#### GetCarveBoundingBox(ColliderComponent, Point)
+#### GetCarveBoundingBox(ColliderComponent, Vector2)
 ```csharp
-public IntRectangle GetCarveBoundingBox(ColliderComponent collider, Point position)
+public IntRectangle GetCarveBoundingBox(ColliderComponent collider, Vector2 position)
 ```
 
 **Parameters** \
 `collider` [ColliderComponent](../../Murder/Components/ColliderComponent.html) \
-`position` [Point](../../Murder/Core/Geometry/Point.html) \
+`position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 
 **Returns** \
 [IntRectangle](../../Murder/Core/Geometry/IntRectangle.html) \
@@ -396,15 +412,17 @@ public Rectangle GetBoundingBox(ColliderComponent collider, Vector2 position)
 **Returns** \
 [Rectangle](../../Murder/Core/Geometry/Rectangle.html) \
 
-#### FindNextAvailablePosition(World, Entity, Vector2, NextAvailablePositionFlags)
+#### FindNextAvailablePosition(World, Entity, Vector2, Vector2, int, NextAvailablePositionFlags)
 ```csharp
-public T? FindNextAvailablePosition(World world, Entity e, Vector2 target, NextAvailablePositionFlags flags)
+public T? FindNextAvailablePosition(World world, Entity e, Vector2 center, Vector2 target, int layerMask, NextAvailablePositionFlags flags)
 ```
 
 **Parameters** \
 `world` [World](../../Bang/World.html) \
 `e` [Entity](../../Bang/Entities/Entity.html) \
+`center` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 `target` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`layerMask` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `flags` [NextAvailablePositionFlags](../../Murder/Services/NextAvailablePositionFlags.html) \
 
 **Returns** \
@@ -418,6 +436,15 @@ public void AddToCollisionCache(Entity entity, int entityId)
 **Parameters** \
 `entity` [Entity](../../Bang/Entities/Entity.html) \
 `entityId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+#### AddVelocity(Entity, Vector2)
+```csharp
+public void AddVelocity(Entity entity, Vector2 addVelocity)
+```
+
+**Parameters** \
+`entity` [Entity](../../Bang/Entities/Entity.html) \
+`addVelocity` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 
 #### GetAllCollisionsAtGrid(World, Point, List`1&)
 ```csharp

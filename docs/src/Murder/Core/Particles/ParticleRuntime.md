@@ -9,7 +9,7 @@ public sealed struct ParticleRuntime
 
 ### ⭐ Constructors
 ```csharp
-public ParticleRuntime(float startTime, float lifetime, Vector2 position, Vector2 fromPosition, Vector2 gravity, float startAlpha, float startVelocity, float startRotation, float startAcceleration, float startFriction, float startRotationSpeed)
+public ParticleRuntime(float startTime, float lifetime, Vector2 position, Vector2 fromPosition, Vector2 gravity, float startAlpha, float startVelocity, float startRotation, float startAcceleration, float startFriction, float startRotationSpeed, float fromAlpha)
 ```
 
 **Parameters** \
@@ -24,6 +24,7 @@ public ParticleRuntime(float startTime, float lifetime, Vector2 position, Vector
 `startAcceleration` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `startFriction` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `startRotationSpeed` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`fromAlpha` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 ### ⭐ Properties
 #### Acceleration
@@ -115,6 +116,14 @@ public void Step(Particle& particle, float currentTime, float dt)
 `particle` [Particle&](../../../Murder/Core/Particles/Particle.html) \
 `currentTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `dt` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### UpdateAlpha(float)
+```csharp
+public void UpdateAlpha(float alpha)
+```
+
+**Parameters** \
+`alpha` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### UpdateFromPosition(Vector2)
 ```csharp

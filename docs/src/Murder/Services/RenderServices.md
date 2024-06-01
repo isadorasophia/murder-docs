@@ -83,6 +83,20 @@ public float YSort(float y)
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
+#### DrawPortrait(Batch2D, Portrait, Vector2, DrawInfo)
+```csharp
+public FrameInfo DrawPortrait(Batch2D batch, Portrait portrait, Vector2 position, DrawInfo drawInfo)
+```
+
+**Parameters** \
+`batch` [Batch2D](../../Murder/Core/Graphics/Batch2D.html) \
+`portrait` [Portrait](../../Murder/Core/Portrait.html) \
+`position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`drawInfo` [DrawInfo](../../Murder/Core/Graphics/DrawInfo.html) \
+
+**Returns** \
+[FrameInfo](../../Murder/Core/FrameInfo.html) \
+
 #### DrawSprite(Batch2D, SpriteAsset, Vector2, DrawInfo, AnimationInfo)
 ```csharp
 public FrameInfo DrawSprite(Batch2D batch, SpriteAsset asset, Vector2 position, DrawInfo drawInfo, AnimationInfo animationInfo)
@@ -100,12 +114,12 @@ public FrameInfo DrawSprite(Batch2D batch, SpriteAsset asset, Vector2 position, 
 
 #### DrawSprite(Batch2D, SpriteAsset, Vector2, T?)
 ```csharp
-public FrameInfo DrawSprite(Batch2D batch, SpriteAsset assetGuid, Vector2 position, T? drawInfo)
+public FrameInfo DrawSprite(Batch2D batch, SpriteAsset asset, Vector2 position, T? drawInfo)
 ```
 
 **Parameters** \
 `batch` [Batch2D](../../Murder/Core/Graphics/Batch2D.html) \
-`assetGuid` [SpriteAsset](../../Murder/Assets/Graphics/SpriteAsset.html) \
+`asset` [SpriteAsset](../../Murder/Assets/Graphics/SpriteAsset.html) \
 `position` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 `drawInfo` [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
@@ -157,9 +171,9 @@ public FrameInfo DrawSprite(Batch2D batch, Guid assetGuid, Vector2 position, T? 
 **Returns** \
 [FrameInfo](../../Murder/Core/FrameInfo.html) \
 
-#### DrawSprite(Batch2D, Vector2, Rectangle, string, SpriteAsset, float, float, bool, Vector2, bool, float, Vector2, Color, Vector3, float, float)
+#### DrawSprite(Batch2D, Vector2, Rectangle, string, SpriteAsset, float, float, bool, Vector2, ImageFlip, float, Vector2, Color, Vector3, float, float)
 ```csharp
-public FrameInfo DrawSprite(Batch2D spriteBatch, Vector2 pos, Rectangle clip, string animationId, SpriteAsset ase, float animationStartedTime, float animationDuration, bool animationLoop, Vector2 origin, bool flipped, float rotation, Vector2 scale, Color color, Vector3 blend, float sort, float currentTime)
+public FrameInfo DrawSprite(Batch2D spriteBatch, Vector2 pos, Rectangle clip, string animationId, SpriteAsset asset, float animationStartedTime, float animationDuration, bool animationLoop, Vector2 origin, ImageFlip imageFlip, float rotation, Vector2 scale, Color color, Vector3 blend, float sort, float currentTime)
 ```
 
 The Renders a sprite on the screen. This is the most basic rendering method with all parameters exposed, avoid using this if possible.
@@ -173,7 +187,7 @@ The Renders a sprite on the screen. This is the most basic rendering method with
 \
 `animationId` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 \
-`ase` [SpriteAsset](../../Murder/Assets/Graphics/SpriteAsset.html) \
+`asset` [SpriteAsset](../../Murder/Assets/Graphics/SpriteAsset.html) \
 \
 `animationStartedTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 \
@@ -183,7 +197,7 @@ The Renders a sprite on the screen. This is the most basic rendering method with
 \
 `origin` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 \
-`flipped` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+`imageFlip` [ImageFlip](../../Murder/Core/Graphics/ImageFlip.html) \
 \
 `rotation` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 \
@@ -418,6 +432,35 @@ Draws a 9-slice using the given texture and target rectangle. The core rectangle
 `style` [NineSliceStyle](../../Murder/Core/Graphics/NineSliceStyle.html) \
 `drawInfo` [DrawInfo](../../Murder/Core/Graphics/DrawInfo.html) \
 `animationInfo` [AnimationInfo](../../Murder/Core/Graphics/AnimationInfo.html) \
+
+#### Draw9SliceWithText(Batch2D, Guid, string, int, Rectangle, DrawInfo, DrawInfo, AnimationInfo)
+```csharp
+public void Draw9SliceWithText(Batch2D batch, Guid sprite, string text, int font, Rectangle target, DrawInfo textDrawInfo, DrawInfo sliceDrawInfo, AnimationInfo sliceAnimationInfo)
+```
+
+**Parameters** \
+`batch` [Batch2D](../../Murder/Core/Graphics/Batch2D.html) \
+`sprite` [Guid](https://learn.microsoft.com/en-us/dotnet/api/System.Guid?view=net-7.0) \
+`text` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`font` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`target` [Rectangle](../../Murder/Core/Geometry/Rectangle.html) \
+`textDrawInfo` [DrawInfo](../../Murder/Core/Graphics/DrawInfo.html) \
+`sliceDrawInfo` [DrawInfo](../../Murder/Core/Graphics/DrawInfo.html) \
+`sliceAnimationInfo` [AnimationInfo](../../Murder/Core/Graphics/AnimationInfo.html) \
+
+#### DrawArrow(Batch2D, Vector2, Vector2, Color, float, float, float)
+```csharp
+public void DrawArrow(Batch2D spriteBatch, Vector2 point1, Vector2 point2, Color color, float thickness, float headSize, float sort)
+```
+
+**Parameters** \
+`spriteBatch` [Batch2D](../../Murder/Core/Graphics/Batch2D.html) \
+`point1` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`point2` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+`color` [Color](../../Murder/Core/Graphics/Color.html) \
+`thickness` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`headSize` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`sort` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### DrawCircleOutline(Batch2D, Point, float, int, Color, float)
 ```csharp

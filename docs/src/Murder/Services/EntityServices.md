@@ -85,6 +85,22 @@ Try to find the target of a [GuidToIdTargetComponent](../../Murder/Components/Gu
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
+#### FindAllTargets(Entity, string)
+```csharp
+public IEnumerable<T> FindAllTargets(Entity e, string prefix)
+```
+
+Return all targets of entity that start with <paramref name="prefix" />.
+            This will first check for a target id. If none, it will check for a target
+            collection with <paramref name="prefix" />.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`prefix` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+
+**Returns** \
+[IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0) \
+
 #### TryActiveSpriteAsset(Entity)
 ```csharp
 public SpriteAsset TryActiveSpriteAsset(Entity entity)
@@ -95,6 +111,17 @@ public SpriteAsset TryActiveSpriteAsset(Entity entity)
 
 **Returns** \
 [SpriteAsset](../../Murder/Assets/Graphics/SpriteAsset.html) \
+
+#### TryGetEntityName(Entity)
+```csharp
+public string TryGetEntityName(Entity entity)
+```
+
+**Parameters** \
+`entity` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 
 #### PlayAsepriteAnimationNext(Entity, string)
 ```csharp
@@ -113,36 +140,51 @@ public T? PlayAsepriteAnimationNext(Entity entity, string animationName)
 public T? PlaySpriteAnimation(Entity entity, ImmutableArray<T> animations)
 ```
 
+Plays an animation or animation sequence. Loops the last animation.
+
 **Parameters** \
 `entity` [Entity](../../Bang/Entities/Entity.html) \
+\
 `animations` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
+\
 
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+\
 
 #### PlaySpriteAnimation(Entity, String[])
 ```csharp
 public T? PlaySpriteAnimation(Entity entity, String[] nextAnimations)
 ```
 
+Plays an animation or animation sequence. Loops the last animation.
+
 **Parameters** \
 `entity` [Entity](../../Bang/Entities/Entity.html) \
+\
 `nextAnimations` [string[]](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+\
 
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+\
 
-#### TryPlayAsepriteAnimation(Entity, String[])
+#### PlaySpriteAnimationOnce(Entity, string)
 ```csharp
-public T? TryPlayAsepriteAnimation(Entity entity, String[] nextAnimations)
+public T? PlaySpriteAnimationOnce(Entity entity, string animation)
 ```
 
+Plays an animation or animation sequence. Do not loop.
+
 **Parameters** \
 `entity` [Entity](../../Bang/Entities/Entity.html) \
-`nextAnimations` [string[]](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+\
+`animation` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+\
 
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+\
 
 #### TryPlayAsepriteAnimationNext(Entity, string)
 ```csharp
@@ -155,6 +197,39 @@ public T? TryPlayAsepriteAnimationNext(Entity entity, string animationName)
 
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryPlaySpriteAnimation(Entity, ImmutableArray<T>)
+```csharp
+public T? TryPlaySpriteAnimation(Entity entity, ImmutableArray<T> nextAnimations)
+```
+
+**Parameters** \
+`entity` [Entity](../../Bang/Entities/Entity.html) \
+`nextAnimations` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryPlaySpriteAnimation(Entity, String[])
+```csharp
+public T? TryPlaySpriteAnimation(Entity entity, String[] nextAnimations)
+```
+
+**Parameters** \
+`entity` [Entity](../../Bang/Entities/Entity.html) \
+`nextAnimations` [string[]](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### RemoveSpeedMultiplier(Entity, int)
+```csharp
+public void RemoveSpeedMultiplier(Entity entity, int slot)
+```
+
+**Parameters** \
+`entity` [Entity](../../Bang/Entities/Entity.html) \
+`slot` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 #### RotateChildPositions(World, Entity, float)
 ```csharp
@@ -184,6 +259,16 @@ public void RotatePositionAround(Entity entity, Vector2 center, float angle)
 `entity` [Entity](../../Bang/Entities/Entity.html) \
 `center` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 `angle` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### SetAgentSpeedMultiplier(Entity, int, float)
+```csharp
+public void SetAgentSpeedMultiplier(Entity entity, int slot, float speedMultiplier)
+```
+
+**Parameters** \
+`entity` [Entity](../../Bang/Entities/Entity.html) \
+`slot` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`speedMultiplier` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### Spawn(World, Vector2, Guid, int, float, IComponent[])
 ```csharp

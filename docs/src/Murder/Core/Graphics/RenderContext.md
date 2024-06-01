@@ -68,13 +68,6 @@ protected RenderTarget2D _mainTarget;
 
 **Returns** \
 [RenderTarget2D](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.RenderTarget2D.html) \
-#### _scale
-```csharp
-protected Vector2 _scale;
-```
-
-**Returns** \
-[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
 #### _spriteBatches
 ```csharp
 public Batch2D[] _spriteBatches;
@@ -107,13 +100,6 @@ protected RenderTarget2D _uiTarget;
 
 **Returns** \
 [RenderTarget2D](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.RenderTarget2D.html) \
-#### _useCustomShader
-```csharp
-protected bool _useCustomShader;
-```
-
-**Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 #### _useDebugBatches
 ```csharp
 protected readonly bool _useDebugBatches;
@@ -252,20 +238,13 @@ public bool RenderToScreen;
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-#### Scale
+#### Settings
 ```csharp
-public Vector2 Scale { get; }
+protected readonly RenderContextFlags Settings;
 ```
 
 **Returns** \
-[Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
-#### ScreenSize
-```csharp
-public Point ScreenSize;
-```
-
-**Returns** \
-[Point](../../../Murder/Core/Geometry/Point.html) \
+[RenderContextFlags](../../../Murder/Core/Graphics/RenderContextFlags.html) \
 #### SubPixelOffset
 ```csharp
 public Vector2 SubPixelOffset { get; }
@@ -282,6 +261,13 @@ Renders above everything, ignores any camera movement.
 
 **Returns** \
 [Batch2D](../../../Murder/Core/Graphics/Batch2D.html) \
+#### Viewport
+```csharp
+public Viewport Viewport;
+```
+
+**Returns** \
+[Viewport](../../../Murder/Core/Viewport.html) \
 ### ⭐ Methods
 #### SetupRenderTarget(RenderTarget2D, int, int, Color, bool)
 ```csharp
@@ -304,6 +290,39 @@ Sets up a new RenderTarget2D, disposing of the existing one if necessary.
 
 **Returns** \
 [RenderTarget2D](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.RenderTarget2D.html) \
+\
+
+#### AfterMainRender(RenderTarget2D)
+```csharp
+protected virtual void AfterMainRender(RenderTarget2D mainTarget)
+```
+
+Called right after [RenderContext.GameUiBatch](../../../Murder/Core/Graphics/RenderContext.html#gameuibatch) end.
+
+**Parameters** \
+`mainTarget` [RenderTarget2D](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.RenderTarget2D.html) \
+\
+
+#### AfterUiRender(RenderTarget2D)
+```csharp
+protected virtual void AfterUiRender(RenderTarget2D uiTarget)
+```
+
+Called right after the [RenderContext.UiBatch](../../../Murder/Core/Graphics/RenderContext.html#uibatch) ends.
+
+**Parameters** \
+`uiTarget` [RenderTarget2D](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.RenderTarget2D.html) \
+\
+
+#### BeforeScreenRender(RenderTarget2D)
+```csharp
+protected virtual void BeforeScreenRender(RenderTarget2D finalTarget)
+```
+
+Last chance to render anything before the contents are drawn on the screen!
+
+**Parameters** \
+`finalTarget` [RenderTarget2D](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.RenderTarget2D.html) \
 \
 
 #### UnloadImpl()
@@ -345,17 +364,18 @@ public Batch2D GetBatch(int index)
 **Returns** \
 [Batch2D](../../../Murder/Core/Graphics/Batch2D.html) \
 
-#### RefreshWindow(Point, float)
+#### RefreshWindow(GraphicsDevice, Point, Point, ViewportResizeStyle)
 ```csharp
-public bool RefreshWindow(Point size, float scale)
+public bool RefreshWindow(GraphicsDevice graphicsDevice, Point viewportSize, Point nativeResolution, ViewportResizeStyle viewportResizeMode)
 ```
 
-Refresh the window size with <paramref name="size" /> with width and height information,
-            respectively.
+Refreshes the window with the new viewport size and camera scale.
 
 **Parameters** \
-`size` [Point](../../../Murder/Core/Geometry/Point.html) \
-`scale` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`graphicsDevice` [GraphicsDevice](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html) \
+`viewportSize` [Point](../../../Murder/Core/Geometry/Point.html) \
+`nativeResolution` [Point](../../../Murder/Core/Geometry/Point.html) \
+`viewportResizeMode` [ViewportResizeStyle](../../../Murder/Core/Graphics/ViewportResizeStyle.html) \
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
@@ -394,13 +414,10 @@ public virtual void End()
 public virtual void Initialize()
 ```
 
-#### UpdateBufferTarget(float)
+#### UpdateViewport()
 ```csharp
-public virtual void UpdateBufferTarget(float scale)
+public virtual void UpdateViewport()
 ```
-
-**Parameters** \
-`scale` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### CreateDebugPreviewIfNecessary(BatchPreviewState, RenderTarget2D)
 ```csharp
@@ -421,14 +438,6 @@ Saves a screenshot of the specified camera area.
 **Parameters** \
 `cameraRect` [Rectangle](../../../Murder/Core/Geometry/Rectangle.html) \
 \
-
-#### SwitchCustomShader(bool)
-```csharp
-public void SwitchCustomShader(bool enable)
-```
-
-**Parameters** \
-`enable` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
 #### Unload()
 ```csharp

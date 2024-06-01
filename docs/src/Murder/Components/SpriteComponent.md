@@ -15,6 +15,14 @@ public SpriteComponent()
 ```
 
 ```csharp
+public SpriteComponent(Portrait portrait, int batchId)
+```
+
+**Parameters** \
+`portrait` [Portrait](../../Murder/Core/Portrait.html) \
+`batchId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+```csharp
 public SpriteComponent(Portrait portrait)
 ```
 
@@ -22,7 +30,7 @@ public SpriteComponent(Portrait portrait)
 `portrait` [Portrait](../../Murder/Core/Portrait.html) \
 
 ```csharp
-public SpriteComponent(Guid guid, Vector2 offset, ImmutableArray<T> id, int ySortOffset, bool rotate, bool flip, OutlineStyle highlightStyle, float startTime, int targetSpriteBatch)
+public SpriteComponent(Guid guid, Vector2 offset, ImmutableArray<T> id, int ySortOffset, bool rotate, bool flip, OutlineStyle highlightStyle, int targetSpriteBatch)
 ```
 
 **Parameters** \
@@ -33,26 +41,18 @@ public SpriteComponent(Guid guid, Vector2 offset, ImmutableArray<T> id, int ySor
 `rotate` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 `flip` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 `highlightStyle` [OutlineStyle](../../Murder/Core/Graphics/OutlineStyle.html) \
-`startTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `targetSpriteBatch` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 ### ⭐ Properties
 #### AnimationGuid
 ```csharp
-public readonly Guid AnimationGuid;
+public Guid AnimationGuid { get; public set; }
 ```
 
 The Guid of the Aseprite file.
 
 **Returns** \
 [Guid](https://learn.microsoft.com/en-us/dotnet/api/System.Guid?view=net-7.0) \
-#### AnimationStartedTime
-```csharp
-public float AnimationStartedTime { get; public set; }
-```
-
-**Returns** \
-[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 #### CurrentAnimation
 ```csharp
 public string CurrentAnimation { get; }
@@ -71,14 +71,14 @@ public readonly bool FlipWithFacing;
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 #### HighlightStyle
 ```csharp
-public readonly OutlineStyle HighlightStyle;
+public OutlineStyle HighlightStyle { get; public set; }
 ```
 
 **Returns** \
 [OutlineStyle](../../Murder/Core/Graphics/OutlineStyle.html) \
 #### NextAnimations
 ```csharp
-public readonly ImmutableArray<T> NextAnimations;
+public ImmutableArray<T> NextAnimations { get; public set; }
 ```
 
 **Returns** \
@@ -115,7 +115,7 @@ public readonly bool UseUnscaledTime;
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 #### YSortOffset
 ```csharp
-public readonly int YSortOffset;
+public int YSortOffset { get; public set; }
 ```
 
 **Returns** \
@@ -132,47 +132,34 @@ public bool HasAnimation(string animationName)
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### IsPlaying(string)
+#### IsPlaying(ImmutableArray<T>)
 ```csharp
-public bool IsPlaying(string animationName)
+public bool IsPlaying(ImmutableArray<T> animations)
 ```
 
 **Parameters** \
-`animationName` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+`animations` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### IsPlaying(String[])
+#### Play(ImmutableArray<T>)
 ```csharp
-public bool IsPlaying(String[] animations)
+public SpriteComponent Play(ImmutableArray<T> id)
 ```
 
 **Parameters** \
-`animations` [string[]](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
-
-**Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-
-#### Play(bool, ImmutableArray<T>)
-```csharp
-public SpriteComponent Play(bool useScaledTime, ImmutableArray<T> id)
-```
-
-**Parameters** \
-`useScaledTime` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 `id` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 
 **Returns** \
 [SpriteComponent](../../Murder/Components/SpriteComponent.html) \
 
-#### Play(bool, String[])
+#### Play(String[])
 ```csharp
-public SpriteComponent Play(bool useScaledTime, String[] id)
+public SpriteComponent Play(String[] id)
 ```
 
 **Parameters** \
-`useScaledTime` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 `id` [string[]](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
 
 **Returns** \
@@ -189,26 +176,6 @@ public SpriteComponent PlayAfter(string id)
 **Returns** \
 [SpriteComponent](../../Murder/Components/SpriteComponent.html) \
 
-#### PlayOnce(string, bool)
-```csharp
-public SpriteComponent PlayOnce(string id, bool useScaledTime)
-```
-
-**Parameters** \
-`id` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
-`useScaledTime` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-
-**Returns** \
-[SpriteComponent](../../Murder/Components/SpriteComponent.html) \
-
-#### Reset()
-```csharp
-public SpriteComponent Reset()
-```
-
-**Returns** \
-[SpriteComponent](../../Murder/Components/SpriteComponent.html) \
-
 #### SetBatch(int)
 ```csharp
 public SpriteComponent SetBatch(int batch)
@@ -216,6 +183,17 @@ public SpriteComponent SetBatch(int batch)
 
 **Parameters** \
 `batch` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+**Returns** \
+[SpriteComponent](../../Murder/Components/SpriteComponent.html) \
+
+#### WithPortrait(Portrait)
+```csharp
+public SpriteComponent WithPortrait(Portrait portrait)
+```
+
+**Parameters** \
+`portrait` [Portrait](../../Murder/Core/Portrait.html) \
 
 **Returns** \
 [SpriteComponent](../../Murder/Components/SpriteComponent.html) \

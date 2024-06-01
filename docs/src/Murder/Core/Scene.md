@@ -46,18 +46,6 @@ public abstract virtual MonoWorld World { get; }
 **Returns** \
 [MonoWorld](../../Murder/Core/MonoWorld.html) \
 ### ⭐ Methods
-#### RefreshWindow(GraphicsDevice, GameProfile)
-```csharp
-public virtual int RefreshWindow(GraphicsDevice graphics, GameProfile settings)
-```
-
-**Parameters** \
-`graphics` [GraphicsDevice](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html) \
-`settings` [GameProfile](../../Murder/Assets/GameProfile.html) \
-
-**Returns** \
-[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-
 #### UnloadAsyncImpl()
 ```csharp
 public virtual Task UnloadAsyncImpl()
@@ -107,6 +95,21 @@ public virtual void LoadContentImpl()
 ```csharp
 public virtual void OnBeforeDraw()
 ```
+
+#### RefreshWindow(Point, GraphicsDevice, GameProfile)
+```csharp
+public virtual void RefreshWindow(Point viewportSize, GraphicsDevice graphics, GameProfile settings)
+```
+
+Refresh the window size, updating the camera and render context.
+
+**Parameters** \
+`viewportSize` [Point](../../Murder/Core/Geometry/Point.html) \
+\
+`graphics` [GraphicsDevice](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html) \
+\
+`settings` [GameProfile](../../Murder/Assets/GameProfile.html) \
+\
 
 #### ReloadImpl()
 ```csharp

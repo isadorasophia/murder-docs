@@ -53,6 +53,15 @@ Whether this will trigger a !SHAKE! (and intensity).
 
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+#### SmallPause
+```csharp
+public int SmallPause { get; public set; }
+```
+
+Amount of small pauses after this letter is printed.
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### Speed
 ```csharp
 public float Speed { get; public set; }

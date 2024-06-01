@@ -9,6 +9,11 @@ public class PrefabEntityInstance : EntityInstance, IEntity
 
 **Implements:** _[EntityInstance](../../Murder/Prefabs/EntityInstance.html), [IEntity](../../Murder/Prefabs/IEntity.html)_
 
+### ⭐ Constructors
+```csharp
+public PrefabEntityInstance()
+```
+
 ### ⭐ Properties
 #### _children
 ```csharp
@@ -421,6 +426,14 @@ public virtual void SetName(string name)
 
 **Parameters** \
 `name` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+
+#### UpdateGuid(Guid)
+```csharp
+public void UpdateGuid(Guid newGuid)
+```
+
+**Parameters** \
+`newGuid` [Guid](https://learn.microsoft.com/en-us/dotnet/api/System.Guid?view=net-7.0) \
 
 
 

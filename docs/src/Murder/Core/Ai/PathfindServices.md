@@ -8,9 +8,9 @@ public static class PathfindServices
 ```
 
 ### ⭐ Methods
-#### FindPath(Map, World, Point, Point, PathfindAlgorithmKind)
+#### FindPath(Map, World, Point, Point, PathfindAlgorithmKind, int)
 ```csharp
-public ImmutableDictionary<TKey, TValue> FindPath(Map map, World world, Point initial, Point target, PathfindAlgorithmKind kind)
+public ImmutableDictionary<TKey, TValue> FindPath(Map map, World world, Point initial, Point target, PathfindAlgorithmKind kind, int collisionMask)
 ```
 
 Find a path between <paramref name="initial" /> and <paramref name="target" />.
@@ -21,6 +21,7 @@ Find a path between <paramref name="initial" /> and <paramref name="target" />.
 `initial` [Point](../../../Murder/Core/Geometry/Point.html) \
 `target` [Point](../../../Murder/Core/Geometry/Point.html) \
 `kind` [PathfindAlgorithmKind](../../../Murder/Core/Ai/PathfindAlgorithmKind.html) \
+`collisionMask` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 **Returns** \
 [ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \

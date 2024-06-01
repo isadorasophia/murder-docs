@@ -7,7 +7,7 @@
 public static class MurderEntityExtensions
 ```
 
-Quality of life extensions for the components declared in this project.
+Quality of life entity extensions for the components declared in this project.
 
 ### ⭐ Methods
 #### GetAdvancedCollision(Entity)
@@ -51,16 +51,16 @@ Gets a component of type [AgentImpulseComponent](../../Murder/Components/AgentIm
 
 #### GetAgentSpeedMultiplier(Entity)
 ```csharp
-public AgentSpeedMultiplier GetAgentSpeedMultiplier(Entity e)
+public AgentSpeedMultiplierComponent GetAgentSpeedMultiplier(Entity e)
 ```
 
-Gets a component of type [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html).
+Gets a component of type [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
 **Returns** \
-[AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html) \
+[AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html) \
 
 #### GetAgentSpeedOverride(Entity)
 ```csharp
@@ -166,18 +166,31 @@ Gets a component of type [AnimationSpeedOverload](../../Murder/Components/Animat
 **Returns** \
 [AnimationSpeedOverload](../../Murder/Components/AnimationSpeedOverload.html) \
 
-#### GetAttackMultiplier(Entity)
+#### GetAnimationStarted(Entity)
 ```csharp
-public AttackMultiplier GetAttackMultiplier(Entity e)
+public AnimationStartedComponent GetAnimationStarted(Entity e)
 ```
 
-Gets a component of type [AttackMultiplier](../../Murder/Components/AttackMultiplier.html).
+Gets a component of type [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
 **Returns** \
-[AttackMultiplier](../../Murder/Components/AttackMultiplier.html) \
+[AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html) \
+
+#### GetAutomaticNextDialogue(Entity)
+```csharp
+public AutomaticNextDialogueComponent GetAutomaticNextDialogue(Entity e)
+```
+
+Gets a component of type [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html) \
 
 #### HasAdvancedCollision(Entity)
 ```csharp
@@ -223,7 +236,7 @@ Checks whether this entity possesses a component of type [AgentImpulseComponent]
 public bool HasAgentSpeedMultiplier(Entity e)
 ```
 
-Checks whether this entity possesses a component of type [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html) or not.
+Checks whether this entity possesses a component of type [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -361,12 +374,25 @@ Checks whether this entity possesses a component of type [AnimationSpeedOverload
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### HasAttackMultiplier(Entity)
+#### HasAnimationStarted(Entity)
 ```csharp
-public bool HasAttackMultiplier(Entity e)
+public bool HasAnimationStarted(Entity e)
 ```
 
-Checks whether this entity possesses a component of type [AttackMultiplier](../../Murder/Components/AttackMultiplier.html) or not.
+Checks whether this entity possesses a component of type [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasAutomaticNextDialogue(Entity)
+```csharp
+public bool HasAutomaticNextDialogue(Entity e)
+```
+
+Checks whether this entity possesses a component of type [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -379,7 +405,7 @@ Checks whether this entity possesses a component of type [AttackMultiplier](../.
 public bool HasBounceAmount(Entity e)
 ```
 
-Checks whether this entity possesses a component of type [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html) or not.
+Checks whether this entity possesses a component of type [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -406,6 +432,19 @@ public bool HasCarve(Entity e)
 ```
 
 Checks whether this entity possesses a component of type [CarveComponent](../../Murder/Components/CarveComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasChildTarget(Entity)
+```csharp
+public bool HasChildTarget(Entity e)
+```
+
+Checks whether this entity possesses a component of type [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -458,6 +497,19 @@ public bool HasCollisionCache(Entity e)
 ```
 
 Checks whether this entity possesses a component of type [CollisionCacheComponent](../../Murder/Components/CollisionCacheComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasCreatedAt(Entity)
+```csharp
+public bool HasCreatedAt(Entity e)
+```
+
+Checks whether this entity possesses a component of type [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -523,6 +575,19 @@ public bool HasCutsceneAnchorsEditor(Entity e)
 ```
 
 Checks whether this entity possesses a component of type [CutsceneAnchorsEditorComponent](../../Murder/Components/Serialization/CutsceneAnchorsEditorComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasDestroyAfterSeconds(Entity)
+```csharp
+public bool HasDestroyAfterSeconds(Entity e)
+```
+
+Checks whether this entity possesses a component of type [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -634,6 +699,19 @@ Checks whether this entity possesses a component of type [DisableSceneTransition
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### HasDoNotLoop(Entity)
+```csharp
+public bool HasDoNotLoop(Entity e)
+```
+
+Checks whether this entity possesses a component of type [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### HasDoNotPause(Entity)
 ```csharp
 public bool HasDoNotPause(Entity e)
@@ -731,6 +809,19 @@ public bool HasFadeScreen(Entity e)
 ```
 
 Checks whether this entity possesses a component of type [FadeScreenComponent](../../Murder/Components/FadeScreenComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasFadeScreenWithSolidColor(Entity)
+```csharp
+public bool HasFadeScreenWithSolidColor(Entity e)
+```
+
+Checks whether this entity possesses a component of type [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -985,6 +1076,19 @@ Checks whether this entity possesses a component of type [IgnoreTriggersUntilCom
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### HasIgnoreUntil(Entity)
+```csharp
+public bool HasIgnoreUntil(Entity e)
+```
+
+Checks whether this entity possesses a component of type [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### HasInCamera(Entity)
 ```csharp
 public bool HasInCamera(Entity e)
@@ -1206,6 +1310,19 @@ Checks whether this entity possesses a component of type [MoveToPerfectComponent
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### HasMoveToTarget(Entity)
+```csharp
+public bool HasMoveToTarget(Entity e)
+```
+
+Checks whether this entity possesses a component of type [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### HasMusic(Entity)
 ```csharp
 public bool HasMusic(Entity e)
@@ -1258,12 +1375,12 @@ Checks whether this entity possesses a component of type [NineSliceComponent](..
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### HasOnActorEnteredOrExitedMessage(Entity)
+#### HasOnCollisionMessage(Entity)
 ```csharp
-public bool HasOnActorEnteredOrExitedMessage(Entity e)
+public bool HasOnCollisionMessage(Entity e)
 ```
 
-Checks whether the entity has a message of type [OnActorEnteredOrExitedMessage](../../Murder/Messages/Physics/OnActorEnteredOrExitedMessage.html) or not.
+Checks whether the entity has a message of type [OnCollisionMessage](../../Murder/Messages/Physics/OnCollisionMessage.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -1290,19 +1407,6 @@ public bool HasOnInteractExitMessage(Entity e)
 ```
 
 Checks whether the entity has a message of type [OnInteractExitMessage](../../Murder/Messages/OnInteractExitMessage.html) or not.
-
-**Parameters** \
-`e` [Entity](../../Bang/Entities/Entity.html) \
-
-**Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-
-#### HasOnTriggerEnteredMessage(Entity)
-```csharp
-public bool HasOnTriggerEnteredMessage(Entity e)
-```
-
-Checks whether the entity has a message of type [OnTriggerEnteredMessage](../../Murder/Messages/Physics/OnTriggerEnteredMessage.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -1362,6 +1466,19 @@ Checks whether this entity possesses a component of type [PathfindComponent](../
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### HasPathfindGrid(Entity)
+```csharp
+public bool HasPathfindGrid(Entity e)
+```
+
+Checks whether this entity possesses a component of type [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### HasPathNotPossibleMessage(Entity)
 ```csharp
 public bool HasPathNotPossibleMessage(Entity e)
@@ -1381,6 +1498,19 @@ public bool HasPauseAnimation(Entity e)
 ```
 
 Checks whether this entity possesses a component of type [PauseAnimationComponent](../../Murder/Components/PauseAnimationComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasPersistPathfind(Entity)
+```csharp
+public bool HasPersistPathfind(Entity e)
+```
+
+Checks whether this entity possesses a component of type [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -1765,6 +1895,45 @@ Checks whether this entity possesses a component of type [SpriteComponent](../..
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### HasSpriteClippingRect(Entity)
+```csharp
+public bool HasSpriteClippingRect(Entity e)
+```
+
+Checks whether this entity possesses a component of type [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasSpriteFacing(Entity)
+```csharp
+public bool HasSpriteFacing(Entity e)
+```
+
+Checks whether this entity possesses a component of type [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasSpriteOffset(Entity)
+```csharp
+public bool HasSpriteOffset(Entity e)
+```
+
+Checks whether this entity possesses a component of type [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### HasSquish(Entity)
 ```csharp
 public bool HasSquish(Entity e)
@@ -1830,12 +1999,38 @@ Checks whether this entity possesses a component of type [TagsComponent](../../M
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### HasTethered(Entity)
+```csharp
+public bool HasTethered(Entity e)
+```
+
+Checks whether this entity possesses a component of type [TetheredComponent](../../Murder/Components/TetheredComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### HasTexture(Entity)
 ```csharp
 public bool HasTexture(Entity e)
 ```
 
 Checks whether this entity possesses a component of type [TextureComponent](../../Murder/Components/TextureComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasThetherSnapMessage(Entity)
+```csharp
+public bool HasThetherSnapMessage(Entity e)
+```
+
+Checks whether the entity has a message of type [ThetherSnapMessage](../../Murder/Messages/ThetherSnapMessage.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -1882,6 +2077,19 @@ Checks whether this entity possesses a component of type [TilesetComponent](../.
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### HasTimeScale(Entity)
+```csharp
+public bool HasTimeScale(Entity e)
+```
+
+Checks whether this entity possesses a component of type [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### HasTint(Entity)
 ```csharp
 public bool HasTint(Entity e)
@@ -1901,6 +2109,19 @@ public bool HasTouchedGroundMessage(Entity e)
 ```
 
 Checks whether the entity has a message of type [TouchedGroundMessage](../../Murder/Messages/TouchedGroundMessage.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasTween(Entity)
+```csharp
+public bool HasTween(Entity e)
+```
+
+Checks whether this entity possesses a component of type [TweenComponent](../../Murder/Components/TweenComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -1940,6 +2161,19 @@ public bool HasVelocity(Entity e)
 ```
 
 Checks whether this entity possesses a component of type [VelocityComponent](../../Murder/Components/VelocityComponent.html) or not.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### HasVelocityTowardsFacing(Entity)
+```csharp
+public bool HasVelocityTowardsFacing(Entity e)
+```
+
+Checks whether this entity possesses a component of type [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html) or not.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -2030,7 +2264,7 @@ Removes the component of type [AgentImpulseComponent](../../Murder/Components/Ag
 public bool RemoveAgentSpeedMultiplier(Entity e)
 ```
 
-Removes the component of type [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html).
+Removes the component of type [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -2168,12 +2402,25 @@ Removes the component of type [AnimationSpeedOverload](../../Murder/Components/A
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### RemoveAttackMultiplier(Entity)
+#### RemoveAnimationStarted(Entity)
 ```csharp
-public bool RemoveAttackMultiplier(Entity e)
+public bool RemoveAnimationStarted(Entity e)
 ```
 
-Removes the component of type [AttackMultiplier](../../Murder/Components/AttackMultiplier.html).
+Removes the component of type [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveAutomaticNextDialogue(Entity)
+```csharp
+public bool RemoveAutomaticNextDialogue(Entity e)
+```
+
+Removes the component of type [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -2186,7 +2433,7 @@ Removes the component of type [AttackMultiplier](../../Murder/Components/AttackM
 public bool RemoveBounceAmount(Entity e)
 ```
 
-Removes the component of type [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html).
+Removes the component of type [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -2213,6 +2460,19 @@ public bool RemoveCarve(Entity e)
 ```
 
 Removes the component of type [CarveComponent](../../Murder/Components/CarveComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveChildTarget(Entity)
+```csharp
+public bool RemoveChildTarget(Entity e)
+```
+
+Removes the component of type [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -2265,6 +2525,19 @@ public bool RemoveCollisionCache(Entity e)
 ```
 
 Removes the component of type [CollisionCacheComponent](../../Murder/Components/CollisionCacheComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveCreatedAt(Entity)
+```csharp
+public bool RemoveCreatedAt(Entity e)
+```
+
+Removes the component of type [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -2330,6 +2603,19 @@ public bool RemoveCutsceneAnchorsEditor(Entity e)
 ```
 
 Removes the component of type [CutsceneAnchorsEditorComponent](../../Murder/Components/Serialization/CutsceneAnchorsEditorComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveDestroyAfterSeconds(Entity)
+```csharp
+public bool RemoveDestroyAfterSeconds(Entity e)
+```
+
+Removes the component of type [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -2441,6 +2727,19 @@ Removes the component of type [DisableSceneTransitionEffectsComponent](../../Mur
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### RemoveDoNotLoop(Entity)
+```csharp
+public bool RemoveDoNotLoop(Entity e)
+```
+
+Removes the component of type [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### RemoveDoNotPause(Entity)
 ```csharp
 public bool RemoveDoNotPause(Entity e)
@@ -2538,6 +2837,19 @@ public bool RemoveFadeScreen(Entity e)
 ```
 
 Removes the component of type [FadeScreenComponent](../../Murder/Components/FadeScreenComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveFadeScreenWithSolidColor(Entity)
+```csharp
+public bool RemoveFadeScreenWithSolidColor(Entity e)
+```
+
+Removes the component of type [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -2792,6 +3104,19 @@ Removes the component of type [IgnoreTriggersUntilComponent](../../Murder/Compon
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### RemoveIgnoreUntil(Entity)
+```csharp
+public bool RemoveIgnoreUntil(Entity e)
+```
+
+Removes the component of type [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### RemoveInCamera(Entity)
 ```csharp
 public bool RemoveInCamera(Entity e)
@@ -3013,6 +3338,19 @@ Removes the component of type [MoveToPerfectComponent](../../Murder/Components/M
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### RemoveMoveToTarget(Entity)
+```csharp
+public bool RemoveMoveToTarget(Entity e)
+```
+
+Removes the component of type [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### RemoveMusic(Entity)
 ```csharp
 public bool RemoveMusic(Entity e)
@@ -3065,12 +3403,12 @@ Removes the component of type [NineSliceComponent](../../Murder/Components/NineS
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
-#### RemoveOnActorEnteredOrExitedMessage(Entity)
+#### RemoveOnCollisionMessage(Entity)
 ```csharp
-public bool RemoveOnActorEnteredOrExitedMessage(Entity e)
+public bool RemoveOnCollisionMessage(Entity e)
 ```
 
-Set a message of type [OnActorEnteredOrExitedMessage](../../Murder/Messages/Physics/OnActorEnteredOrExitedMessage.html).
+Set a message of type [OnCollisionMessage](../../Murder/Messages/Physics/OnCollisionMessage.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -3097,19 +3435,6 @@ public bool RemoveOnInteractExitMessage(Entity e)
 ```
 
 Set a message of type [OnInteractExitMessage](../../Murder/Messages/OnInteractExitMessage.html).
-
-**Parameters** \
-`e` [Entity](../../Bang/Entities/Entity.html) \
-
-**Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
-
-#### RemoveOnTriggerEnteredMessage(Entity)
-```csharp
-public bool RemoveOnTriggerEnteredMessage(Entity e)
-```
-
-Set a message of type [OnTriggerEnteredMessage](../../Murder/Messages/Physics/OnTriggerEnteredMessage.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -3169,6 +3494,19 @@ Removes the component of type [PathfindComponent](../../Murder/Components/Pathfi
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### RemovePathfindGrid(Entity)
+```csharp
+public bool RemovePathfindGrid(Entity e)
+```
+
+Removes the component of type [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### RemovePathNotPossibleMessage(Entity)
 ```csharp
 public bool RemovePathNotPossibleMessage(Entity e)
@@ -3188,6 +3526,19 @@ public bool RemovePauseAnimation(Entity e)
 ```
 
 Removes the component of type [PauseAnimationComponent](../../Murder/Components/PauseAnimationComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemovePersistPathfind(Entity)
+```csharp
+public bool RemovePersistPathfind(Entity e)
+```
+
+Removes the component of type [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -3572,6 +3923,45 @@ Removes the component of type [SpriteComponent](../../Murder/Components/SpriteCo
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### RemoveSpriteClippingRect(Entity)
+```csharp
+public bool RemoveSpriteClippingRect(Entity e)
+```
+
+Removes the component of type [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveSpriteFacing(Entity)
+```csharp
+public bool RemoveSpriteFacing(Entity e)
+```
+
+Removes the component of type [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveSpriteOffset(Entity)
+```csharp
+public bool RemoveSpriteOffset(Entity e)
+```
+
+Removes the component of type [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### RemoveSquish(Entity)
 ```csharp
 public bool RemoveSquish(Entity e)
@@ -3637,12 +4027,38 @@ Removes the component of type [TagsComponent](../../Murder/Components/Utilities/
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### RemoveTethered(Entity)
+```csharp
+public bool RemoveTethered(Entity e)
+```
+
+Removes the component of type [TetheredComponent](../../Murder/Components/TetheredComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### RemoveTexture(Entity)
 ```csharp
 public bool RemoveTexture(Entity e)
 ```
 
 Removes the component of type [TextureComponent](../../Murder/Components/TextureComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveThetherSnapMessage(Entity)
+```csharp
+public bool RemoveThetherSnapMessage(Entity e)
+```
+
+Set a message of type [ThetherSnapMessage](../../Murder/Messages/ThetherSnapMessage.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -3689,6 +4105,19 @@ Removes the component of type [TilesetComponent](../../Murder/Components/Tileset
 **Returns** \
 [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
+#### RemoveTimeScale(Entity)
+```csharp
+public bool RemoveTimeScale(Entity e)
+```
+
+Removes the component of type [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### RemoveTint(Entity)
 ```csharp
 public bool RemoveTint(Entity e)
@@ -3708,6 +4137,19 @@ public bool RemoveTouchedGroundMessage(Entity e)
 ```
 
 Set a message of type [TouchedGroundMessage](../../Murder/Messages/TouchedGroundMessage.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveTween(Entity)
+```csharp
+public bool RemoveTween(Entity e)
+```
+
+Removes the component of type [TweenComponent](../../Murder/Components/TweenComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -3747,6 +4189,19 @@ public bool RemoveVelocity(Entity e)
 ```
 
 Removes the component of type [VelocityComponent](../../Murder/Components/VelocityComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
+#### RemoveVelocityTowardsFacing(Entity)
+```csharp
+public bool RemoveVelocityTowardsFacing(Entity e)
+```
+
+Removes the component of type [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -3798,13 +4253,13 @@ Removes the component of type [WindowRefreshTrackerComponent](../../Murder/Compo
 public BounceAmountComponent GetBounceAmount(Entity e)
 ```
 
-Gets a component of type [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html).
+Gets a component of type [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
 **Returns** \
-[BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html) \
+[BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html) \
 
 #### GetCameraFollow(Entity)
 ```csharp
@@ -3831,6 +4286,19 @@ Gets a component of type [CarveComponent](../../Murder/Components/CarveComponent
 
 **Returns** \
 [CarveComponent](../../Murder/Components/CarveComponent.html) \
+
+#### GetChildTarget(Entity)
+```csharp
+public ChildTargetComponent GetChildTarget(Entity e)
+```
+
+Gets a component of type [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html) \
 
 #### GetChoice(Entity)
 ```csharp
@@ -3870,6 +4338,19 @@ Gets a component of type [CollisionCacheComponent](../../Murder/Components/Colli
 
 **Returns** \
 [CollisionCacheComponent](../../Murder/Components/CollisionCacheComponent.html) \
+
+#### GetCreatedAt(Entity)
+```csharp
+public CreatedAtComponent GetCreatedAt(Entity e)
+```
+
+Gets a component of type [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html) \
 
 #### GetCustomCollisionMask(Entity)
 ```csharp
@@ -3935,6 +4416,19 @@ Gets a component of type [CutsceneAnchorsEditorComponent](../../Murder/Component
 
 **Returns** \
 [CutsceneAnchorsEditorComponent](../../Murder/Components/Serialization/CutsceneAnchorsEditorComponent.html) \
+
+#### GetDestroyAfterSeconds(Entity)
+```csharp
+public DestroyAfterSecondsComponent GetDestroyAfterSeconds(Entity e)
+```
+
+Gets a component of type [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html) \
 
 #### GetDestroyAtTime(Entity)
 ```csharp
@@ -4040,6 +4534,19 @@ Gets a component of type [DisableSceneTransitionEffectsComponent](../../Murder/C
 **Returns** \
 [DisableSceneTransitionEffectsComponent](../../Murder/Components/DisableSceneTransitionEffectsComponent.html) \
 
+#### GetDoNotLoop(Entity)
+```csharp
+public DoNotLoopComponent GetDoNotLoop(Entity e)
+```
+
+Gets a component of type [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html) \
+
 #### GetDoNotPause(Entity)
 ```csharp
 public DoNotPauseComponent GetDoNotPause(Entity e)
@@ -4121,16 +4628,16 @@ Adds or replaces the component of type [AgentImpulseComponent](../../Murder/Comp
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
-#### WithAgentSpeedMultiplier(Entity, AgentSpeedMultiplier)
+#### WithAgentSpeedMultiplier(Entity, AgentSpeedMultiplierComponent)
 ```csharp
-public Entity WithAgentSpeedMultiplier(Entity e, AgentSpeedMultiplier component)
+public Entity WithAgentSpeedMultiplier(Entity e, AgentSpeedMultiplierComponent component)
 ```
 
-Adds or replaces the component of type [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html).
+Adds or replaces the component of type [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
-`component` [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html) \
+`component` [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -4247,16 +4754,30 @@ Adds or replaces the component of type [AnimationSpeedOverload](../../Murder/Com
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
-#### WithAttackMultiplier(Entity, AttackMultiplier)
+#### WithAnimationStarted(Entity, AnimationStartedComponent)
 ```csharp
-public Entity WithAttackMultiplier(Entity e, AttackMultiplier component)
+public Entity WithAnimationStarted(Entity e, AnimationStartedComponent component)
 ```
 
-Adds or replaces the component of type [AttackMultiplier](../../Murder/Components/AttackMultiplier.html).
+Adds or replaces the component of type [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
-`component` [AttackMultiplier](../../Murder/Components/AttackMultiplier.html) \
+`component` [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithAutomaticNextDialogue(Entity, AutomaticNextDialogueComponent)
+```csharp
+public Entity WithAutomaticNextDialogue(Entity e, AutomaticNextDialogueComponent component)
+```
+
+Adds or replaces the component of type [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -4266,11 +4787,11 @@ Adds or replaces the component of type [AttackMultiplier](../../Murder/Component
 public Entity WithBounceAmount(Entity e, BounceAmountComponent component)
 ```
 
-Adds or replaces the component of type [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html).
+Adds or replaces the component of type [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
-`component` [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html) \
+`component` [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -4299,6 +4820,20 @@ Adds or replaces the component of type [CarveComponent](../../Murder/Components/
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [CarveComponent](../../Murder/Components/CarveComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithChildTarget(Entity, ChildTargetComponent)
+```csharp
+public Entity WithChildTarget(Entity e, ChildTargetComponent component)
+```
+
+Adds or replaces the component of type [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -4341,6 +4876,20 @@ Adds or replaces the component of type [CollisionCacheComponent](../../Murder/Co
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [CollisionCacheComponent](../../Murder/Components/CollisionCacheComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithCreatedAt(Entity, CreatedAtComponent)
+```csharp
+public Entity WithCreatedAt(Entity e, CreatedAtComponent component)
+```
+
+Adds or replaces the component of type [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -4411,6 +4960,20 @@ Adds or replaces the component of type [CutsceneAnchorsEditorComponent](../../Mu
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [CutsceneAnchorsEditorComponent](../../Murder/Components/Serialization/CutsceneAnchorsEditorComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithDestroyAfterSeconds(Entity, DestroyAfterSecondsComponent)
+```csharp
+public Entity WithDestroyAfterSeconds(Entity e, DestroyAfterSecondsComponent component)
+```
+
+Adds or replaces the component of type [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -4527,6 +5090,20 @@ Adds or replaces the component of type [DisableSceneTransitionEffectsComponent](
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
+#### WithDoNotLoop(Entity, DoNotLoopComponent)
+```csharp
+public Entity WithDoNotLoop(Entity e, DoNotLoopComponent component)
+```
+
+Adds or replaces the component of type [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
 #### WithDoNotPause(Entity, DoNotPauseComponent)
 ```csharp
 public Entity WithDoNotPause(Entity e, DoNotPauseComponent component)
@@ -4635,6 +5212,20 @@ Adds or replaces the component of type [FadeScreenComponent](../../Murder/Compon
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [FadeScreenComponent](../../Murder/Components/FadeScreenComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithFadeScreenWithSolidColor(Entity, FadeScreenWithSolidColorComponent)
+```csharp
+public Entity WithFadeScreenWithSolidColor(Entity e, FadeScreenWithSolidColorComponent component)
+```
+
+Adds or replaces the component of type [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -4877,6 +5468,20 @@ Adds or replaces the component of type [IgnoreTriggersUntilComponent](../../Murd
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
+#### WithIgnoreUntil(Entity, IgnoreUntilComponent)
+```csharp
+public Entity WithIgnoreUntil(Entity e, IgnoreUntilComponent component)
+```
+
+Adds or replaces the component of type [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
 #### WithInCamera(Entity, InCameraComponent)
 ```csharp
 public Entity WithInCamera(Entity e, InCameraComponent component)
@@ -5087,6 +5692,20 @@ Adds or replaces the component of type [MoveToPerfectComponent](../../Murder/Com
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
+#### WithMoveToTarget(Entity, MoveToTargetComponent)
+```csharp
+public Entity WithMoveToTarget(Entity e, MoveToTargetComponent component)
+```
+
+Adds or replaces the component of type [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
 #### WithMusic(Entity, MusicComponent)
 ```csharp
 public Entity WithMusic(Entity e, MusicComponent component)
@@ -5199,6 +5818,20 @@ Adds or replaces the component of type [PathfindComponent](../../Murder/Componen
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
+#### WithPathfindGrid(Entity, PathfindGridComponent)
+```csharp
+public Entity WithPathfindGrid(Entity e, PathfindGridComponent component)
+```
+
+Adds or replaces the component of type [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
 #### WithPauseAnimation(Entity, PauseAnimationComponent)
 ```csharp
 public Entity WithPauseAnimation(Entity e, PauseAnimationComponent component)
@@ -5209,6 +5842,20 @@ Adds or replaces the component of type [PauseAnimationComponent](../../Murder/Co
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [PauseAnimationComponent](../../Murder/Components/PauseAnimationComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithPersistPathfind(Entity, PersistPathfindComponent)
+```csharp
+public Entity WithPersistPathfind(Entity e, PersistPathfindComponent component)
+```
+
+Adds or replaces the component of type [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -5605,6 +6252,48 @@ Adds or replaces the component of type [SpriteComponent](../../Murder/Components
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
+#### WithSpriteClippingRect(Entity, SpriteClippingRectComponent)
+```csharp
+public Entity WithSpriteClippingRect(Entity e, SpriteClippingRectComponent component)
+```
+
+Adds or replaces the component of type [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithSpriteFacing(Entity, SpriteFacingComponent)
+```csharp
+public Entity WithSpriteFacing(Entity e, SpriteFacingComponent component)
+```
+
+Adds or replaces the component of type [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithSpriteOffset(Entity, SpriteOffsetComponent)
+```csharp
+public Entity WithSpriteOffset(Entity e, SpriteOffsetComponent component)
+```
+
+Adds or replaces the component of type [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
 #### WithSquish(Entity, SquishComponent)
 ```csharp
 public Entity WithSquish(Entity e, SquishComponent component)
@@ -5675,6 +6364,20 @@ Adds or replaces the component of type [TagsComponent](../../Murder/Components/U
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
+#### WithTethered(Entity, TetheredComponent)
+```csharp
+public Entity WithTethered(Entity e, TetheredComponent component)
+```
+
+Adds or replaces the component of type [TetheredComponent](../../Murder/Components/TetheredComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [TetheredComponent](../../Murder/Components/TetheredComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
 #### WithTexture(Entity, TextureComponent)
 ```csharp
 public Entity WithTexture(Entity e, TextureComponent component)
@@ -5731,6 +6434,20 @@ Adds or replaces the component of type [TilesetComponent](../../Murder/Component
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
 
+#### WithTimeScale(Entity, TimeScaleComponent)
+```csharp
+public Entity WithTimeScale(Entity e, TimeScaleComponent component)
+```
+
+Adds or replaces the component of type [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
 #### WithTint(Entity, TintComponent)
 ```csharp
 public Entity WithTint(Entity e, TintComponent component)
@@ -5741,6 +6458,20 @@ Adds or replaces the component of type [TintComponent](../../Murder/Components/G
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [TintComponent](../../Murder/Components/Graphics/TintComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithTween(Entity, TweenComponent)
+```csharp
+public Entity WithTween(Entity e, TweenComponent component)
+```
+
+Adds or replaces the component of type [TweenComponent](../../Murder/Components/TweenComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [TweenComponent](../../Murder/Components/TweenComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -5783,6 +6514,20 @@ Adds or replaces the component of type [VelocityComponent](../../Murder/Componen
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [VelocityComponent](../../Murder/Components/VelocityComponent.html) \
+
+**Returns** \
+[Entity](../../Bang/Entities/Entity.html) \
+
+#### WithVelocityTowardsFacing(Entity, VelocityTowardsFacingComponent)
+```csharp
+public Entity WithVelocityTowardsFacing(Entity e, VelocityTowardsFacingComponent component)
+```
+
+Adds or replaces the component of type [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html) \
 
 **Returns** \
 [Entity](../../Bang/Entities/Entity.html) \
@@ -5893,6 +6638,19 @@ Gets a component of type [FadeScreenComponent](../../Murder/Components/FadeScree
 
 **Returns** \
 [FadeScreenComponent](../../Murder/Components/FadeScreenComponent.html) \
+
+#### GetFadeScreenWithSolidColor(Entity)
+```csharp
+public FadeScreenWithSolidColorComponent GetFadeScreenWithSolidColor(Entity e)
+```
+
+Gets a component of type [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html) \
 
 #### GetFadeTransition(Entity)
 ```csharp
@@ -6115,6 +6873,19 @@ Gets a component of type [IgnoreTriggersUntilComponent](../../Murder/Components/
 **Returns** \
 [IgnoreTriggersUntilComponent](../../Murder/Components/IgnoreTriggersUntilComponent.html) \
 
+#### GetIgnoreUntil(Entity)
+```csharp
+public IgnoreUntilComponent GetIgnoreUntil(Entity e)
+```
+
+Gets a component of type [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html) \
+
 #### GetInCamera(Entity)
 ```csharp
 public InCameraComponent GetInCamera(Entity e)
@@ -6310,6 +7081,19 @@ Gets a component of type [MoveToPerfectComponent](../../Murder/Components/MoveTo
 **Returns** \
 [MoveToPerfectComponent](../../Murder/Components/MoveToPerfectComponent.html) \
 
+#### GetMoveToTarget(Entity)
+```csharp
+public MoveToTargetComponent GetMoveToTarget(Entity e)
+```
+
+Gets a component of type [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html) \
+
 #### GetMusic(Entity)
 ```csharp
 public MusicComponent GetMusic(Entity e)
@@ -6414,6 +7198,19 @@ Gets a component of type [PathfindComponent](../../Murder/Components/PathfindCom
 **Returns** \
 [PathfindComponent](../../Murder/Components/PathfindComponent.html) \
 
+#### GetPathfindGrid(Entity)
+```csharp
+public PathfindGridComponent GetPathfindGrid(Entity e)
+```
+
+Gets a component of type [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html) \
+
 #### GetPauseAnimation(Entity)
 ```csharp
 public PauseAnimationComponent GetPauseAnimation(Entity e)
@@ -6426,6 +7223,19 @@ Gets a component of type [PauseAnimationComponent](../../Murder/Components/Pause
 
 **Returns** \
 [PauseAnimationComponent](../../Murder/Components/PauseAnimationComponent.html) \
+
+#### GetPersistPathfind(Entity)
+```csharp
+public PersistPathfindComponent GetPersistPathfind(Entity e)
+```
+
+Gets a component of type [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html) \
 
 #### GetPickEntityToAddOnStart(Entity)
 ```csharp
@@ -6778,6 +7588,19 @@ Gets a component of type [SpeakerComponent](../../Murder/Components/SpeakerCompo
 **Returns** \
 [SpeakerComponent](../../Murder/Components/SpeakerComponent.html) \
 
+#### GetSpriteClippingRect(Entity)
+```csharp
+public SpriteClippingRectComponent GetSpriteClippingRect(Entity e)
+```
+
+Gets a component of type [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html) \
+
 #### GetSprite(Entity)
 ```csharp
 public SpriteComponent GetSprite(Entity e)
@@ -6790,6 +7613,32 @@ Gets a component of type [SpriteComponent](../../Murder/Components/SpriteCompone
 
 **Returns** \
 [SpriteComponent](../../Murder/Components/SpriteComponent.html) \
+
+#### GetSpriteFacing(Entity)
+```csharp
+public SpriteFacingComponent GetSpriteFacing(Entity e)
+```
+
+Gets a component of type [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html) \
+
+#### GetSpriteOffset(Entity)
+```csharp
+public SpriteOffsetComponent GetSpriteOffset(Entity e)
+```
+
+Gets a component of type [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html) \
 
 #### GetSquish(Entity)
 ```csharp
@@ -6887,7 +7736,7 @@ Gets a [AgentImpulseComponent](../../Murder/Components/AgentImpulseComponent.htm
 public T? TryGetAgentSpeedMultiplier(Entity e)
 ```
 
-Gets a [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html) if the entity has one, otherwise returns null.
+Gets a [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -6999,12 +7848,25 @@ Gets a [AnimationSpeedOverload](../../Murder/Components/AnimationSpeedOverload.h
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
-#### TryGetAttackMultiplier(Entity)
+#### TryGetAnimationStarted(Entity)
 ```csharp
-public T? TryGetAttackMultiplier(Entity e)
+public T? TryGetAnimationStarted(Entity e)
 ```
 
-Gets a [AttackMultiplier](../../Murder/Components/AttackMultiplier.html) if the entity has one, otherwise returns null.
+Gets a [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetAutomaticNextDialogue(Entity)
+```csharp
+public T? TryGetAutomaticNextDialogue(Entity e)
+```
+
+Gets a [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -7017,7 +7879,7 @@ Gets a [AttackMultiplier](../../Murder/Components/AttackMultiplier.html) if the 
 public T? TryGetBounceAmount(Entity e)
 ```
 
-Gets a [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html) if the entity has one, otherwise returns null.
+Gets a [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -7044,6 +7906,19 @@ public T? TryGetCarve(Entity e)
 ```
 
 Gets a [CarveComponent](../../Murder/Components/CarveComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetChildTarget(Entity)
+```csharp
+public T? TryGetChildTarget(Entity e)
+```
+
+Gets a [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -7083,6 +7958,19 @@ public T? TryGetCollisionCache(Entity e)
 ```
 
 Gets a [CollisionCacheComponent](../../Murder/Components/CollisionCacheComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetCreatedAt(Entity)
+```csharp
+public T? TryGetCreatedAt(Entity e)
+```
+
+Gets a [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -7148,6 +8036,19 @@ public T? TryGetCutsceneAnchorsEditor(Entity e)
 ```
 
 Gets a [CutsceneAnchorsEditorComponent](../../Murder/Components/Serialization/CutsceneAnchorsEditorComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetDestroyAfterSeconds(Entity)
+```csharp
+public T? TryGetDestroyAfterSeconds(Entity e)
+```
+
+Gets a [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -7259,6 +8160,19 @@ Gets a [DisableSceneTransitionEffectsComponent](../../Murder/Components/DisableS
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
+#### TryGetDoNotLoop(Entity)
+```csharp
+public T? TryGetDoNotLoop(Entity e)
+```
+
+Gets a [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
 #### TryGetDoNotPause(Entity)
 ```csharp
 public T? TryGetDoNotPause(Entity e)
@@ -7356,6 +8270,19 @@ public T? TryGetFadeScreen(Entity e)
 ```
 
 Gets a [FadeScreenComponent](../../Murder/Components/FadeScreenComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetFadeScreenWithSolidColor(Entity)
+```csharp
+public T? TryGetFadeScreenWithSolidColor(Entity e)
+```
+
+Gets a [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -7584,6 +8511,19 @@ Gets a [IgnoreTriggersUntilComponent](../../Murder/Components/IgnoreTriggersUnti
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
+#### TryGetIgnoreUntil(Entity)
+```csharp
+public T? TryGetIgnoreUntil(Entity e)
+```
+
+Gets a [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
 #### TryGetInCamera(Entity)
 ```csharp
 public T? TryGetInCamera(Entity e)
@@ -7779,6 +8719,19 @@ Gets a [MoveToPerfectComponent](../../Murder/Components/MoveToPerfectComponent.h
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
+#### TryGetMoveToTarget(Entity)
+```csharp
+public T? TryGetMoveToTarget(Entity e)
+```
+
+Gets a [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
 #### TryGetMusic(Entity)
 ```csharp
 public T? TryGetMusic(Entity e)
@@ -7883,12 +8836,38 @@ Gets a [PathfindComponent](../../Murder/Components/PathfindComponent.html) if th
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
+#### TryGetPathfindGrid(Entity)
+```csharp
+public T? TryGetPathfindGrid(Entity e)
+```
+
+Gets a [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
 #### TryGetPauseAnimation(Entity)
 ```csharp
 public T? TryGetPauseAnimation(Entity e)
 ```
 
 Gets a [PauseAnimationComponent](../../Murder/Components/PauseAnimationComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetPersistPathfind(Entity)
+```csharp
+public T? TryGetPersistPathfind(Entity e)
+```
+
+Gets a [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -8260,6 +9239,45 @@ Gets a [SpriteComponent](../../Murder/Components/SpriteComponent.html) if the en
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
+#### TryGetSpriteClippingRect(Entity)
+```csharp
+public T? TryGetSpriteClippingRect(Entity e)
+```
+
+Gets a [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetSpriteFacing(Entity)
+```csharp
+public T? TryGetSpriteFacing(Entity e)
+```
+
+Gets a [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetSpriteOffset(Entity)
+```csharp
+public T? TryGetSpriteOffset(Entity e)
+```
+
+Gets a [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
 #### TryGetSquish(Entity)
 ```csharp
 public T? TryGetSquish(Entity e)
@@ -8325,6 +9343,19 @@ Gets a [TagsComponent](../../Murder/Components/Utilities/TagsComponent.html) if 
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
+#### TryGetTethered(Entity)
+```csharp
+public T? TryGetTethered(Entity e)
+```
+
+Gets a [TetheredComponent](../../Murder/Components/TetheredComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
 #### TryGetTexture(Entity)
 ```csharp
 public T? TryGetTexture(Entity e)
@@ -8377,12 +9408,38 @@ Gets a [TilesetComponent](../../Murder/Components/TilesetComponent.html) if the 
 **Returns** \
 [T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
 
+#### TryGetTimeScale(Entity)
+```csharp
+public T? TryGetTimeScale(Entity e)
+```
+
+Gets a [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
 #### TryGetTint(Entity)
 ```csharp
 public T? TryGetTint(Entity e)
 ```
 
 Gets a [TintComponent](../../Murder/Components/Graphics/TintComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetTween(Entity)
+```csharp
+public T? TryGetTween(Entity e)
+```
+
+Gets a [TweenComponent](../../Murder/Components/TweenComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -8422,6 +9479,19 @@ public T? TryGetVelocity(Entity e)
 ```
 
 Gets a [VelocityComponent](../../Murder/Components/VelocityComponent.html) if the entity has one, otherwise returns null.
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[T?](https://learn.microsoft.com/en-us/dotnet/api/System.Nullable-1?view=net-7.0) \
+
+#### TryGetVelocityTowardsFacing(Entity)
+```csharp
+public T? TryGetVelocityTowardsFacing(Entity e)
+```
+
+Gets a [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html) if the entity has one, otherwise returns null.
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -8481,6 +9551,19 @@ Gets a component of type [TagsComponent](../../Murder/Components/Utilities/TagsC
 **Returns** \
 [TagsComponent](../../Murder/Components/Utilities/TagsComponent.html) \
 
+#### GetTethered(Entity)
+```csharp
+public TetheredComponent GetTethered(Entity e)
+```
+
+Gets a component of type [TetheredComponent](../../Murder/Components/TetheredComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[TetheredComponent](../../Murder/Components/TetheredComponent.html) \
+
 #### GetTexture(Entity)
 ```csharp
 public TextureComponent GetTexture(Entity e)
@@ -8533,6 +9616,19 @@ Gets a component of type [TilesetComponent](../../Murder/Components/TilesetCompo
 **Returns** \
 [TilesetComponent](../../Murder/Components/TilesetComponent.html) \
 
+#### GetTimeScale(Entity)
+```csharp
+public TimeScaleComponent GetTimeScale(Entity e)
+```
+
+Gets a component of type [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html) \
+
 #### GetTint(Entity)
 ```csharp
 public TintComponent GetTint(Entity e)
@@ -8545,6 +9641,19 @@ Gets a component of type [TintComponent](../../Murder/Components/Graphics/TintCo
 
 **Returns** \
 [TintComponent](../../Murder/Components/Graphics/TintComponent.html) \
+
+#### GetTween(Entity)
+```csharp
+public TweenComponent GetTween(Entity e)
+```
+
+Gets a component of type [TweenComponent](../../Murder/Components/TweenComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[TweenComponent](../../Murder/Components/TweenComponent.html) \
 
 #### GetUiDisplay(Entity)
 ```csharp
@@ -8584,6 +9693,19 @@ Gets a component of type [VelocityComponent](../../Murder/Components/VelocityCom
 
 **Returns** \
 [VelocityComponent](../../Murder/Components/VelocityComponent.html) \
+
+#### GetVelocityTowardsFacing(Entity)
+```csharp
+public VelocityTowardsFacingComponent GetVelocityTowardsFacing(Entity e)
+```
+
+Gets a component of type [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+**Returns** \
+[VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html) \
 
 #### GetVerticalPosition(Entity)
 ```csharp
@@ -8823,35 +9945,35 @@ Send a message of type [NextDialogMessage](../../Murder/Messages/NextDialogMessa
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
-#### SendOnActorEnteredOrExitedMessage(Entity, OnActorEnteredOrExitedMessage)
+#### SendOnCollisionMessage(Entity, OnCollisionMessage)
 ```csharp
-public void SendOnActorEnteredOrExitedMessage(Entity e, OnActorEnteredOrExitedMessage message)
+public void SendOnCollisionMessage(Entity e, OnCollisionMessage message)
 ```
 
-Send a message of type [OnActorEnteredOrExitedMessage](../../Murder/Messages/Physics/OnActorEnteredOrExitedMessage.html).
+Send a message of type [OnCollisionMessage](../../Murder/Messages/Physics/OnCollisionMessage.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
-`message` [OnActorEnteredOrExitedMessage](../../Murder/Messages/Physics/OnActorEnteredOrExitedMessage.html) \
+`message` [OnCollisionMessage](../../Murder/Messages/Physics/OnCollisionMessage.html) \
 
-#### SendOnActorEnteredOrExitedMessage(Entity, int, CollisionDirection)
+#### SendOnCollisionMessage(Entity, int, CollisionDirection)
 ```csharp
-public void SendOnActorEnteredOrExitedMessage(Entity e, int actorId, CollisionDirection movement)
+public void SendOnCollisionMessage(Entity e, int triggerId, CollisionDirection movement)
 ```
 
-Send a message of type [OnActorEnteredOrExitedMessage](../../Murder/Messages/Physics/OnActorEnteredOrExitedMessage.html).
+Send a message of type [OnCollisionMessage](../../Murder/Messages/Physics/OnCollisionMessage.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
-`actorId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`triggerId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `movement` [CollisionDirection](../../Murder/Utilities/CollisionDirection.html) \
 
-#### SendOnActorEnteredOrExitedMessage(Entity)
+#### SendOnCollisionMessage(Entity)
 ```csharp
-public void SendOnActorEnteredOrExitedMessage(Entity e)
+public void SendOnCollisionMessage(Entity e)
 ```
 
-Send a message of type [OnActorEnteredOrExitedMessage](../../Murder/Messages/Physics/OnActorEnteredOrExitedMessage.html).
+Send a message of type [OnCollisionMessage](../../Murder/Messages/Physics/OnCollisionMessage.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -8873,39 +9995,6 @@ public void SendOnInteractExitMessage(Entity e)
 ```
 
 Send a message of type [OnInteractExitMessage](../../Murder/Messages/OnInteractExitMessage.html).
-
-**Parameters** \
-`e` [Entity](../../Bang/Entities/Entity.html) \
-
-#### SendOnTriggerEnteredMessage(Entity, OnTriggerEnteredMessage)
-```csharp
-public void SendOnTriggerEnteredMessage(Entity e, OnTriggerEnteredMessage message)
-```
-
-Send a message of type [OnTriggerEnteredMessage](../../Murder/Messages/Physics/OnTriggerEnteredMessage.html).
-
-**Parameters** \
-`e` [Entity](../../Bang/Entities/Entity.html) \
-`message` [OnTriggerEnteredMessage](../../Murder/Messages/Physics/OnTriggerEnteredMessage.html) \
-
-#### SendOnTriggerEnteredMessage(Entity, int, CollisionDirection)
-```csharp
-public void SendOnTriggerEnteredMessage(Entity e, int triggerId, CollisionDirection movement)
-```
-
-Send a message of type [OnTriggerEnteredMessage](../../Murder/Messages/Physics/OnTriggerEnteredMessage.html).
-
-**Parameters** \
-`e` [Entity](../../Bang/Entities/Entity.html) \
-`triggerId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-`movement` [CollisionDirection](../../Murder/Utilities/CollisionDirection.html) \
-
-#### SendOnTriggerEnteredMessage(Entity)
-```csharp
-public void SendOnTriggerEnteredMessage(Entity e)
-```
-
-Send a message of type [OnTriggerEnteredMessage](../../Murder/Messages/Physics/OnTriggerEnteredMessage.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -8970,6 +10059,38 @@ public void SendPickChoiceMessage(Entity e)
 ```
 
 Send a message of type [PickChoiceMessage](../../Murder/Messages/PickChoiceMessage.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SendThetherSnapMessage(Entity, ThetherSnapMessage)
+```csharp
+public void SendThetherSnapMessage(Entity e, ThetherSnapMessage message)
+```
+
+Send a message of type [ThetherSnapMessage](../../Murder/Messages/ThetherSnapMessage.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`message` [ThetherSnapMessage](../../Murder/Messages/ThetherSnapMessage.html) \
+
+#### SendThetherSnapMessage(Entity, int)
+```csharp
+public void SendThetherSnapMessage(Entity e, int attachedEntityId)
+```
+
+Send a message of type [ThetherSnapMessage](../../Murder/Messages/ThetherSnapMessage.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`attachedEntityId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+#### SendThetherSnapMessage(Entity)
+```csharp
+public void SendThetherSnapMessage(Entity e)
+```
+
+Send a message of type [ThetherSnapMessage](../../Murder/Messages/ThetherSnapMessage.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -9094,26 +10215,27 @@ Adds or replaces the component of type [AgentImpulseComponent](../../Murder/Comp
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
-#### SetAgentSpeedMultiplier(Entity, AgentSpeedMultiplier)
+#### SetAgentSpeedMultiplier(Entity, AgentSpeedMultiplierComponent)
 ```csharp
-public void SetAgentSpeedMultiplier(Entity e, AgentSpeedMultiplier component)
+public void SetAgentSpeedMultiplier(Entity e, AgentSpeedMultiplierComponent component)
 ```
 
-Adds or replaces the component of type [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html).
+Adds or replaces the component of type [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
-`component` [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html) \
+`component` [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html) \
 
-#### SetAgentSpeedMultiplier(Entity, float)
+#### SetAgentSpeedMultiplier(Entity, int, float)
 ```csharp
-public void SetAgentSpeedMultiplier(Entity e, float speedMultiplier)
+public void SetAgentSpeedMultiplier(Entity e, int slot, float speedMultiplier)
 ```
 
-Adds or replaces the component of type [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html).
+Adds or replaces the component of type [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
+`slot` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 `speedMultiplier` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### SetAgentSpeedMultiplier(Entity)
@@ -9121,7 +10243,7 @@ Adds or replaces the component of type [AgentSpeedMultiplier](../../Murder/Compo
 public void SetAgentSpeedMultiplier(Entity e)
 ```
 
-Adds or replaces the component of type [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html).
+Adds or replaces the component of type [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -9495,34 +10617,55 @@ Adds or replaces the component of type [AnimationSpeedOverload](../../Murder/Com
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
-#### SetAttackMultiplier(Entity, AttackMultiplier)
+#### SetAnimationStarted(Entity, AnimationStartedComponent)
 ```csharp
-public void SetAttackMultiplier(Entity e, AttackMultiplier component)
+public void SetAnimationStarted(Entity e, AnimationStartedComponent component)
 ```
 
-Adds or replaces the component of type [AttackMultiplier](../../Murder/Components/AttackMultiplier.html).
+Adds or replaces the component of type [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
-`component` [AttackMultiplier](../../Murder/Components/AttackMultiplier.html) \
+`component` [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html) \
 
-#### SetAttackMultiplier(Entity, float)
+#### SetAnimationStarted(Entity, float)
 ```csharp
-public void SetAttackMultiplier(Entity e, float multiplier)
+public void SetAnimationStarted(Entity e, float startTime)
 ```
 
-Adds or replaces the component of type [AttackMultiplier](../../Murder/Components/AttackMultiplier.html).
+Adds or replaces the component of type [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
-`multiplier` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`startTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
-#### SetAttackMultiplier(Entity)
+#### SetAnimationStarted(Entity)
 ```csharp
-public void SetAttackMultiplier(Entity e)
+public void SetAnimationStarted(Entity e)
 ```
 
-Adds or replaces the component of type [AttackMultiplier](../../Murder/Components/AttackMultiplier.html).
+Adds or replaces the component of type [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetAutomaticNextDialogue(Entity, AutomaticNextDialogueComponent)
+```csharp
+public void SetAutomaticNextDialogue(Entity e, AutomaticNextDialogueComponent component)
+```
+
+Adds or replaces the component of type [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html) \
+
+#### SetAutomaticNextDialogue(Entity)
+```csharp
+public void SetAutomaticNextDialogue(Entity e)
+```
+
+Adds or replaces the component of type [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -9532,18 +10675,18 @@ Adds or replaces the component of type [AttackMultiplier](../../Murder/Component
 public void SetBounceAmount(Entity e, BounceAmountComponent component)
 ```
 
-Adds or replaces the component of type [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html).
+Adds or replaces the component of type [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
-`component` [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html) \
+`component` [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html) \
 
 #### SetBounceAmount(Entity, float, float)
 ```csharp
 public void SetBounceAmount(Entity e, float bounciness, float gravity)
 ```
 
-Adds or replaces the component of type [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html).
+Adds or replaces the component of type [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -9555,7 +10698,7 @@ Adds or replaces the component of type [BounceAmountComponent](../../Murder/Comp
 public void SetBounceAmount(Entity e)
 ```
 
-Adds or replaces the component of type [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html).
+Adds or replaces the component of type [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -9658,6 +10801,27 @@ public void SetCarve(Entity e)
 ```
 
 Adds or replaces the component of type [CarveComponent](../../Murder/Components/CarveComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetChildTarget(Entity, ChildTargetComponent)
+```csharp
+public void SetChildTarget(Entity e, ChildTargetComponent component)
+```
+
+Adds or replaces the component of type [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html) \
+
+#### SetChildTarget(Entity)
+```csharp
+public void SetChildTarget(Entity e)
+```
+
+Adds or replaces the component of type [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -9778,6 +10942,38 @@ public void SetCollisionCache(Entity e)
 ```
 
 Adds or replaces the component of type [CollisionCacheComponent](../../Murder/Components/CollisionCacheComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetCreatedAt(Entity, CreatedAtComponent)
+```csharp
+public void SetCreatedAt(Entity e, CreatedAtComponent component)
+```
+
+Adds or replaces the component of type [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html) \
+
+#### SetCreatedAt(Entity, float)
+```csharp
+public void SetCreatedAt(Entity e, float when)
+```
+
+Adds or replaces the component of type [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`when` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### SetCreatedAt(Entity)
+```csharp
+public void SetCreatedAt(Entity e)
+```
+
+Adds or replaces the component of type [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -9938,6 +11134,27 @@ Adds or replaces the component of type [CutsceneAnchorsEditorComponent](../../Mu
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
+#### SetDestroyAfterSeconds(Entity, DestroyAfterSecondsComponent)
+```csharp
+public void SetDestroyAfterSeconds(Entity e, DestroyAfterSecondsComponent component)
+```
+
+Adds or replaces the component of type [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html) \
+
+#### SetDestroyAfterSeconds(Entity)
+```csharp
+public void SetDestroyAfterSeconds(Entity e)
+```
+
+Adds or replaces the component of type [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
 #### SetDestroyAtTime(Entity, DestroyAtTimeComponent)
 ```csharp
 public void SetDestroyAtTime(Entity e, DestroyAtTimeComponent component)
@@ -10024,6 +11241,17 @@ Adds or replaces the component of type [DestroyOnBlackboardConditionComponent](.
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [DestroyOnBlackboardConditionComponent](../../Murder/Components/DestroyOnBlackboardConditionComponent.html) \
+
+#### SetDestroyOnBlackboardCondition(Entity, CriterionNode)
+```csharp
+public void SetDestroyOnBlackboardCondition(Entity e, CriterionNode node)
+```
+
+Adds or replaces the component of type [DestroyOnBlackboardConditionComponent](../../Murder/Components/DestroyOnBlackboardConditionComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`node` [CriterionNode](../../Murder/Core/Dialogs/CriterionNode.html) \
 
 #### SetDestroyOnBlackboardCondition(Entity)
 ```csharp
@@ -10151,6 +11379,27 @@ Adds or replaces the component of type [DisableSceneTransitionEffectsComponent](
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
+#### SetDoNotLoop(Entity, DoNotLoopComponent)
+```csharp
+public void SetDoNotLoop(Entity e, DoNotLoopComponent component)
+```
+
+Adds or replaces the component of type [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html) \
+
+#### SetDoNotLoop(Entity)
+```csharp
+public void SetDoNotLoop(Entity e)
+```
+
+Adds or replaces the component of type [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
 #### SetDoNotPause(Entity, DoNotPauseComponent)
 ```csharp
 public void SetDoNotPause(Entity e, DoNotPauseComponent component)
@@ -10203,6 +11452,20 @@ Adds or replaces the component of type [DrawRectangleComponent](../../Murder/Com
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [DrawRectangleComponent](../../Murder/Components/DrawRectangleComponent.html) \
+
+#### SetDrawRectangle(Entity, int, bool, Color, float)
+```csharp
+public void SetDrawRectangle(Entity e, int spriteBatch, bool fill, Color color, float offset)
+```
+
+Adds or replaces the component of type [DrawRectangleComponent](../../Murder/Components/DrawRectangleComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`spriteBatch` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`fill` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+`color` [Color](../../Murder/Core/Graphics/Color.html) \
+`offset` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### SetDrawRectangle(Entity)
 ```csharp
@@ -10319,6 +11582,17 @@ Adds or replaces the component of type [FacingComponent](../../Murder/Components
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `direction` [Direction](../../Murder/Helpers/Direction.html) \
 
+#### SetFacing(Entity, float)
+```csharp
+public void SetFacing(Entity e, float angle)
+```
+
+Adds or replaces the component of type [FacingComponent](../../Murder/Components/FacingComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`angle` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
 #### SetFacing(Entity)
 ```csharp
 public void SetFacing(Entity e)
@@ -10363,6 +11637,40 @@ public void SetFadeScreen(Entity e)
 ```
 
 Adds or replaces the component of type [FadeScreenComponent](../../Murder/Components/FadeScreenComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetFadeScreenWithSolidColor(Entity, FadeScreenWithSolidColorComponent)
+```csharp
+public void SetFadeScreenWithSolidColor(Entity e, FadeScreenWithSolidColorComponent component)
+```
+
+Adds or replaces the component of type [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html) \
+
+#### SetFadeScreenWithSolidColor(Entity, Color, FadeType, float)
+```csharp
+public void SetFadeScreenWithSolidColor(Entity e, Color color, FadeType fade, float duration)
+```
+
+Adds or replaces the component of type [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`color` [Color](../../Murder/Core/Graphics/Color.html) \
+`fade` [FadeType](../../Murder/Components/FadeType.html) \
+`duration` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### SetFadeScreenWithSolidColor(Entity)
+```csharp
+public void SetFadeScreenWithSolidColor(Entity e)
+```
+
+Adds or replaces the component of type [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -10533,16 +11841,28 @@ Adds or replaces the component of type [FreezeWorldComponent](../../Murder/Compo
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [FreezeWorldComponent](../../Murder/Components/FreezeWorldComponent.html) \
 
-#### SetFreezeWorld(Entity, int)
+#### SetFreezeWorld(Entity, float, int)
 ```csharp
-public void SetFreezeWorld(Entity e, int count)
+public void SetFreezeWorld(Entity e, float startTime, int count)
 ```
 
 Adds or replaces the component of type [FreezeWorldComponent](../../Murder/Components/FreezeWorldComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
+`startTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `count` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
+#### SetFreezeWorld(Entity, float)
+```csharp
+public void SetFreezeWorld(Entity e, float startTime)
+```
+
+Adds or replaces the component of type [FreezeWorldComponent](../../Murder/Components/FreezeWorldComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`startTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### SetFreezeWorld(Entity)
 ```csharp
@@ -10861,6 +12181,38 @@ Adds or replaces the component of type [IgnoreTriggersUntilComponent](../../Murd
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
+#### SetIgnoreUntil(Entity, IgnoreUntilComponent)
+```csharp
+public void SetIgnoreUntil(Entity e, IgnoreUntilComponent component)
+```
+
+Adds or replaces the component of type [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html) \
+
+#### SetIgnoreUntil(Entity, float)
+```csharp
+public void SetIgnoreUntil(Entity e, float until)
+```
+
+Adds or replaces the component of type [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`until` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### SetIgnoreUntil(Entity)
+```csharp
+public void SetIgnoreUntil(Entity e)
+```
+
+Adds or replaces the component of type [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
 #### SetInCamera(Entity, InCameraComponent)
 ```csharp
 public void SetInCamera(Entity e, InCameraComponent component)
@@ -10935,6 +12287,15 @@ Adds or replaces the component of type [InsideMovementModAreaComponent](../../Mu
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `area` [MovementModAreaComponent](../../Murder/Components/MovementModAreaComponent.html) \
+
+#### SetInsideMovementModArea(Entity, ImmutableArray<T>)
+```csharp
+public void SetInsideMovementModArea(Entity e, ImmutableArray<T> areas)
+```
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`areas` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
 
 #### SetInsideMovementModArea(Entity)
 ```csharp
@@ -11335,6 +12696,54 @@ Adds or replaces the component of type [MoveToPerfectComponent](../../Murder/Com
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
+#### SetMoveToTarget(Entity, MoveToTargetComponent)
+```csharp
+public void SetMoveToTarget(Entity e, MoveToTargetComponent component)
+```
+
+Adds or replaces the component of type [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html) \
+
+#### SetMoveToTarget(Entity, int, float, float, Vector2)
+```csharp
+public void SetMoveToTarget(Entity e, int target, float minDistance, float slowDownDistance, Vector2 offset)
+```
+
+Adds or replaces the component of type [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`target` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`minDistance` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`slowDownDistance` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`offset` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+#### SetMoveToTarget(Entity, int, float, float)
+```csharp
+public void SetMoveToTarget(Entity e, int target, float minDistance, float slowDownDistance)
+```
+
+Adds or replaces the component of type [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`target` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`minDistance` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`slowDownDistance` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### SetMoveToTarget(Entity)
+```csharp
+public void SetMoveToTarget(Entity e)
+```
+
+Adds or replaces the component of type [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
 #### SetMusic(Entity, MusicComponent)
 ```csharp
 public void SetMusic(Entity e, MusicComponent component)
@@ -11550,6 +12959,36 @@ Adds or replaces the component of type [PathfindComponent](../../Murder/Componen
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
+#### SetPathfindGrid(Entity, PathfindGridComponent)
+```csharp
+public void SetPathfindGrid(Entity e, PathfindGridComponent component)
+```
+
+Adds or replaces the component of type [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html) \
+
+#### SetPathfindGrid(Entity, ImmutableArray<T>)
+```csharp
+public void SetPathfindGrid(Entity e, ImmutableArray<T> cells)
+```
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`cells` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
+
+#### SetPathfindGrid(Entity)
+```csharp
+public void SetPathfindGrid(Entity e)
+```
+
+Adds or replaces the component of type [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
 #### SetPauseAnimation(Entity, PauseAnimationComponent)
 ```csharp
 public void SetPauseAnimation(Entity e, PauseAnimationComponent component)
@@ -11567,6 +13006,27 @@ public void SetPauseAnimation(Entity e)
 ```
 
 Adds or replaces the component of type [PauseAnimationComponent](../../Murder/Components/PauseAnimationComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetPersistPathfind(Entity, PersistPathfindComponent)
+```csharp
+public void SetPersistPathfind(Entity e, PersistPathfindComponent component)
+```
+
+Adds or replaces the component of type [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html) \
+
+#### SetPersistPathfind(Entity)
+```csharp
+public void SetPersistPathfind(Entity e)
+```
+
+Adds or replaces the component of type [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -11668,6 +13128,18 @@ Adds or replaces the component of type [PositionComponent](../../Murder/Componen
 `x` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `y` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `parent` [IMurderTransformComponent](../../Murder/Components/IMurderTransformComponent.html) \
+
+#### SetPosition(Entity, float, float)
+```csharp
+public void SetPosition(Entity e, float x, float y)
+```
+
+Adds or replaces the component of type [PositionComponent](../../Murder/Components/PositionComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`x` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`y` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
 #### SetPosition(Entity, Vector2)
 ```csharp
@@ -12348,6 +13820,18 @@ Adds or replaces the component of type [SpriteComponent](../../Murder/Components
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `component` [SpriteComponent](../../Murder/Components/SpriteComponent.html) \
 
+#### SetSprite(Entity, Portrait, int)
+```csharp
+public void SetSprite(Entity e, Portrait portrait, int batchId)
+```
+
+Adds or replaces the component of type [SpriteComponent](../../Murder/Components/SpriteComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`portrait` [Portrait](../../Murder/Core/Portrait.html) \
+`batchId` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+
 #### SetSprite(Entity, Portrait)
 ```csharp
 public void SetSprite(Entity e, Portrait portrait)
@@ -12359,9 +13843,9 @@ Adds or replaces the component of type [SpriteComponent](../../Murder/Components
 `e` [Entity](../../Bang/Entities/Entity.html) \
 `portrait` [Portrait](../../Murder/Core/Portrait.html) \
 
-#### SetSprite(Entity, Guid, Vector2, ImmutableArray<T>, int, bool, bool, OutlineStyle, float, int)
+#### SetSprite(Entity, Guid, Vector2, ImmutableArray<T>, int, bool, bool, OutlineStyle, int)
 ```csharp
-public void SetSprite(Entity e, Guid guid, Vector2 offset, ImmutableArray<T> id, int ySortOffset, bool rotate, bool flip, OutlineStyle highlightStyle, float startTime, int targetSpriteBatch)
+public void SetSprite(Entity e, Guid guid, Vector2 offset, ImmutableArray<T> id, int ySortOffset, bool rotate, bool flip, OutlineStyle highlightStyle, int targetSpriteBatch)
 ```
 
 **Parameters** \
@@ -12373,7 +13857,6 @@ public void SetSprite(Entity e, Guid guid, Vector2 offset, ImmutableArray<T> id,
 `rotate` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 `flip` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 `highlightStyle` [OutlineStyle](../../Murder/Core/Graphics/OutlineStyle.html) \
-`startTime` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 `targetSpriteBatch` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 
 #### SetSprite(Entity)
@@ -12382,6 +13865,105 @@ public void SetSprite(Entity e)
 ```
 
 Adds or replaces the component of type [SpriteComponent](../../Murder/Components/SpriteComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetSpriteClippingRect(Entity, SpriteClippingRectComponent)
+```csharp
+public void SetSpriteClippingRect(Entity e, SpriteClippingRectComponent component)
+```
+
+Adds or replaces the component of type [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html) \
+
+#### SetSpriteClippingRect(Entity, float, float, float, float, ClippingStyle)
+```csharp
+public void SetSpriteClippingRect(Entity e, float left, float right, float top, float down, ClippingStyle clippingStyle)
+```
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`left` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`right` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`top` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`down` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`clippingStyle` [ClippingStyle](../../Murder/Components/ClippingStyle.html) \
+
+#### SetSpriteClippingRect(Entity)
+```csharp
+public void SetSpriteClippingRect(Entity e)
+```
+
+Adds or replaces the component of type [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetSpriteFacing(Entity, SpriteFacingComponent)
+```csharp
+public void SetSpriteFacing(Entity e, SpriteFacingComponent component)
+```
+
+Adds or replaces the component of type [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html) \
+
+#### SetSpriteFacing(Entity)
+```csharp
+public void SetSpriteFacing(Entity e)
+```
+
+Adds or replaces the component of type [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetSpriteOffset(Entity, SpriteOffsetComponent)
+```csharp
+public void SetSpriteOffset(Entity e, SpriteOffsetComponent component)
+```
+
+Adds or replaces the component of type [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html) \
+
+#### SetSpriteOffset(Entity, float, float)
+```csharp
+public void SetSpriteOffset(Entity e, float x, float y)
+```
+
+Adds or replaces the component of type [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`x` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`y` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### SetSpriteOffset(Entity, Vector2)
+```csharp
+public void SetSpriteOffset(Entity e, Vector2 offset)
+```
+
+Adds or replaces the component of type [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`offset` [Vector2](https://learn.microsoft.com/en-us/dotnet/api/System.Numerics.Vector2?view=net-7.0) \
+
+#### SetSpriteOffset(Entity)
+```csharp
+public void SetSpriteOffset(Entity e)
+```
+
+Adds or replaces the component of type [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -12516,6 +14098,36 @@ public void SetTags(Entity e)
 ```
 
 Adds or replaces the component of type [TagsComponent](../../Murder/Components/Utilities/TagsComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetTethered(Entity, TetheredComponent)
+```csharp
+public void SetTethered(Entity e, TetheredComponent component)
+```
+
+Adds or replaces the component of type [TetheredComponent](../../Murder/Components/TetheredComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [TetheredComponent](../../Murder/Components/TetheredComponent.html) \
+
+#### SetTethered(Entity, ImmutableArray<T>)
+```csharp
+public void SetTethered(Entity e, ImmutableArray<T> tetherPoints)
+```
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`tetherPoints` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
+
+#### SetTethered(Entity)
+```csharp
+public void SetTethered(Entity e)
+```
+
+Adds or replaces the component of type [TetheredComponent](../../Murder/Components/TetheredComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -12663,6 +14275,38 @@ Adds or replaces the component of type [TilesetComponent](../../Murder/Component
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
 
+#### SetTimeScale(Entity, TimeScaleComponent)
+```csharp
+public void SetTimeScale(Entity e, TimeScaleComponent component)
+```
+
+Adds or replaces the component of type [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html) \
+
+#### SetTimeScale(Entity, float)
+```csharp
+public void SetTimeScale(Entity e, float scale)
+```
+
+Adds or replaces the component of type [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`scale` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### SetTimeScale(Entity)
+```csharp
+public void SetTimeScale(Entity e)
+```
+
+Adds or replaces the component of type [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
 #### SetTint(Entity, TintComponent)
 ```csharp
 public void SetTint(Entity e, TintComponent component)
@@ -12691,6 +14335,39 @@ public void SetTint(Entity e)
 ```
 
 Adds or replaces the component of type [TintComponent](../../Murder/Components/Graphics/TintComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetTween(Entity, TweenComponent)
+```csharp
+public void SetTween(Entity e, TweenComponent component)
+```
+
+Adds or replaces the component of type [TweenComponent](../../Murder/Components/TweenComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [TweenComponent](../../Murder/Components/TweenComponent.html) \
+
+#### SetTween(Entity, float, float)
+```csharp
+public void SetTween(Entity e, float timeStart, float timeEnd)
+```
+
+Adds or replaces the component of type [TweenComponent](../../Murder/Components/TweenComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`timeStart` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+`timeEnd` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
+#### SetTween(Entity)
+```csharp
+public void SetTween(Entity e)
+```
+
+Adds or replaces the component of type [TweenComponent](../../Murder/Components/TweenComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \
@@ -12777,6 +14454,27 @@ public void SetVelocity(Entity e)
 ```
 
 Adds or replaces the component of type [VelocityComponent](../../Murder/Components/VelocityComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+
+#### SetVelocityTowardsFacing(Entity, VelocityTowardsFacingComponent)
+```csharp
+public void SetVelocityTowardsFacing(Entity e, VelocityTowardsFacingComponent component)
+```
+
+Adds or replaces the component of type [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html).
+
+**Parameters** \
+`e` [Entity](../../Bang/Entities/Entity.html) \
+`component` [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html) \
+
+#### SetVelocityTowardsFacing(Entity)
+```csharp
+public void SetVelocityTowardsFacing(Entity e)
+```
+
+Adds or replaces the component of type [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html).
 
 **Parameters** \
 `e` [Entity](../../Bang/Entities/Entity.html) \

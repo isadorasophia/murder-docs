@@ -14,6 +14,16 @@ public sealed struct DrawRectangleComponent : IComponent
 public DrawRectangleComponent()
 ```
 
+```csharp
+public DrawRectangleComponent(int spriteBatch, bool fill, Color color, float offset)
+```
+
+**Parameters** \
+`spriteBatch` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`fill` [bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+`color` [Color](../../Murder/Core/Graphics/Color.html) \
+`offset` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+
 ### ⭐ Properties
 #### Color
 ```csharp

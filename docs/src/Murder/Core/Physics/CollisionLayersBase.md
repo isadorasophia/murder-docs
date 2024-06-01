@@ -50,13 +50,6 @@ public static const int HOLE;
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-#### INTERIOR
-```csharp
-public static const int INTERIOR;
-```
-
-**Returns** \
-[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### NONE
 ```csharp
 public static const int NONE;
@@ -74,6 +67,13 @@ public static const int PATHFIND;
 #### RAYIGNORE
 ```csharp
 public static const int RAYIGNORE;
+```
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### RESERVED
+```csharp
+public static const int RESERVED;
 ```
 
 **Returns** \

@@ -62,10 +62,29 @@ public virtual float GetGlobalParameter(ParameterId _)
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
-#### LoadContentAsync()
+#### FetchAllPlugins()
 ```csharp
-public virtual Task LoadContentAsync()
+public virtual ImmutableArray<T> FetchAllPlugins()
 ```
+
+**Returns** \
+[ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
+
+#### FetchAllBanks()
+```csharp
+public virtual ImmutableDictionary<TKey, TValue> FetchAllBanks()
+```
+
+**Returns** \
+[ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \
+
+#### LoadContentAsync(PackedSoundData)
+```csharp
+public virtual Task LoadContentAsync(PackedSoundData packedData)
+```
+
+**Parameters** \
+`packedData` [PackedSoundData](../../../Murder/Data/PackedSoundData.html) \
 
 **Returns** \
 [Task](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task?view=net-7.0) \

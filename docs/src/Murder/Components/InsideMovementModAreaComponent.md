@@ -17,28 +17,33 @@ public InsideMovementModAreaComponent(MovementModAreaComponent area)
 **Parameters** \
 `area` [MovementModAreaComponent](../../Murder/Components/MovementModAreaComponent.html) \
 
+```csharp
+public InsideMovementModAreaComponent(ImmutableArray<T> areas)
+```
+
+**Parameters** \
+`areas` [ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
+
 ### ⭐ Properties
-#### Orientation
+#### areas
 ```csharp
-public readonly Orientation Orientation;
+public readonly ImmutableArray<T> areas;
 ```
 
 **Returns** \
-[Orientation](../../Murder/Core/Orientation.html) \
-#### Slide
+[ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
+### ⭐ Methods
+#### AddArea(MovementModAreaComponent)
 ```csharp
-public readonly float Slide;
+public InsideMovementModAreaComponent AddArea(MovementModAreaComponent area)
 ```
 
-**Returns** \
-[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
-#### SpeedMultiplier
-```csharp
-public readonly float SpeedMultiplier;
-```
+**Parameters** \
+`area` [MovementModAreaComponent](../../Murder/Components/MovementModAreaComponent.html) \
 
 **Returns** \
-[float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
+[InsideMovementModAreaComponent](../../Murder/Components/InsideMovementModAreaComponent.html) \
+
 
 
 ⚡

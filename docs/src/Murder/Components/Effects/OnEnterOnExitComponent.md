@@ -37,6 +37,13 @@ public readonly IInteractiveComponent OnExit;
 
 **Returns** \
 [IInteractiveComponent](../../../Bang/Interactions/IInteractiveComponent.html) \
+#### Target
+```csharp
+public readonly TargetEntity Target;
+```
+
+**Returns** \
+[TargetEntity](../../../Murder/Utilities/TargetEntity.html) \
 
 
 ⚡

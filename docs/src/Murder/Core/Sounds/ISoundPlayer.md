@@ -65,12 +65,35 @@ public abstract float GetGlobalParameter(ParameterId parameter)
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 
-#### LoadContentAsync()
+#### FetchAllPlugins()
 ```csharp
-public abstract Task LoadContentAsync()
+public abstract ImmutableArray<T> FetchAllPlugins()
+```
+
+Fetch a list of all the plugins when serializing it.
+
+**Returns** \
+[ImmutableArray\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableArray-1?view=net-7.0) \
+
+#### FetchAllBanks()
+```csharp
+public abstract ImmutableDictionary<TKey, TValue> FetchAllBanks()
+```
+
+Fetch a list of all the banks when serializing it, separated by the supported platform.
+
+**Returns** \
+[ImmutableDictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Immutable.ImmutableDictionary-2?view=net-7.0) \
+
+#### LoadContentAsync(PackedSoundData)
+```csharp
+public abstract Task LoadContentAsync(PackedSoundData packedData)
 ```
 
 This will load the actual bank content asynchonously.
+
+**Parameters** \
+`packedData` [PackedSoundData](../../../Murder/Data/PackedSoundData.html) \
 
 **Returns** \
 [Task](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task?view=net-7.0) \

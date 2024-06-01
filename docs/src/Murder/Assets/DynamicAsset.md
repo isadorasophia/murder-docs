@@ -137,11 +137,6 @@ public bool TaggedForDeletion;
 protected virtual void OnModified()
 ```
 
-#### Initialize()
-```csharp
-public abstract void Initialize()
-```
-
 #### Duplicate(string)
 ```csharp
 public GameAsset Duplicate(string name)

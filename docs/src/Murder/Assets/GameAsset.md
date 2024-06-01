@@ -12,7 +12,7 @@ The GameAsset is the core functionality on how Murder Engine serializes and pers
 
 ### ⭐ Constructors
 ```csharp
-protected GameAsset()
+public GameAsset()
 ```
 
 ### ⭐ Properties

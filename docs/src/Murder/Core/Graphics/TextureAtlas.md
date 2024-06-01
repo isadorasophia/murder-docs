@@ -22,15 +22,6 @@ public TextureAtlas(string name, AtlasId id)
 `id` [AtlasId](../../../Murder/Data/AtlasId.html) \
 
 ### ⭐ Properties
-#### _entries
-```csharp
-public Dictionary<TKey, TValue> _entries;
-```
-
-Used publically only for the json serializer
-
-**Returns** \
-[Dictionary\<TKey, TValue\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2?view=net-7.0) \
 #### CountEntries
 ```csharp
 public int CountEntries { get; }
@@ -63,17 +54,6 @@ public AtlasCoordinates Get(string id)
 
 **Returns** \
 [AtlasCoordinates](../../../Murder/Core/Graphics/AtlasCoordinates.html) \
-
-#### Exist(string)
-```csharp
-public bool Exist(string id)
-```
-
-**Parameters** \
-`id` [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
-
-**Returns** \
-[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
 
 #### HasId(string)
 ```csharp
@@ -118,9 +98,9 @@ public IEnumerable<T> GetAllEntries()
 **Returns** \
 [IEnumerable\<T\>](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1?view=net-7.0) \
 
-#### CreateTextureFromAtlas(AtlasCoordinates, SurfaceFormat, int)
+#### CreateTextureFromAtlas(AtlasCoordinates, SurfaceFormat, float)
 ```csharp
-public Texture2D CreateTextureFromAtlas(AtlasCoordinates textureCoord, SurfaceFormat format, int scale)
+public Texture2D CreateTextureFromAtlas(AtlasCoordinates textureCoord, SurfaceFormat format, float scale)
 ```
 
 This creates a new texture on the fly and should be *AVOIDED!*. Use `Get` instead.
@@ -130,7 +110,7 @@ This creates a new texture on the fly and should be *AVOIDED!*. Use `Get` instea
 \
 `format` [SurfaceFormat](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.SurfaceFormat.html) \
 \
-`scale` [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+`scale` [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 \
 
 **Returns** \

@@ -26,6 +26,15 @@ This is the name of the game, used when creating assets and loading save data.
 
 **Returns** \
 [string](https://learn.microsoft.com/en-us/dotnet/api/System.String?view=net-7.0) \
+#### Options
+```csharp
+public abstract virtual JsonSerializerOptions Options { get; }
+```
+
+Serialization options. This is generated automatically by the game based on the assets.
+
+**Returns** \
+[JsonSerializerOptions](https://learn.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonSerializerOptions?view=net-7.0) \
 #### Version
 ```csharp
 public virtual float Version { get; }
@@ -36,6 +45,21 @@ This is the version of the game, used when checking for save compatibility.
 **Returns** \
 [float](https://learn.microsoft.com/en-us/dotnet/api/System.Single?view=net-7.0) \
 ### ⭐ Methods
+#### OnLoadingDraw(RenderContext)
+```csharp
+public virtual bool OnLoadingDraw(RenderContext context)
+```
+
+Called when a scene is unavailable due to loading of assets.
+            Only assets at [GameDataManager.PreloadContent](../Murder/Data/GameDataManager.html#preloadcontent) are available.
+
+**Parameters** \
+`context` [RenderContext](../Murder/Core/Graphics/RenderContext.html) \
+\
+
+**Returns** \
+[bool](https://learn.microsoft.com/en-us/dotnet/api/System.Boolean?view=net-7.0) \
+
 #### CreateGamePreferences()
 ```csharp
 public virtual GamePreferences CreateGamePreferences()
@@ -124,18 +148,6 @@ public virtual void OnExit()
 ```
 
 Called once the game exits.
-
-#### OnLoadingDraw(RenderContext)
-```csharp
-public virtual void OnLoadingDraw(RenderContext context)
-```
-
-Called when a scene is unavailable due to loading of assets.
-            Only assets at [GameDataManager.PreloadContent](../Murder/Data/GameDataManager.html#preloadcontent) are available.
-
-**Parameters** \
-`context` [RenderContext](../Murder/Core/Graphics/RenderContext.html) \
-\
 
 #### OnSceneTransition()
 ```csharp

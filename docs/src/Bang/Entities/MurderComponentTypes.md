@@ -42,7 +42,7 @@ Unique Id used for the lookup of components with type [AgentImpulseComponent](..
 public static int AgentSpeedMultiplier { get; }
 ```
 
-Unique Id used for the lookup of components with type [AgentSpeedMultiplier](../../Murder/Components/Agents/AgentSpeedMultiplier.html).
+Unique Id used for the lookup of components with type [AgentSpeedMultiplierComponent](../../Murder/Components/AgentSpeedMultiplierComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -118,12 +118,21 @@ Unique Id used for the lookup of components with type [AnimationSpeedOverload](.
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
-#### AttackMultiplier
+#### AnimationStarted
 ```csharp
-public static int AttackMultiplier { get; }
+public static int AnimationStarted { get; }
 ```
 
-Unique Id used for the lookup of components with type [AttackMultiplier](../../Murder/Components/AttackMultiplier.html).
+Unique Id used for the lookup of components with type [AnimationStartedComponent](../../Murder/Components/Graphics/AnimationStartedComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### AutomaticNextDialogue
+```csharp
+public static int AutomaticNextDialogue { get; }
+```
+
+Unique Id used for the lookup of components with type [AutomaticNextDialogueComponent](../../Murder/Components/AutomaticNextDialogueComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -132,7 +141,7 @@ Unique Id used for the lookup of components with type [AttackMultiplier](../../M
 public static int BounceAmount { get; }
 ```
 
-Unique Id used for the lookup of components with type [BounceAmountComponent](../../Murder/Component/BounceAmountComponent.html).
+Unique Id used for the lookup of components with type [BounceAmountComponent](../../Murder/Components/BounceAmountComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -151,6 +160,15 @@ public static int Carve { get; }
 ```
 
 Unique Id used for the lookup of components with type [CarveComponent](../../Murder/Components/CarveComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### ChildTarget
+```csharp
+public static int ChildTarget { get; }
+```
+
+Unique Id used for the lookup of components with type [ChildTargetComponent](../../Murder/Components/ChildTargetComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -178,6 +196,15 @@ public static int CollisionCache { get; }
 ```
 
 Unique Id used for the lookup of components with type [CollisionCacheComponent](../../Murder/Components/CollisionCacheComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### CreatedAt
+```csharp
+public static int CreatedAt { get; }
+```
+
+Unique Id used for the lookup of components with type [CreatedAtComponent](../../Murder/Components/CreatedAtComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -223,6 +250,15 @@ public static int CutsceneAnchorsEditor { get; }
 ```
 
 Unique Id used for the lookup of components with type [CutsceneAnchorsEditorComponent](../../Murder/Components/Serialization/CutsceneAnchorsEditorComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### DestroyAfterSeconds
+```csharp
+public static int DestroyAfterSeconds { get; }
+```
+
+Unique Id used for the lookup of components with type [DestroyAfterSecondsComponent](../../Murder/Components/Utilities/DestroyAfterSecondsComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -298,6 +334,15 @@ Unique Id used for the lookup of components with type [DisableSceneTransitionEff
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### DoNotLoop
+```csharp
+public static int DoNotLoop { get; }
+```
+
+Unique Id used for the lookup of components with type [DoNotLoopComponent](../../Murder/Components/Graphics/DoNotLoopComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### DoNotPause
 ```csharp
 public static int DoNotPause { get; }
@@ -367,6 +412,15 @@ public static int FadeScreen { get; }
 ```
 
 Unique Id used for the lookup of components with type [FadeScreenComponent](../../Murder/Components/FadeScreenComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### FadeScreenWithSolidColor
+```csharp
+public static int FadeScreenWithSolidColor { get; }
+```
+
+Unique Id used for the lookup of components with type [FadeScreenWithSolidColorComponent](../../Murder/Components/FadeScreenWithSolidColorComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -523,6 +577,15 @@ Unique Id used for the lookup of components with type [IgnoreTriggersUntilCompon
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### IgnoreUntil
+```csharp
+public static int IgnoreUntil { get; }
+```
+
+Unique Id used for the lookup of components with type [IgnoreUntilComponent](../../Murder/Components/IgnoreUntilComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### InCamera
 ```csharp
 public static int InCamera { get; }
@@ -658,6 +721,15 @@ Unique Id used for the lookup of components with type [MoveToPerfectComponent](.
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### MoveToTarget
+```csharp
+public static int MoveToTarget { get; }
+```
+
+Unique Id used for the lookup of components with type [MoveToTargetComponent](../../Murder/Components/MoveToTargetComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### Music
 ```csharp
 public static int Music { get; }
@@ -730,12 +802,30 @@ Unique Id used for the lookup of components with type [PathfindComponent](../../
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### PathfindGrid
+```csharp
+public static int PathfindGrid { get; }
+```
+
+Unique Id used for the lookup of components with type [PathfindGridComponent](../../Murder/Components/PathfindGridComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### PauseAnimation
 ```csharp
 public static int PauseAnimation { get; }
 ```
 
 Unique Id used for the lookup of components with type [PauseAnimationComponent](../../Murder/Components/PauseAnimationComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### PersistPathfind
+```csharp
+public static int PersistPathfind { get; }
+```
+
+Unique Id used for the lookup of components with type [PersistPathfindComponent](../../Murder/Components/PersistPathfindComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -991,6 +1081,33 @@ Unique Id used for the lookup of components with type [SpriteComponent](../../Mu
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### SpriteClippingRect
+```csharp
+public static int SpriteClippingRect { get; }
+```
+
+Unique Id used for the lookup of components with type [SpriteClippingRectComponent](../../Murder/Components/SpriteClippingRectComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### SpriteFacing
+```csharp
+public static int SpriteFacing { get; }
+```
+
+Unique Id used for the lookup of components with type [SpriteFacingComponent](../../Murder/Components/SpriteFacingComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### SpriteOffset
+```csharp
+public static int SpriteOffset { get; }
+```
+
+Unique Id used for the lookup of components with type [SpriteOffsetComponent](../../Murder/Components/SpriteOffsetComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### Squish
 ```csharp
 public static int Squish { get; }
@@ -1036,6 +1153,15 @@ Unique Id used for the lookup of components with type [TagsComponent](../../Murd
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### Tethered
+```csharp
+public static int Tethered { get; }
+```
+
+Unique Id used for the lookup of components with type [TetheredComponent](../../Murder/Components/TetheredComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### Texture
 ```csharp
 public static int Texture { get; }
@@ -1072,12 +1198,30 @@ Unique Id used for the lookup of components with type [TilesetComponent](../../M
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### TimeScale
+```csharp
+public static int TimeScale { get; }
+```
+
+Unique Id used for the lookup of components with type [TimeScaleComponent](../../Murder/Components/TimeScaleComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
 #### Tint
 ```csharp
 public static int Tint { get; }
 ```
 
 Unique Id used for the lookup of components with type [TintComponent](../../Murder/Components/Graphics/TintComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### Tween
+```csharp
+public static int Tween { get; }
+```
+
+Unique Id used for the lookup of components with type [TweenComponent](../../Murder/Components/TweenComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
@@ -1105,6 +1249,15 @@ public static int Velocity { get; }
 ```
 
 Unique Id used for the lookup of components with type [VelocityComponent](../../Murder/Components/VelocityComponent.html).
+
+**Returns** \
+[int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
+#### VelocityTowardsFacing
+```csharp
+public static int VelocityTowardsFacing { get; }
+```
+
+Unique Id used for the lookup of components with type [VelocityTowardsFacingComponent](../../Murder/Components/VelocityTowardsFacingComponent.html).
 
 **Returns** \
 [int](https://learn.microsoft.com/en-us/dotnet/api/System.Int32?view=net-7.0) \
