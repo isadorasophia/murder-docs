@@ -2,7 +2,7 @@
 
 # What is Murder?
 
-Welcome to the official documentation for the _Murder_ engine. This has been an ongoing and fun development project of creating a game engine on top of [MonoGame](https://www.monogame.net/).
+Welcome to the official documentation for the _Murder_ engine. This has been an ongoing and fun development project of creating a game engine on top of [FNA](https://github.com/FNA-XNA/FNA).
 
 You can find the source code [here](https://github.com/isadorasophia/murder) and the main authors have been [@isa](https://twitter.com/isainstars) and [@saint11](https://twitter.com/saint11).
 
